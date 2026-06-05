@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fora — Blog médico</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--rose:#A85C7A;--rose2:#7D3D5E;--rose3:#C4849A;--dark:#1A0A12;--dark2:#2A1020;--grad:linear-gradient(135deg,#A85C7A,#7D3D5E)}
+html{scroll-behavior:smooth}body{background:var(--dark);color:#fff;font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:#C4849A;border-radius:2px}
+nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 56px;height:68px;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
+nav.scrolled{background:rgba(26,10,18,.92);backdrop-filter:blur(24px);border-bottom:1px solid rgba(168,92,122,.2)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:28px;color:#fff;text-decoration:none}
+.nav-logo em{color:#C4849A;font-style:normal}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang-pill{display:flex;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:3px;gap:2px}
+.lang-btn{font-size:11px;font-weight:600;padding:5px 12px;border-radius:100px;border:none;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;background:transparent;color:rgba(255,255,255,.4)}
+.lang-btn.active{background:rgba(168,92,122,.35);color:#fff}
+.nav-cta{background:var(--grad);color:#fff;padding:10px 22px;border-radius:100px;font-weight:500;font-size:13px;text-decoration:none;box-shadow:0 4px 16px rgba(168,92,122,.4);transition:opacity .2s,transform .2s}
+.nav-cta:hover{opacity:.85;transform:translateY(-1px)}
+.ph{padding:160px 56px 60px;text-align:center;position:relative;overflow:hidden}
+.ph-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(168,92,122,.15) 0%,transparent 60%);top:-100px;left:50%;transform:translateX(-50%);filter:blur(80px)}
+.ph-content{position:relative;z-index:1}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#C4849A;margin-bottom:20px;display:block}
+.ph-title{font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(48px,7vw,88px);line-height:1.0;letter-spacing:-.04em;margin-bottom:20px}
+.ph-title span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ph-sub{font-size:18px;font-weight:300;color:rgba(255,255,255,.5);max-width:560px;margin:0 auto;line-height:1.75}
+.filter-bar{padding:0 56px 44px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
+.filter-btn{font-size:13px;padding:8px 18px;border-radius:100px;border:1px solid rgba(255,255,255,.12);background:transparent;color:rgba(255,255,255,.5);cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
+.filter-btn:hover{border-color:rgba(168,92,122,.4);color:#fff}
+.filter-btn.active{background:var(--grad);border-color:transparent;color:#fff;box-shadow:0 4px 16px rgba(168,92,122,.3)}
+.feat-wrap{padding:0 56px 48px;max-width:1200px;margin:0 auto}
+.feat-card{display:grid;grid-template-columns:1fr 1fr;border-radius:24px;overflow:hidden;border:1px solid rgba(255,255,255,.08);transition:border-color .3s}
+.feat-card:hover{border-color:rgba(168,92,122,.25)}
+.feat-vis{background:linear-gradient(135deg,var(--dark2),rgba(168,92,122,.2));display:flex;align-items:center;justify-content:center;min-height:360px;position:relative;overflow:hidden}
+.feat-vis::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 40% 50%,rgba(168,92,122,.2) 0%,transparent 60%)}
+.feat-vis-inner{position:relative;z-index:1;text-align:center;padding:40px}
+.fv-num{font-family:'Cormorant Garamond',serif;font-size:100px;font-weight:300;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:.9}
+.fv-label{font-size:12px;color:rgba(255,255,255,.4);letter-spacing:.1em;text-transform:uppercase;margin-top:8px}
+.feat-body-wrap{padding:48px;background:rgba(255,255,255,.02);display:flex;flex-direction:column;justify-content:center}
+.post-tag{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.tag-d{color:#C4849A;border:1px solid rgba(196,132,154,.3);background:rgba(196,132,154,.08)}
+.tag-t{color:#9A8AB8;border:1px solid rgba(154,138,184,.3);background:rgba(154,138,184,.08)}
+.tag-n{color:#7A9E7A;border:1px solid rgba(122,158,122,.3);background:rgba(122,158,122,.08)}
+.tag-m{color:#7A9AB8;border:1px solid rgba(122,154,184,.3);background:rgba(122,154,184,.08)}
+.tag-f{color:#B8849A;border:1px solid rgba(184,132,154,.3);background:rgba(184,132,154,.08)}
+.feat-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:clamp(24px,3vw,36px);line-height:1.2;color:#fff;margin-bottom:16px}
+.feat-excerpt{font-size:15px;font-weight:300;color:rgba(255,255,255,.5);line-height:1.75;margin-bottom:24px}
+.post-meta{display:flex;align-items:center;gap:14px}
+.pm-av{width:34px;height:34px;border-radius:50%;background:rgba(168,92,122,.2);border:1px solid rgba(168,92,122,.3);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:13px;color:#C4849A;flex-shrink:0}
+.pm-name{font-size:13px;font-weight:500;color:rgba(255,255,255,.7)}
+.pm-role{font-size:11px;color:rgba(255,255,255,.35)}
+.pm-label{margin-left:auto;font-size:12px;color:rgba(255,255,255,.35)}
+.read-more{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:#C4849A;text-decoration:none;margin-top:18px;transition:gap .2s}
+.read-more:hover{gap:10px}
+.posts-section{padding:0 56px 80px;max-width:1200px;margin:0 auto}
+.posts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.pc{background:rgba(255,255,255,.025);border:1px solid rgba(255,255,255,.07);border-radius:20px;overflow:hidden;transition:border-color .3s,transform .25s;cursor:pointer}
+.pc:hover{border-color:rgba(168,92,122,.2);transform:translateY(-3px)}
+.pc-vis{height:150px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.pc-vis-icon{font-size:64px;opacity:.35;position:relative;z-index:0}
+.pc-body{padding:22px}
+.pc-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-size:21px;line-height:1.3;color:#fff;margin-bottom:10px;margin-top:10px}
+.pc-excerpt{font-size:13px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.65;margin-bottom:14px}
+.pc-footer{display:flex;align-items:center;justify-content:space-between}
+.pc-av{width:22px;height:22px;border-radius:50%;background:rgba(168,92,122,.2);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:10px;color:#C4849A}
+.pc-author{font-size:11px;color:rgba(255,255,255,.4);margin-left:7px}
+.pc-time{font-size:11px;color:rgba(255,255,255,.3)}
+.bn-wrap{margin:0 56px 80px;background:linear-gradient(135deg,rgba(168,92,122,.1),rgba(125,61,94,.08));border:1px solid rgba(168,92,122,.2);border-radius:24px;padding:44px 52px;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+.bn-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:28px;color:#fff;margin-bottom:8px}
+.bn-sub{font-size:14px;font-weight:300;color:rgba(255,255,255,.45)}
+.bn-form{display:flex;background:rgba(255,255,255,.06);border:1px solid rgba(168,92,122,.25);border-radius:100px;padding:5px 5px 5px 20px;min-width:320px}
+.bn-input{flex:1;background:transparent;border:none;outline:none;font-family:'DM Sans',sans-serif;font-size:14px;color:#fff}
+.bn-input::placeholder{color:rgba(255,255,255,.3)}
+.bn-btn{background:var(--grad);color:#fff;border:none;border-radius:100px;padding:11px 22px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:600;cursor:pointer;transition:opacity .2s}
+.bn-btn:hover{opacity:.85}
+footer{border-top:1px solid rgba(255,255,255,.06);padding:44px 56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:24px;color:#C4849A;text-decoration:none}
+.footer-links{display:flex;gap:24px;list-style:none;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:rgba(255,255,255,.75)}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}.d6{transition-delay:.6s}
+@media(max-width:900px){nav{padding:0 20px}.nav-links{display:none}.ph,.filter-bar,.feat-wrap,.posts-section{padding-left:20px;padding-right:20px}.feat-card{grid-template-columns:1fr}.feat-vis{min-height:180px}.feat-body-wrap{padding:28px}.posts-grid{grid-template-columns:1fr}.bn-wrap{grid-template-columns:1fr;padding:28px 20px}.bn-form{min-width:unset}footer{flex-direction:column;text-align:center;padding:32px 20px}.footer-links{justify-content:center}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="app.html" data-i18n="nav_app">La app</a></li>
+    <li><a href="about.html" data-i18n="nav_about">Endometriosis</a></li>
+    <li><a href="blog.html" class="active" data-i18n="nav_blog">Blog médico</a></li>
+    <li><a href="team.html" data-i18n="nav_team">El equipo</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-pill">
+      <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="index.html#waitlist" class="nav-cta" data-i18n="nav_cta">Unirse a la lista</a>
+  </div>
+</nav>
+
+<section class="ph">
+  <div class="ph-orb"></div>
+  <div class="ph-content reveal">
+    <span class="eyebrow" data-i18n="blog_eyebrow">Blog médico</span>
+    <h1 class="ph-title" data-i18n="blog_title">Escrito por<br><span>especialistas.</span></h1>
+    <p class="ph-sub" data-i18n="blog_sub">Artículos sobre endometriosis redactados por ginecólogas, investigadoras y psicólogas. Basados en evidencia.</p>
+  </div>
+</section>
+
+<div class="filter-bar reveal">
+  <button class="filter-btn active" data-cat="all" data-i18n="filter_all">Todo</button>
+  <button class="filter-btn" data-cat="diagnostico" data-i18n="filter_diag">Diagnóstico</button>
+  <button class="filter-btn" data-cat="tratamiento" data-i18n="filter_trat">Tratamiento</button>
+  <button class="filter-btn" data-cat="nutricion" data-i18n="filter_nut">Nutrición</button>
+  <button class="filter-btn" data-cat="mental" data-i18n="filter_ment">Salud mental</button>
+  <button class="filter-btn" data-cat="fertilidad" data-i18n="filter_fert">Fertilidad</button>
+</div>
+
+<div class="feat-wrap reveal">
+  <div class="feat-card">
+    <div class="feat-vis">
+      <div class="feat-vis-inner">
+        <div class="fv-num">7</div>
+        <div class="fv-label" data-i18n="feat_vis_label">Años de retraso medio</div>
+      </div>
+    </div>
+    <div class="feat-body-wrap">
+      <span class="post-tag tag-d" data-i18n="feat_tag">Diagnóstico</span>
+      <h2 class="feat-title" data-i18n="feat_title">Por qué la endometriosis tarda 7 años en diagnosticarse — y qué puedes hacer</h2>
+      <p class="feat-excerpt" data-i18n="feat_excerpt">El retraso diagnóstico de la endometriosis es uno de los más largos de la medicina moderna. No es inevitable. En este artículo explicamos los mecanismos que lo causan.</p>
+      <div class="post-meta">
+        <div class="pm-av">C</div>
+        <div>
+          <div class="pm-name" data-i18n="feat_author">Dra. Claudia Martínez</div>
+          <div class="pm-role" data-i18n="feat_role">Ginecóloga · HU La Paz · 12 min lectura</div>
+        </div>
+        <span class="pm-label" data-i18n="feat_label">Artículo destacado</span>
+      </div>
+      <a href="article.html" class="read-more" data-i18n="feat_read">Leer artículo completo →</a>
+    </div>
+  </div>
+</div>
+
+<div class="posts-section">
+  <div class="posts-grid" id="postsGrid">
+    <div class="pc reveal d1" data-cat="tratamiento">
+      <div class="pc-vis" style="background:linear-gradient(135deg,rgba(154,138,184,.15),rgba(125,61,94,.2))"><div class="pc-vis-icon">💊</div></div>
+      <div class="pc-body">
+        <span class="post-tag tag-t" data-i18n="filter_trat">Tratamiento</span>
+        <h3 class="pc-title" data-i18n="p1_title">Dienogest (Visanne): qué esperar en los primeros tres meses</h3>
+        <p class="pc-excerpt" data-i18n="p1_excerpt">El progestágeno más prescrito en endometriosis. Efectos secundarios reales, qué es esperable y qué no.</p>
+        <div class="pc-footer"><div style="display:flex;align-items:center"><div class="pc-av">C</div><span class="pc-author">Dra. Martínez</span></div><span class="pc-time">8 min</span></div>
+      </div>
+    </div>
+    <div class="pc reveal d2" data-cat="nutricion">
+      <div class="pc-vis" style="background:linear-gradient(135deg,rgba(122,158,122,.15),rgba(90,138,90,.15))"><div class="pc-vis-icon">🌿</div></div>
+      <div class="pc-body">
+        <span class="post-tag tag-n" data-i18n="filter_nut">Nutrición</span>
+        <h3 class="pc-title" data-i18n="p2_title">Ferritina baja y endometriosis: la conexión que nadie explica</h3>
+        <p class="pc-excerpt" data-i18n="p2_excerpt">Las pérdidas menstruales abundantes pueden llevar a déficit de hierro. Cómo detectarlo y qué hacer.</p>
+        <div class="pc-footer"><div style="display:flex;align-items:center"><div class="pc-av">A</div><span class="pc-author">Dra. Puig</span></div><span class="pc-time">6 min</span></div>
+      </div>
+    </div>
+    <div class="pc reveal d3" data-cat="mental">
+      <div class="pc-vis" style="background:linear-gradient(135deg,rgba(122,154,184,.15),rgba(90,110,160,.15))"><div class="pc-vis-icon">💛</div></div>
+      <div class="pc-body">
+        <span class="post-tag tag-m" data-i18n="filter_ment">Salud mental</span>
+        <h3 class="pc-title" data-i18n="p3_title">El duelo por la vida que imaginabas: una guía para pacientes con endometriosis</h3>
+        <p class="pc-excerpt" data-i18n="p3_excerpt">La endometriosis no solo afecta al cuerpo. Afecta a la identidad, a los planes, a las relaciones.</p>
+        <div class="pc-footer"><div style="display:flex;align-items:center"><div class="pc-av">I</div><span class="pc-author">Dra. Vidal</span></div><span class="pc-time">10 min</span></div>
+      </div>
+    </div>
+    <div class="pc reveal d1" data-cat="diagnostico">
+      <div class="pc-vis" style="background:linear-gradient(135deg,rgba(168,92,122,.15),rgba(196,132,154,.1))"><div class="pc-vis-icon">🔬</div></div>
+      <div class="pc-body">
+        <span class="post-tag tag-d" data-i18n="filter_diag">Diagnóstico</span>
+        <h3 class="pc-title" data-i18n="p4_title">Dispareunia, disquecia, disuria: los síntomas que orientan a endometriosis profunda</h3>
+        <p class="pc-excerpt" data-i18n="p4_excerpt">Tres síntomas que las pacientes a menudo no mencionan porque los consideran normales.</p>
+        <div class="pc-footer"><div style="display:flex;align-items:center"><div class="pc-av">M</div><span class="pc-author">Dra. Ros</span></div><span class="pc-time">7 min</span></div>
+      </div>
+    </div>
+    <div class="pc reveal d2" data-cat="fertilidad">
+      <div class="pc-vis" style="background:linear-gradient(135deg,rgba(184,132,154,.15),rgba(168,92,122,.1))"><div class="pc-vis-icon">🌱</div></div>
+      <div class="pc-body">
+        <span class="post-tag tag-f" data-i18n="filter_fert">Fertilidad</span>
+        <h3 class="pc-title" data-i18n="p5_title">Endometriosis y fertilidad: lo que la evidencia dice (y lo que no)</h3>
+        <p class="pc-excerpt" data-i18n="p5_excerpt">Tener endometriosis no significa infertilidad. Pero hay matices importantes.</p>
+        <div class="pc-footer"><div style="display:flex;align-items:center"><div class="pc-av">C</div><span class="pc-author">Dra. Martínez</span></div><span class="pc-time">9 min</span></div>
+      </div>
+    </div>
+    <div class="pc reveal d3" data-cat="tratamiento">
+      <div class="pc-vis" style="background:linear-gradient(135deg,rgba(196,133,90,.15),rgba(168,100,60,.1))"><div class="pc-vis-icon">⚡</div></div>
+      <div class="pc-body">
+        <span class="post-tag tag-t" data-i18n="filter_trat">Tratamiento</span>
+        <h3 class="pc-title" data-i18n="p6_title">Niebla mental en endometriosis: no estás inventándotelo</h3>
+        <p class="pc-excerpt" data-i18n="p6_excerpt">La niebla mental es uno de los síntomas más invalidados. Explicamos su base biológica.</p>
+        <div class="pc-footer"><div style="display:flex;align-items:center"><div class="pc-av">A</div><span class="pc-author">Dra. Puig</span></div><span class="pc-time">7 min</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bn-wrap reveal">
+  <div>
+    <h3 class="bn-title" data-i18n="bn_title">Nuevo artículo cada semana.</h3>
+    <p class="bn-sub" data-i18n="bn_sub">Escrito por especialistas. En tu correo. Sin algoritmos.</p>
+  </div>
+  <div class="bn-form">
+    <input class="bn-input" type="email" data-i18n-placeholder="bn_placeholder" placeholder="tu@correo.com">
+    <button class="bn-btn" data-i18n="bn_btn">Suscribirme</button>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html" class="footer-logo">fora</a>
+  <ul class="footer-links">
+    <li><a href="app.html" data-i18n="fl_app">La app</a></li>
+    <li><a href="about.html" data-i18n="fl_about">Qué es la endometriosis</a></li>
+    <li><a href="blog.html" data-i18n="fl_blog">Blog médico</a></li>
+    <li><a href="team.html" data-i18n="fl_team">El equipo</a></li>
+    <li><a href="#" data-i18n="fl_privacy">Privacidad</a></li>
+    <li><a href="#" data-i18n="fl_contact">Contacto</a></li>
+  </ul>
+  <span class="footer-copy" data-i18n="footer_copy">© 2026 Fora</span>
+</footer>
+
+<script src="i18n.js"></script>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat=btn.dataset.cat;
+    document.querySelectorAll('.pc').forEach(card=>{
+      card.style.display=(cat==='all'||card.dataset.cat===cat)?'':'none';
+    });
+  });
+});
+</script>
+</body>
+</html>

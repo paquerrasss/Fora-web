@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fora — El equipo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--rose:#A85C7A;--rose2:#7D3D5E;--rose3:#C4849A;--dark:#1A0A12;--dark2:#2A1020;--grad:linear-gradient(135deg,#A85C7A,#7D3D5E)}
+html{scroll-behavior:smooth}body{background:var(--dark);color:#fff;font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+::-webkit-scrollbar{width:3px}::-webkit-scrollbar-thumb{background:#C4849A;border-radius:2px}
+nav{position:fixed;top:0;width:100%;z-index:1000;padding:0 56px;height:68px;display:flex;align-items:center;justify-content:space-between;transition:all .4s}
+nav.scrolled{background:rgba(26,10,18,.92);backdrop-filter:blur(24px);border-bottom:1px solid rgba(168,92,122,.2)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:28px;color:#fff;text-decoration:none}
+.nav-logo em{color:#C4849A;font-style:normal}
+.nav-links{display:flex;align-items:center;gap:28px;list-style:none}
+.nav-links a{font-size:13px;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
+.nav-links a:hover,.nav-links a.active{color:#fff}
+.nav-right{display:flex;align-items:center;gap:14px}
+.lang-pill{display:flex;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.1);border-radius:100px;padding:3px;gap:2px}
+.lang-btn{font-size:11px;font-weight:600;padding:5px 12px;border-radius:100px;border:none;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif;background:transparent;color:rgba(255,255,255,.4)}
+.lang-btn.active{background:rgba(168,92,122,.35);color:#fff}
+.nav-cta{background:var(--grad);color:#fff;padding:10px 22px;border-radius:100px;font-weight:500;font-size:13px;text-decoration:none;box-shadow:0 4px 16px rgba(168,92,122,.4);transition:opacity .2s,transform .2s}
+.nav-cta:hover{opacity:.85;transform:translateY(-1px)}
+.ph{padding:160px 56px 80px;text-align:center;position:relative;overflow:hidden}
+.ph-orb{position:absolute;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(168,92,122,.15) 0%,transparent 60%);top:-100px;left:50%;transform:translateX(-50%);filter:blur(80px)}
+.ph-content{position:relative;z-index:1}
+.eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#C4849A;margin-bottom:20px;display:block}
+.ph-title{font-family:'DM Sans',sans-serif;font-weight:700;font-size:clamp(48px,7vw,88px);line-height:1.0;letter-spacing:-.04em;margin-bottom:20px}
+.ph-title span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ph-sub{font-size:18px;font-weight:300;color:rgba(255,255,255,.5);max-width:560px;margin:0 auto;line-height:1.75}
+.team-section{padding:80px 56px 120px;max-width:1200px;margin:0 auto}
+.team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:24px}
+.tc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:24px;padding:36px 28px;transition:border-color .3s,transform .25s;position:relative;overflow:hidden}
+.tc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+.tc:hover{border-color:rgba(168,92,122,.25);transform:translateY(-4px)}
+.tc:hover::before{transform:scaleX(1)}
+.tc-wide{grid-column:span 3;display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center}
+.av{width:80px;height:80px;border-radius:50%;margin-bottom:20px;position:relative;display:inline-flex;align-items:center;justify-content:center}
+.av-wide{width:120px;height:120px;margin-bottom:0}
+.av-ring{position:absolute;inset:-3px;border-radius:50%;background:var(--grad);opacity:.3}
+.av-inner{width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:300;color:#fff;position:relative;z-index:1}
+.av-inner-sm{font-size:28px}
+.av-inner-lg{font-size:44px}
+.role-tag{display:inline-block;font-size:10px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;padding:4px 12px;border-radius:100px;border:1px solid;margin-bottom:14px}
+.tag-med{color:#C4849A;border-color:rgba(196,132,154,.3);background:rgba(196,132,154,.08)}
+.tag-tech{color:#7A9AB8;border-color:rgba(122,154,184,.3);background:rgba(122,154,184,.08)}
+.tag-design{color:#9A8AB8;border-color:rgba(154,138,184,.3);background:rgba(154,138,184,.08)}
+.tag-research{color:#7A9E7A;border-color:rgba(122,158,122,.3);background:rgba(122,158,122,.08)}
+.tc-name{font-family:'DM Sans',sans-serif;font-weight:700;font-size:20px;color:#fff;margin-bottom:4px;letter-spacing:-.01em}
+.tc-name-lg{font-size:26px}
+.tc-title{font-size:13px;color:rgba(255,255,255,.45);margin-bottom:16px}
+.tc-bio{font-size:14px;font-weight:300;color:rgba(255,255,255,.5);line-height:1.75}
+.adv-title{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:32px;color:rgba(255,255,255,.7);margin-bottom:28px}
+.adv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.adv-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:22px;transition:border-color .25s}
+.adv-card:hover{border-color:rgba(168,92,122,.2)}
+.adv-av{width:44px;height:44px;border-radius:50%;background:rgba(168,92,122,.15);border:1px solid rgba(168,92,122,.25);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:18px;color:#C4849A;margin-bottom:10px}
+.adv-name{font-size:15px;font-weight:600;color:#fff;margin-bottom:3px}
+.adv-role{font-size:12px;color:rgba(255,255,255,.4)}
+.val-section{padding:80px 56px;border-top:1px solid rgba(255,255,255,.06)}
+.val-inner{max-width:1200px;margin:0 auto}
+.val-header{text-align:center;margin-bottom:52px}
+.val-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.val-item{padding:32px}
+.val-icon{font-size:32px;margin-bottom:16px}
+.val-title{font-size:17px;font-weight:600;color:#fff;margin-bottom:10px}
+.val-body{font-size:14px;font-weight:300;color:rgba(255,255,255,.45);line-height:1.75}
+footer{border-top:1px solid rgba(255,255,255,.06);padding:44px 56px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:24px;color:#C4849A;text-decoration:none}
+.footer-links{display:flex;gap:24px;list-style:none;flex-wrap:wrap}
+.footer-links a{font-size:12px;color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s}
+.footer-links a:hover{color:rgba(255,255,255,.75)}
+.footer-copy{font-size:12px;color:rgba(255,255,255,.25)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}.d4{transition-delay:.4s}.d5{transition-delay:.5s}
+@media(max-width:900px){nav{padding:0 20px}.nav-links{display:none}.ph,.team-section,.val-section{padding-left:20px;padding-right:20px}.team-grid{grid-template-columns:1fr}.tc-wide{grid-column:span 1;grid-template-columns:1fr;gap:20px}.adv-grid{grid-template-columns:1fr 1fr}.val-grid{grid-template-columns:1fr}footer{flex-direction:column;text-align:center;padding:32px 20px}.footer-links{justify-content:center}}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="index.html" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="app.html" data-i18n="nav_app">La app</a></li>
+    <li><a href="about.html" data-i18n="nav_about">Endometriosis</a></li>
+    <li><a href="blog.html" data-i18n="nav_blog">Blog médico</a></li>
+    <li><a href="team.html" class="active" data-i18n="nav_team">El equipo</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="lang-pill">
+      <button class="lang-btn" data-lang="es" onclick="setLang('es')">ES</button>
+      <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="index.html#waitlist" class="nav-cta" data-i18n="nav_cta">Unirse a la lista</a>
+  </div>
+</nav>
+
+<section class="ph">
+  <div class="ph-orb"></div>
+  <div class="ph-content reveal">
+    <span class="eyebrow" data-i18n="team_eyebrow">Quiénes somos</span>
+    <h1 class="ph-title" data-i18n="team_title">El equipo<br><span>detrás de Fora</span></h1>
+    <p class="ph-sub" data-i18n="team_sub">Médicas, ingenieras y diseñadoras unidas por el mismo objetivo: que ninguna mujer tarde 10 años en ser diagnosticada.</p>
+  </div>
+</section>
+
+<section class="team-section">
+  <!-- Founder -->
+  <div class="team-grid" style="margin-bottom:16px">
+    <div class="tc tc-wide reveal">
+      <div class="av av-wide">
+        <div class="av-ring"></div>
+        <div class="av-inner av-inner-lg" style="background:linear-gradient(135deg,rgba(168,92,122,.3),rgba(125,61,94,.3))">C</div>
+      </div>
+      <div>
+        <span class="role-tag tag-med" data-i18n="founder_tag">Fundadora & CEO</span>
+        <div class="tc-name tc-name-lg" data-i18n="founder_name">Claudia Martínez</div>
+        <div class="tc-title" data-i18n="founder_title">Ginecóloga especialista en endometriosis · Hospital Universitario La Paz, Madrid</div>
+        <p class="tc-bio" data-i18n="founder_bio">Tras 12 años atendiendo pacientes con endometriosis, Claudia fundó Fora con una convicción: el retraso diagnóstico no es inevitable. Es el resultado de no tener datos. Fora nació de sus consultas.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Core team -->
+  <div class="team-grid reveal">
+    <div class="tc d1">
+      <div class="av"><div class="av-ring"></div><div class="av-inner av-inner-sm" style="background:linear-gradient(135deg,rgba(122,110,160,.3),rgba(90,138,160,.3))">S</div></div>
+      <span class="role-tag tag-tech" data-i18n="m2_tag">CTO & Cofundadora</span>
+      <div class="tc-name" data-i18n="m2_name">Sara López</div>
+      <div class="tc-title" data-i18n="m2_title">Ingeniería de Software · ex-Cabify, ex-Glovo</div>
+      <p class="tc-bio" data-i18n="m2_bio">Sara construyó los sistemas de datos de dos de las apps más usadas de España antes de decidir que quería construir algo que importara más.</p>
+    </div>
+    <div class="tc d2">
+      <div class="av"><div class="av-ring"></div><div class="av-inner av-inner-sm" style="background:linear-gradient(135deg,rgba(196,133,90,.25),rgba(168,92,122,.25))">L</div></div>
+      <span class="role-tag tag-design" data-i18n="m3_tag">Head of Design</span>
+      <div class="tc-name" data-i18n="m3_name">Laura Ferrer</div>
+      <div class="tc-title" data-i18n="m3_title">UX/Product Design · ex-Typeform, ex-Factorial</div>
+      <p class="tc-bio" data-i18n="m3_bio">Laura diseña productos digitales de salud desde 2016. En Fora es responsable de que una app de uso clínico se sienta humana y cálida.</p>
+    </div>
+    <div class="tc d3">
+      <div class="av"><div class="av-ring"></div><div class="av-inner av-inner-sm" style="background:linear-gradient(135deg,rgba(122,158,122,.25),rgba(90,138,160,.25))">A</div></div>
+      <span class="role-tag tag-research" data-i18n="m4_tag">Directora Científica</span>
+      <div class="tc-name" data-i18n="m4_name">Ana Puig</div>
+      <div class="tc-title" data-i18n="m4_title">Investigadora en endometriosis · IDIBELL, Barcelona</div>
+      <p class="tc-bio" data-i18n="m4_bio">Ana lleva 8 años investigando los mecanismos inflamatorios de la endometriosis. Diseñó la arquitectura de las 4 esferas alineada con el EHP-30.</p>
+    </div>
+  </div>
+
+  <!-- Advisors -->
+  <div style="margin-top:64px" class="reveal">
+    <h2 class="adv-title" data-i18n="advisors_title">Consejo asesor</h2>
+    <div class="adv-grid">
+      <div class="adv-card d1"><div class="adv-av">M</div><div class="adv-name">Dra. Marta Ros</div><div class="adv-role">Ginecología endoscópica · HU Quirón Salud Madrid</div></div>
+      <div class="adv-card d2"><div class="adv-av">P</div><div class="adv-name">Dr. Pablo Sánchez</div><div class="adv-role">Salud digital · Stanford Medicine X</div></div>
+      <div class="adv-card d3"><div class="adv-av">I</div><div class="adv-name">Dra. Isabel Vidal</div><div class="adv-role">Psicología del dolor crónico · UAB</div></div>
+      <div class="adv-card d4"><div class="adv-av">C</div><div class="adv-name">Carla Méndez</div><div class="adv-role">Privacidad de datos sanitarios · AEPD</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="val-section">
+  <div class="val-inner">
+    <div class="val-header reveal">
+      <span class="eyebrow" data-i18n="values_eyebrow">Nuestros principios</span>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(32px,4vw,48px);color:#fff" data-i18n="values_title">Lo que nos guía</h2>
+    </div>
+    <div class="val-grid reveal">
+      <div class="val-item d1"><div class="val-icon">🔬</div><h3 class="val-title" data-i18n="v1_title">Evidencia, no tendencias</h3><p class="val-body" data-i18n="v1_body">Cada función de Fora está fundamentada en literatura científica revisada por pares.</p></div>
+      <div class="val-item d2"><div class="val-icon">🛡️</div><h3 class="val-title" data-i18n="v2_title">Privacidad sin compromisos</h3><p class="val-body" data-i18n="v2_body">Los datos de salud son los más sensibles. Nunca los vendemos, nunca los compartimos.</p></div>
+      <div class="val-item d3"><div class="val-icon">💬</div><h3 class="val-title" data-i18n="v3_title">Lenguaje que respeta</h3><p class="val-body" data-i18n="v3_body">Nunca "paciente". Nunca condescendencia. Fora habla a mujeres adultas.</p></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="index.html" class="footer-logo">fora</a>
+  <ul class="footer-links">
+    <li><a href="app.html" data-i18n="fl_app">La app</a></li>
+    <li><a href="about.html" data-i18n="fl_about">Qué es la endometriosis</a></li>
+    <li><a href="blog.html" data-i18n="fl_blog">Blog médico</a></li>
+    <li><a href="team.html" data-i18n="fl_team">El equipo</a></li>
+    <li><a href="#" data-i18n="fl_privacy">Privacidad</a></li>
+    <li><a href="#" data-i18n="fl_contact">Contacto</a></li>
+  </ul>
+  <span class="footer-copy" data-i18n="footer_copy">© 2026 Fora</span>
+</footer>
+
+<script src="i18n.js"></script>
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>40),{passive:true});
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
