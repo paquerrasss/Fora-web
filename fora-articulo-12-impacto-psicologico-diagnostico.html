@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El impacto psicológico del diagnóstico tardío en endometriosis — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #27131C; --surface: #36041C; --surface-2: #2F0F1E;
+    --accent: #C4607A; --highlight: #D4899A; --text: #F7EDE7;
+    --muted: #C9A8B4; --border: #5A2A3C; --divider: #3D1A28;
+    --inverted-bg: #F7EDE7; --inverted-text: #27131C;
+  }
+
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.75; min-height: 100vh; }
+
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--divider); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.5rem; color: var(--text); text-decoration: none; }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.8rem; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+
+  article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+
+  .label { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .label::after { content: ''; display: inline-block; width: 2rem; height: 0.5px; background: var(--accent); }
+
+  h1 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; color: var(--text); margin-bottom: 1rem; }
+
+  .meta { margin: 1.75rem 0 2.5rem; padding-bottom: 1.75rem; border-bottom: 0.5px solid var(--divider); }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+
+  .body-text { font-size: 1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+
+  h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 1.65rem; color: var(--text); margin: 3rem 0 1rem; line-height: 1.3; }
+
+  .section-start { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+  /* STAT GRID */
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 2.5rem 0; background: var(--divider); border-radius: 10px; overflow: hidden; border: 0.5px solid var(--border); }
+  .stat-card { background: var(--surface); padding: 1.5rem 1.25rem; text-align: center; }
+  .stat-number { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 2.4rem; font-weight: 300; color: var(--highlight); line-height: 1; display: block; margin-bottom: 0.4rem; }
+  .stat-label { font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
+
+  /* EXPERIENCIA CARD — citas de pacientes */
+  .exp-card { background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 10px 10px 0; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
+  .exp-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; font-weight: 300; color: var(--text); line-height: 1.6; margin-bottom: 0.5rem; }
+  .exp-source { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.04em; }
+
+  /* CARGA CARD */
+  .carga-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.75rem 2rem; margin: 1.25rem 0; }
+  .carga-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+  .carga-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; font-weight: 400; color: var(--text); margin-bottom: 0.75rem; line-height: 1.3; }
+  .carga-body { font-size: 0.9rem; color: var(--text); line-height: 1.75; }
+  .carga-dato { margin-top: 0.75rem; padding: 0.75rem 1rem; background: var(--surface-2); border-radius: 8px; font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
+  .carga-dato strong { color: var(--highlight); font-weight: 400; }
+
+  blockquote { margin: 2.5rem 0; padding: 1.75rem 2rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 10px 10px 0; }
+  blockquote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.25rem; color: var(--text); line-height: 1.6; margin-bottom: 0.75rem; }
+  blockquote cite { font-size: 0.75rem; color: var(--muted); font-style: normal; letter-spacing: 0.04em; }
+
+  .highlight-box { background: var(--inverted-bg); border-radius: 10px; padding: 1.75rem 2rem; margin: 2.5rem 0; }
+  .highlight-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.3rem; color: var(--inverted-text); line-height: 1.55; }
+  .highlight-box .highlight-source { display: block; margin-top: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: #7A3D52; font-style: normal; letter-spacing: 0.04em; }
+
+  .info-box { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 2rem 0; }
+  .info-box-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li { display: flex; gap: 0.75rem; font-size: 0.9rem; color: var(--text); line-height: 1.55; }
+  .info-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.55rem; }
+
+  .references { margin-top: 4rem; padding-top: 2rem; border-top: 0.5px solid var(--divider); }
+  .references-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li { counter-increment: ref; display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+  .references ol li::before { content: counter(ref) "."; color: var(--accent); font-weight: 500; flex-shrink: 0; min-width: 1.2rem; }
+  .references ol li a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; opacity: 0.7; }
+
+  .article-cta { margin-top: 3.5rem; background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; font-weight: 300; color: var(--text); }
+  .cta-btn { background: var(--accent); color: var(--inverted-bg); font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; padding: 0.7rem 1.4rem; border-radius: 8px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: opacity 0.2s; }
+  .cta-btn:hover { opacity: 0.85; }
+
+  footer { border-top: 0.5px solid var(--divider); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; } .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .stat-grid { grid-template-columns: 1fr; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Salud Mental</div>
+
+  <h1>El impacto psicológico<br>del diagnóstico tardío</h1>
+
+  <div class="meta">
+    <div class="meta-info">Salud Mental · 7 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    Recibir el diagnóstico de endometriosis después de años de síntomas no suele vivirse como un alivio. Para muchas personas es un momento agridulce: la validación de que algo real estaba ocurriendo, mezclada con la rabia de haber esperado tanto, el duelo por el tiempo perdido y la incertidumbre de lo que viene después. Todo eso tiene nombre — y tiene evidencia científica detrás.
+  </p>
+
+  <p class="body-text">
+    El impacto psicológico de la endometriosis no es una consecuencia secundaria de la enfermedad. Es parte de ella. Y merece el mismo espacio clínico que el dolor físico.
+  </p>
+
+  <!-- STATS -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <span class="stat-number">87%</span>
+      <span class="stat-label">prevalencia máxima de ansiedad documentada en estudios sobre endometriosis</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">98%</span>
+      <span class="stat-label">prevalencia máxima de síntomas depresivos en algunas series clínicas</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">↑ riesgo</span>
+      <span class="stat-label">significativamente mayor de depresión y ansiedad vs. población general</span>
+    </div>
+  </div>
+
+  <p class="body-text">
+    Los rangos son amplios porque los estudios usan metodologías distintas y poblaciones diferentes. Pero el mensaje es consistente en todos ellos: las personas con endometriosis tienen tasas significativamente más altas de ansiedad, depresión y deterioro de la calidad de vida que la población general. No es subjetivo. Está documentado.
+  </p>
+
+  <!-- AÑOS SIN NOMBRE -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El peso de los años sin diagnóstico</span>
+  </div>
+  <h2>Lo que dejan los años de no ser creída</h2>
+
+  <p class="body-text">
+    El retraso diagnóstico medio es de casi siete años. Siete años en los que el dolor fue real y la respuesta del sistema fue, con demasiada frecuencia, que era exagerado, que era estrés, que era normal, que había que aprender a vivir con él. Esa experiencia repetida tiene un nombre: gaslighting médico. Y deja una huella psicológica específica.
+  </p>
+
+  <div class="exp-card">
+    <div class="exp-text">"Si los médicos me hubieran explicado que la enfermedad podía afectar a mi bienestar emocional, habría entendido mejor qué esperar a largo plazo y no me habría sentido tan en la oscuridad."</div>
+    <div class="exp-source">Testimonio de paciente · Think Global Health, 2024</div>
+  </div>
+
+  <p class="body-text">
+    La investigación muestra que la carga mental de ser descartada, mal diagnosticada y tener que esperar durante años es, en algunos casos, comparable en intensidad a la del propio dolor físico. No es retórica — es un hallazgo documentado en estudios cualitativos con pacientes de endometriosis.
+  </p>
+
+  <div class="carga-card">
+    <div class="carga-tag">Mecanismo documentado</div>
+    <div class="carga-title">El círculo entre dolor crónico y salud mental</div>
+    <p class="carga-body">
+      El dolor crónico y la salud mental se alimentan mutuamente. El dolor persistente activa el sistema de estrés del cuerpo de forma sostenida, lo que con el tiempo puede generar ansiedad, depresión e hipersensibilidad al dolor. A su vez, la ansiedad y la depresión amplifican la percepción del dolor — un mecanismo llamado catastrofización que está documentado en endometriosis y que no significa que el dolor sea imaginario, sino que el sistema nervioso está en un estado de alerta constante.
+    </p>
+    <div class="carga-dato"><strong>Lo que esto significa en la práctica:</strong> tratar el dolor sin atender la salud mental, o atender la salud mental sin tratar el dolor, es siempre un abordaje incompleto. Los dos tienen que ir juntos.</div>
+  </div>
+
+  <!-- EL DIAGNÓSTICO EN SÍ -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El momento del diagnóstico</span>
+  </div>
+  <h2>Por qué el diagnóstico no siempre trae alivio</h2>
+
+  <p class="body-text">
+    Existe un imaginario de que el diagnóstico es el final del camino difícil — el momento en que por fin todo empieza a tener sentido y a mejorar. Para muchas personas con endometriosis no es así. El diagnóstico abre preguntas nuevas: ¿qué implica esto para mi fertilidad? ¿Me voy a operar? ¿Esto tiene cura? ¿Voy a estar así toda la vida?
+  </p>
+
+  <div class="carga-card">
+    <div class="carga-tag">Reacción frecuente y válida</div>
+    <div class="carga-title">El duelo por el cuerpo sano que creías tener</div>
+    <p class="carga-body">
+      Recibir un diagnóstico de enfermedad crónica implica un proceso de duelo — no metafórico, sino real. El duelo por el cuerpo que creías tener, por los planes que quizás haya que revisar, por los años que pasaron sin respuesta. Es un proceso que tiene sus fases y que no sigue un orden predecible. Sentir rabia, tristeza, alivio y confusión al mismo tiempo es completamente normal.
+    </p>
+    <div class="carga-dato"><strong>La investigación es clara:</strong> las personas que reciben apoyo psicológico en el momento del diagnóstico — o poco después — tienen mejores resultados tanto en salud mental como en manejo del dolor a largo plazo.</div>
+  </div>
+
+  <div class="carga-card">
+    <div class="carga-tag">Especialmente relevante</div>
+    <div class="carga-title">Cuando el diagnóstico llega junto a noticias sobre fertilidad</div>
+    <p class="carga-body">
+      Para las personas que tenían planes de maternidad, el diagnóstico de endometriosis puede venir acompañado de información sobre el impacto en la fertilidad. Incluso cuando ese impacto es incierto o manejable, la sola posibilidad activa un proceso emocional intenso — miedo, duelo anticipado, sensación de pérdida de control sobre el propio futuro. Ese proceso merece acompañamiento específico, no minimización.
+    </p>
+  </div>
+
+  <blockquote>
+    <p>La carga mental de ser descartada y esperar años para un diagnóstico es, en algunos casos, comparable en intensidad a la del propio dolor físico. El agotamiento emocional es generalizado en esta población.</p>
+    <cite>Experiences of disempowerment amongst endometriosis patients · PMC12678643, 2025</cite>
+  </blockquote>
+
+  <!-- LO QUE LA EVIDENCIA DICE QUE AYUDA -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que funciona</span>
+  </div>
+  <h2>Qué dice la evidencia sobre el apoyo psicológico</h2>
+
+  <p class="body-text">
+    La buena noticia es que hay intervenciones con evidencia real. No se trata de "pensar en positivo" ni de aprender a aguantar mejor. Se trata de herramientas clínicas concretas que tienen impacto documentado tanto en el bienestar emocional como en la percepción del dolor.
+  </p>
+
+  <div class="carga-card">
+    <div class="carga-tag">Con mayor evidencia en endometriosis</div>
+    <div class="carga-title">Terapia cognitivo-conductual (TCC)</div>
+    <p class="carga-body">
+      La TCC trabaja sobre los pensamientos y comportamientos que amplifican el dolor y el malestar emocional. En endometriosis ha mostrado mejoras significativas en la intensidad del dolor, la ansiedad y la calidad de vida. No elimina el dolor físico — actúa sobre cómo el sistema nervioso lo procesa y sobre el impacto que tiene en la vida diaria.
+    </p>
+  </div>
+
+  <div class="carga-card">
+    <div class="carga-tag">Evidencia creciente</div>
+    <div class="carga-title">Terapia de aceptación y compromiso (ACT)</div>
+    <p class="carga-body">
+      El ACT no busca eliminar el dolor ni las emociones difíciles, sino cambiar la relación que se tiene con ellos. El objetivo es reducir la lucha constante contra lo que no se puede controlar y redirigir la energía hacia lo que sí importa. En dolor crónico es especialmente relevante porque parte de una premisa honesta: hay cosas que no van a desaparecer, y la vida tiene que poder seguir aún así.
+    </p>
+  </div>
+
+  <div class="carga-card">
+    <div class="carga-tag">Complemento útil</div>
+    <div class="carga-title">Grupos de apoyo y comunidad</div>
+    <p class="carga-body">
+      La sensación de aislamiento — de que nadie entiende lo que estás viviendo — es una de las experiencias más frecuentes en personas con endometriosis. Los grupos de apoyo, ya sean presenciales o digitales, reducen ese aislamiento, normalizan la experiencia y crean un espacio donde no hay que justificar el dolor. No sustituyen a la terapia individual, pero la complementan de forma significativa.
+    </p>
+    <div class="carga-dato"><strong>En España:</strong> Asociación Endometriosis España (endoinfo.org), EndoMadrid, grupos autonómicos y comunidades en redes sociales. Busca comunidades moderadas con enfoque de salud, no de victimismo ni de pseudociencia.</div>
+  </div>
+
+  <div class="highlight-box">
+    <p>Tratar la endometriosis sin atender su impacto psicológico es tratar la mitad de la enfermedad. El apoyo psicológico no es un lujo ni un último recurso — es parte del tratamiento.</p>
+    <span class="highlight-source">Experiences of disempowerment · PMC12678643, 2025 · Mental health & endometriosis, SoCalEndo 2025</span>
+  </div>
+
+  <!-- LO QUE PUEDES HACER -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+  <h2>Por dónde empezar</h2>
+
+  <div class="info-box">
+    <div class="info-box-title">Pasos concretos si el impacto emocional es significativo</div>
+    <ul class="info-list">
+      <li>Nómbralo. No minimices lo que estás sintiendo como "normal dado lo que tengo". El impacto emocional de la endometriosis es clínicamente relevante y merece atención específica.</li>
+      <li>Pide apoyo psicológico explícitamente — no esperes a que te lo ofrezcan. En España, la psicología clínica especializada en dolor crónico es casi siempre privada, pero existen psicólogos con formación específica en enfermedad crónica.</li>
+      <li>Si estás en lista de espera para un tratamiento o cirugía, ese período de incertidumbre es especialmente difícil emocionalmente — es un buen momento para empezar apoyo psicológico si aún no lo tienes.</li>
+      <li>Busca comunidad — ya sea presencial o digital. No tienes que explicar desde cero lo que es vivir con endometriosis si estás con personas que también lo viven.</li>
+      <li>Si notas que los pensamientos sobre la enfermedad ocupan la mayor parte del día, que el dolor interfiere con tu sueño de forma sistemática, o que sientes que has perdido el interés en cosas que antes te importaban — son señales de que necesitas apoyo adicional, no señales de debilidad.</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>Szypłowska M et al. The impact of endometriosis on depressive and anxiety symptoms and quality of life: a systematic review. <em>Front Public Health.</em> 2023;11:1230303. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10512020/" target="_blank">PMC10512020</a></li>
+      <li>Relationship between endometriosis and mental health: a systematic review and meta-analysis. <em>Arch Med Sci.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12703484/" target="_blank">PMC12703484</a></li>
+      <li>Experiences of disempowerment amongst endometriosis patients: Toward comprehensive care to address the psychosocial impact of chronic illness. <em>PMC.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12678643/" target="_blank">PMC12678643</a></li>
+      <li>Understanding Psychological Symptoms of Endometriosis from a Research Domain Criteria Perspective. <em>PMC.</em> 2023. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10299570/" target="_blank">PMC10299570</a></li>
+      <li>Estes SJ et al. Depression, anxiety, and self-directed violence in women with endometriosis. <em>Am J Epidemiol.</em> 2021;190(5):843–852.</li>
+      <li>When Endometriosis Causes Mental Illness. <em>Think Global Health.</em> 2024. <a href="https://www.thinkglobalhealth.org/article/when-endometriosis-causes-mental-illness" target="_blank">Ver artículo</a></li>
+      <li>Psychological Effects of Late Endometriosis Diagnosis. <em>Endo Excellence Center.</em> 2025. <a href="https://endoexcellencecenter.com/psychological-effects-of-late-endometriosis-diagnosis/" target="_blank">Ver artículo</a></li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Tu experiencia importa más allá del dolor físico.</strong>
+      <p>Fora incluye seguimiento del estado emocional como parte del registro semanal.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Omega-3 y grasas en endometriosis: el antiinflamatorio más accesible — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #27131C; --surface: #36041C; --surface-2: #2F0F1E;
+    --accent: #C4607A; --highlight: #D4899A; --text: #F7EDE7;
+    --muted: #C9A8B4; --border: #5A2A3C; --divider: #3D1A28;
+    --inverted-bg: #F7EDE7; --inverted-text: #27131C;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.75; min-height: 100vh; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--divider); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.5rem; color: var(--text); text-decoration: none; }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.8rem; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+  .label { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .label::after { content: ''; display: inline-block; width: 2rem; height: 0.5px; background: var(--accent); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; color: var(--text); margin-bottom: 1rem; }
+  .meta { margin: 1.75rem 0 2.5rem; padding-bottom: 1.75rem; border-bottom: 0.5px solid var(--divider); }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+  .body-text { font-size: 1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 1.65rem; color: var(--text); margin: 3rem 0 1rem; line-height: 1.3; }
+  .section-start { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+  /* TIPO GRASA CARD */
+  .grasa-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.75rem 2rem; margin: 1.25rem 0; }
+  .grasa-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .grasa-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem; }
+  .grasa-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; font-weight: 400; color: var(--text); line-height: 1.2; }
+  .efecto-badge { font-size: 0.68rem; font-weight: 500; padding: 0.25rem 0.7rem; border-radius: 20px; white-space: nowrap; flex-shrink: 0; letter-spacing: 0.03em; }
+  .e-pro { background: #0a2010; color: #5cba7a; border: 0.5px solid #1a4a2a; }
+  .e-contra { background: #2a0a0a; color: #ba5a5a; border: 0.5px solid #4a1a1a; }
+  .e-neutro { background: var(--surface-2); color: var(--muted); border: 0.5px solid var(--border); }
+  .grasa-body { font-size: 0.9rem; color: var(--text); line-height: 1.75; margin-bottom: 0.75rem; }
+  .grasa-fuentes { margin-top: 0.75rem; }
+  .grasa-fuentes-label { font-size: 9px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+  .grasa-fuentes-list { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+  .fuente-pill { font-size: 0.75rem; color: var(--highlight); background: var(--surface-2); border: 0.5px solid var(--border); border-radius: 6px; padding: 0.2rem 0.6rem; }
+
+  /* VEREDICTO EVIDENCIA */
+  .veredicto-box { background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 10px 10px 0; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+  .veredicto-label { font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.5rem; }
+  .veredicto-text { font-size: 0.88rem; color: var(--text); line-height: 1.65; }
+  .veredicto-text em { color: var(--muted); font-style: normal; }
+
+  /* STAT INLINE */
+  .stat-inline { display: flex; gap: 1.5rem; align-items: center; background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; }
+  .stat-inline .num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 2.5rem; font-weight: 300; color: var(--highlight); line-height: 1; flex-shrink: 0; }
+  .stat-inline .stat-text { font-size: 0.85rem; color: var(--muted); line-height: 1.5; }
+  .stat-inline .stat-text strong { color: var(--text); font-weight: 400; display: block; }
+
+  blockquote { margin: 2.5rem 0; padding: 1.75rem 2rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 10px 10px 0; }
+  blockquote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.25rem; color: var(--text); line-height: 1.6; margin-bottom: 0.75rem; }
+  blockquote cite { font-size: 0.75rem; color: var(--muted); font-style: normal; letter-spacing: 0.04em; }
+
+  .highlight-box { background: var(--inverted-bg); border-radius: 10px; padding: 1.75rem 2rem; margin: 2.5rem 0; }
+  .highlight-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.3rem; color: var(--inverted-text); line-height: 1.55; }
+  .highlight-box .highlight-source { display: block; margin-top: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: #7A3D52; font-style: normal; letter-spacing: 0.04em; }
+
+  .info-box { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 2rem 0; }
+  .info-box-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li { display: flex; gap: 0.75rem; font-size: 0.9rem; color: var(--text); line-height: 1.55; }
+  .info-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.55rem; }
+
+  .references { margin-top: 4rem; padding-top: 2rem; border-top: 0.5px solid var(--divider); }
+  .references-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li { counter-increment: ref; display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+  .references ol li::before { content: counter(ref) "."; color: var(--accent); font-weight: 500; flex-shrink: 0; min-width: 1.2rem; }
+  .references ol li a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; opacity: 0.7; }
+
+  .article-cta { margin-top: 3.5rem; background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; font-weight: 300; color: var(--text); }
+  .cta-btn { background: var(--accent); color: var(--inverted-bg); font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; padding: 0.7rem 1.4rem; border-radius: 8px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: opacity 0.2s; }
+  .cta-btn:hover { opacity: 0.85; }
+  footer { border-top: 0.5px solid var(--divider); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; } .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .grasa-header { flex-direction: column; gap: 0.5rem; }
+    .stat-inline { flex-direction: column; gap: 0.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Nutrición</div>
+
+  <h1>Omega-3 y grasas:<br>el antiinflamatorio<br>más accesible</h1>
+
+  <div class="meta">
+    <div class="meta-info">Nutrición · 7 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    No todos los tipos de grasa hacen lo mismo en el cuerpo. Hay grasas que alimentan la inflamación — y grasas que la frenan. En endometriosis, entender esta diferencia no es un detalle nutricional menor: es uno de los cambios dietéticos con mayor respaldo científico y más fácil de implementar sin eliminar nada.
+  </p>
+
+  <p class="body-text">
+    El protagonista de este artículo es el omega-3. Pero para entender por qué importa, hay que entender primero el contexto: la guerra silenciosa entre dos tipos de ácidos grasos que ocurre en cada célula de tu cuerpo.
+  </p>
+
+  <!-- LA GUERRA OMEGA -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El mecanismo que lo explica todo</span>
+  </div>
+  <h2>Omega-6 vs. omega-3: la balanza de la inflamación</h2>
+
+  <p class="body-text">
+    El cuerpo humano necesita tanto omega-6 como omega-3 para funcionar. El problema no es el omega-6 en sí — es la proporción. La dieta occidental típica tiene una ratio de omega-6 a omega-3 de entre 15:1 y 20:1. La ratio que favorece una respuesta inflamatoria equilibrada está más cerca de 4:1.
+  </p>
+
+  <p class="body-text">
+    Cuando hay mucho omega-6 y poco omega-3, las células producen preferentemente prostaglandinas de la serie 2 — las proinflamatorias, las mismas que amplifican las contracciones uterinas y el dolor menstrual. Cuando aumenta el omega-3, la balanza se inclina hacia las prostaglandinas de la serie 3 — antiinflamatorias — y la intensidad de la respuesta inflamatoria se reduce.
+  </p>
+
+  <div class="stat-inline">
+    <div class="num">20:1</div>
+    <div class="stat-text">
+      <strong>Ratio omega-6/omega-3 en la dieta occidental media</strong>
+      La ratio ideal para reducir la inflamación crónica está entre 4:1 y 2:1 — cinco veces menos omega-6 relativo al omega-3
+    </div>
+  </div>
+
+  <!-- LOS TRES TIPOS -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">No todos los omega-3 son iguales</span>
+  </div>
+  <h2>EPA, DHA y ALA: cuál importa más y por qué</h2>
+
+  <div class="grasa-card">
+    <div class="grasa-header">
+      <div>
+        <div class="grasa-tag">Omega-3 marino</div>
+        <div class="grasa-title">EPA — ácido eicosapentaenoico</div>
+      </div>
+      <span class="efecto-badge e-pro">Mayor evidencia antiinflamatoria</span>
+    </div>
+    <p class="grasa-body">
+      Es el omega-3 con mayor acción antiinflamatoria directa en endometriosis. El EPA inhibe la conversión del ácido araquidónico — el precursor proinflamatorio — en prostaglandinas PGE2 y leucotrienos LTB4, que son las moléculas que generan inflamación y dolor pélvico. También puede servir como marcador de severidad de la enfermedad: niveles bajos de EPA en sangre se han asociado con mayor intensidad de síntomas.
+    </p>
+    <div class="grasa-fuentes">
+      <div class="grasa-fuentes-label">Fuentes principales</div>
+      <div class="grasa-fuentes-list">
+        <span class="fuente-pill">Sardinas</span>
+        <span class="fuente-pill">Salmón</span>
+        <span class="fuente-pill">Caballa</span>
+        <span class="fuente-pill">Boquerones</span>
+        <span class="fuente-pill">Aceite de krill</span>
+        <span class="fuente-pill">Aceite de pescado</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grasa-card">
+    <div class="grasa-header">
+      <div>
+        <div class="grasa-tag">Omega-3 marino</div>
+        <div class="grasa-title">DHA — ácido docosahexaenoico</div>
+      </div>
+      <span class="efecto-badge e-pro">Antiinflamatorio y neuroprotector</span>
+    </div>
+    <p class="grasa-body">
+      El DHA actúa en sinergia con el EPA y tiene un papel especialmente relevante en la membrana celular — modifica su composición haciéndola más fluida y menos favorable a la señalización inflamatoria. Además, tiene propiedades neuroprotectoras que pueden ser relevantes en la sensibilización central del dolor crónico asociado a la endometriosis. En suplementación, siempre se busca la combinación EPA+DHA, no uno solo.
+    </p>
+    <div class="grasa-fuentes">
+      <div class="grasa-fuentes-label">Fuentes principales</div>
+      <div class="grasa-fuentes-list">
+        <span class="fuente-pill">Salmón</span>
+        <span class="fuente-pill">Caballa</span>
+        <span class="fuente-pill">Atún</span>
+        <span class="fuente-pill">Ostras</span>
+        <span class="fuente-pill">Algas marinas (vegano)</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="grasa-card">
+    <div class="grasa-header">
+      <div>
+        <div class="grasa-tag">Omega-3 vegetal</div>
+        <div class="grasa-title">ALA — ácido alfa-linolénico</div>
+      </div>
+      <span class="efecto-badge e-neutro">Conversión limitada — complementario</span>
+    </div>
+    <p class="grasa-body">
+      El ALA es el omega-3 de las fuentes vegetales — nueces, semillas de lino, semillas de chía, aceite de lino. El problema es que el cuerpo humano convierte el ALA en EPA y DHA con una eficiencia muy baja: entre el 5% y el 15% en el mejor de los casos. Esto significa que comer nueces o semillas de lino es beneficioso, pero no equivalente a consumir pescado azul o tomar un suplemento de aceite de pescado. Para las personas que no comen pescado, los suplementos de omega-3 de algas son la alternativa más efectiva — ofrecen EPA y DHA directamente.
+    </p>
+    <div class="grasa-fuentes">
+      <div class="grasa-fuentes-label">Fuentes principales</div>
+      <div class="grasa-fuentes-list">
+        <span class="fuente-pill">Nueces</span>
+        <span class="fuente-pill">Semillas de lino</span>
+        <span class="fuente-pill">Semillas de chía</span>
+        <span class="fuente-pill">Aceite de lino</span>
+        <span class="fuente-pill">Aceite de cáñamo</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUÉ DICE LA EVIDENCIA REAL -->
+  <div class="section-start" style="margin-top: 2rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que dicen los estudios — con honestidad</span>
+  </div>
+  <h2>Qué dice la evidencia real sobre omega-3 y endometriosis</h2>
+
+  <p class="body-text">
+    Aquí viene el matiz importante — y es uno que muchas fuentes no mencionan porque complica el mensaje. La evidencia sobre omega-3 y endometriosis es positiva pero no tan sencilla como "toma omega-3 y tendrás menos dolor".
+  </p>
+
+  <div class="veredicto-box">
+    <div class="veredicto-label">Lo que los estudios muestran con consistencia</div>
+    <div class="veredicto-text">Los omega-3 reducen los marcadores inflamatorios en sangre — IL-6, TNF-α, PCR — en pacientes con endometriosis. Un estudio de cohorte de 2025 con 289 pacientes confirmó reducciones significativas de estos marcadores con suplementación de EPA+DHA a 900 mg/día durante 12 semanas. <em>La inflamación sistémica baja — y eso tiene valor clínico real.</em></div>
+  </div>
+
+  <div class="veredicto-box">
+    <div class="veredicto-label">Lo que los estudios muestran con menos consistencia</div>
+    <div class="veredicto-text">El impacto directo sobre el dolor es más variable. Un metaanálisis de 2025 con 424 pacientes en cinco ensayos clínicos no encontró efecto estadísticamente significativo sobre el dolor en escala EVA. <em>La reducción inflamatoria y la reducción del dolor no siempre son paralelas — especialmente cuando el dolor tiene un componente de sensibilización central que los omega-3 no abordan directamente.</em></div>
+  </div>
+
+  <blockquote>
+    <p>Los omega-3 reducen consistentemente los marcadores inflamatorios en endometriosis. Su efecto sobre el dolor percibido es más variable — probablemente porque el dolor en endometriosis tiene múltiples mecanismos, no todos de origen inflamatorio.</p>
+    <cite>Effect of omega-3 PUFA on endometriosis · Clinics 2025 · PMC12051631 · Frontiers in Nutrition 2026</cite>
+  </blockquote>
+
+  <p class="body-text">
+    ¿Qué significa esto en la práctica? Que aumentar el omega-3 sigue teniendo sentido — reducir la inflamación sistémica tiene valor aunque no se traduzca inmediatamente en menos dolor. Pero no es una solución mágica ni un sustituto del tratamiento médico.
+  </p>
+
+  <!-- GRASAS INFLAMATORIAS -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">La otra parte de la ecuación</span>
+  </div>
+  <h2>Las grasas que aumentan la inflamación</h2>
+
+  <div class="grasa-card">
+    <div class="grasa-header">
+      <div>
+        <div class="grasa-tag">Omega-6 en exceso</div>
+        <div class="grasa-title">Aceites vegetales refinados y ultraprocesados</div>
+      </div>
+      <span class="efecto-badge e-contra">Proinflamatorio en exceso</span>
+    </div>
+    <p class="grasa-body">
+      El omega-6 no es malo en sí mismo — el cuerpo lo necesita. El problema es el exceso relativo respecto al omega-3. Los aceites de girasol, maíz y soja — presentes en la mayoría de ultraprocesados — son muy ricos en omega-6 y contribuyen a una ratio desfavorable. Reducir su consumo no requiere eliminarlos, sino desplazarlos progresivamente hacia aceite de oliva como grasa de cocina principal.
+    </p>
+    <div class="grasa-fuentes">
+      <div class="grasa-fuentes-label">Dónde se acumulan</div>
+      <div class="grasa-fuentes-list">
+        <span class="fuente-pill">Bollería industrial</span>
+        <span class="fuente-pill">Snacks y fritos</span>
+        <span class="fuente-pill">Margarina</span>
+        <span class="fuente-pill">Platos precocinados</span>
+        <span class="fuente-pill">Aceites refinados de semillas</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- LO QUE PUEDES HACER -->
+  <div class="section-start" style="margin-top: 2rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+
+  <div class="highlight-box">
+    <p>No necesitas suplementar para mejorar tu ratio omega-3/omega-6. Comer pescado azul dos o tres veces por semana y cambiar los aceites refinados por aceite de oliva ya mueve la balanza en la dirección correcta.</p>
+    <span class="highlight-source">Sienko et al. · Ginekol Pol 2024;95(7):573–583 · PMC12051631, 2025</span>
+  </div>
+
+  <div class="info-box">
+    <div class="info-box-title">Guía práctica: cómo mejorar tu ratio de grasas</div>
+    <ul class="info-list">
+      <li><strong style="color: var(--highlight); font-weight: 400;">Prioridad 1 — pescado azul 2-3 veces por semana.</strong> Sardinas en lata, boquerones, caballa, salmón. Son la fuente más accesible y concentrada de EPA+DHA. Las sardinas en aceite de oliva son probablemente la relación calidad-coste-omega3 más difícil de batir.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Prioridad 2 — aceite de oliva virgen extra como grasa base.</strong> Desplaza los aceites refinados de cocina. El AOVE también tiene polifenoles antiinflamatorios propios — no es solo una grasa neutra.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Si suplementas — EPA+DHA juntos, forma de triglicérido.</strong> La forma de triglicérido se absorbe mejor que la forma de éster etílico. Dosis orientativa: 1-2 g de EPA+DHA al día. Con las comidas para mejorar la absorción.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Si no comes pescado — aceite de algas.</strong> Es la fuente vegana directa de EPA y DHA. Más cara que el aceite de pescado, pero la única alternativa eficaz para quien sigue una dieta sin pescado.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Añade nueces y semillas de lino.</strong> No reemplazan al pescado, pero contribuyen. Un puñado de nueces o una cucharada de semillas de lino molidas en el desayuno son fáciles de sostener.</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>Liu E et al. Effect of omega-3 polyunsaturated fatty acid on endometriosis. <em>Clinics.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12051631/" target="_blank">PMC12051631</a></li>
+      <li>Sienko A et al. The effect of omega-3 and resveratrol on endometriosis. <em>Ginekol Pol.</em> 2024;95(7):573–583. <a href="https://pubmed.ncbi.nlm.nih.gov/37768015/" target="_blank">PubMed</a></li>
+      <li>Omega-3 PUFA intake and pain, inflammatory cytokines, and quality of life in endometriosis. <em>Front Nutr.</em> 2026. <a href="https://www.frontiersin.org/journals/nutrition/articles/10.3389/fnut.2026.1768244/full" target="_blank">Ver artículo</a></li>
+      <li>Snipe RMJ et al. Omega-3 long chain PUFA and dysmenorrhoea pain: systematic review and meta-analysis. <em>Nutr Diet.</em> 2024. <a href="https://onlinelibrary.wiley.com/doi/full/10.1111/1747-0080.12835" target="_blank">Ver artículo</a></li>
+      <li>Popa AD et al. Dietary and Nutritional Interventions for the Management of Endometriosis. <em>Nutrients.</em> 2024;16(23):3988. <a href="https://doi.org/10.3390/nu16233988" target="_blank">doi:10.3390/nu16233988</a></li>
+      <li>Arab A et al. Food groups and nutrients and risk of endometriosis: systematic review and meta-analysis. <em>Nutr J.</em> 2022;21:58.</li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Registra lo que comes y cómo te sientes.</strong>
+      <p>Fora te ayuda a detectar si hay relación entre tu alimentación y tus síntomas semana a semana.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

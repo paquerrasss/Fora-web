@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TENS, calor, acupuntura y osteopatía en endometriosis: qué dice la evidencia — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #27131C;
+    --surface: #36041C;
+    --surface-2: #2F0F1E;
+    --accent: #C4607A;
+    --highlight: #D4899A;
+    --text: #F7EDE7;
+    --muted: #C9A8B4;
+    --border: #5A2A3C;
+    --divider: #3D1A28;
+    --inverted-bg: #F7EDE7;
+    --inverted-text: #27131C;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .label::after {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 0.5px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .meta {
+    margin: 1.75rem 0 2.5rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.65rem;
+    color: var(--text);
+    margin: 3rem 0 1rem;
+    line-height: 1.3;
+  }
+
+  .section-start {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* INTERVENCIÓN CARD */
+  .int-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    margin: 1.25rem 0;
+  }
+  .int-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .int-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+  .int-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  /* SEMÁFORO DE EVIDENCIA */
+  .ev-badge {
+    font-size: 0.68rem;
+    font-weight: 500;
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.03em;
+  }
+  .ev-verde { background: #0a2010; color: #5cba7a; border: 0.5px solid #1a4a2a; }
+  .ev-ambar { background: #2a1a08; color: #c9903a; border: 0.5px solid #5a3a10; }
+  .ev-gris { background: var(--surface-2); color: var(--muted); border: 0.5px solid var(--border); }
+
+  .int-mecanismo {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+  .int-body {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+  .int-divider { height: 0.5px; background: var(--divider); margin: 1rem 0; }
+
+  /* VEREDICTO INLINE */
+  .veredicto {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    margin-top: 0.75rem;
+  }
+  .veredicto-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    flex-shrink: 0;
+    padding-top: 0.1rem;
+    min-width: 5rem;
+  }
+  .veredicto-text {
+    font-size: 0.85rem;
+    color: var(--text);
+    line-height: 1.55;
+  }
+
+  .int-caveat {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface-2);
+    border-left: 1px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .int-caveat strong { color: var(--text); font-weight: 400; }
+
+  blockquote {
+    margin: 2.5rem 0;
+    padding: 1.75rem 2rem;
+    background: var(--surface-2);
+    border-left: 1px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+  }
+  blockquote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  blockquote cite {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  .highlight-box {
+    background: var(--inverted-bg);
+    border-radius: 10px;
+    padding: 1.75rem 2rem;
+    margin: 2.5rem 0;
+  }
+  .highlight-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: var(--inverted-text);
+    line-height: 1.55;
+  }
+  .highlight-box .highlight-source {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    color: #7A3D52;
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  /* LEYENDA EVIDENCIA */
+  .leyenda {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    margin: 1.5rem 0 2rem;
+    padding: 1rem 1.25rem;
+    background: var(--surface-2);
+    border-radius: 8px;
+    border: 0.5px solid var(--divider);
+  }
+  .leyenda-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .info-box {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+  }
+  .info-box-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .info-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+
+  .references {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--divider);
+  }
+  .references-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li {
+    counter-increment: ref;
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .references ol li::before {
+    content: counter(ref) ".";
+    color: var(--accent);
+    font-weight: 500;
+    flex-shrink: 0;
+    min-width: 1.2rem;
+  }
+  .references ol li a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    opacity: 0.7;
+  }
+
+  .article-cta {
+    margin-top: 3.5rem;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--text);
+  }
+  .cta-btn {
+    background: var(--accent);
+    color: var(--inverted-bg);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.85; }
+
+  footer {
+    border-top: 0.5px solid var(--divider);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; }
+    .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .int-header { flex-direction: column; gap: 0.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Tratamiento</div>
+
+  <h1>TENS, calor, acupuntura<br>y osteopatía: qué dice<br>la evidencia</h1>
+
+  <div class="meta">
+    <div class="meta-info">Tratamiento · 8 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    Más allá de la fisioterapia de suelo pélvico existe un abanico de intervenciones no farmacológicas que las pacientes con endometriosis usan — a menudo sin que su médico lo sepa — para manejar el dolor. Algunas tienen evidencia clínica directa y específica en endometriosis. Otras tienen evidencia sólida en dolor pélvico crónico generalizado. Y algunas simplemente tienen poca base científica pero tampoco daño demostrado.
+  </p>
+
+  <p class="body-text">
+    Distinguir entre ellas no es un ejercicio académico: es información práctica que permite tomar decisiones informadas sobre qué añadir, con qué expectativas y con qué coste de tiempo y dinero.
+  </p>
+
+  <!-- LEYENDA -->
+  <div class="leyenda">
+    <div class="leyenda-item">
+      <span class="ev-badge ev-verde">Verde</span>
+      Evidencia clínica sólida o moderada en endometriosis
+    </div>
+    <div class="leyenda-item">
+      <span class="ev-badge ev-ambar">Ámbar</span>
+      Evidencia indirecta o estudios pequeños
+    </div>
+    <div class="leyenda-item">
+      <span class="ev-badge ev-gris">Gris</span>
+      Base limitada — no descartado, pero no demostrado
+    </div>
+  </div>
+
+  <!-- TENS -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Intervención 1</span>
+  </div>
+
+  <div class="int-card">
+    <div class="int-header">
+      <div>
+        <div class="int-tag">TENS — Estimulación eléctrica transcutánea</div>
+        <div class="int-title">Analgesia no invasiva con respaldo clínico directo</div>
+      </div>
+      <span class="ev-badge ev-verde">Evidencia sólida</span>
+    </div>
+    <div class="int-mecanismo">Mecanismo: el TENS activa fibras nerviosas de gran calibre (Aβ) que inhiben la transmisión del dolor a través de fibras más pequeñas (Aδ y C) — el mecanismo de la "compuerta del dolor". A frecuencias bajas también estimula la liberación endógena de beta-endorfinas.</div>
+    <p class="int-body">
+      El TENS tiene uno de los perfiles de evidencia más sólidos entre las intervenciones no farmacológicas en endometriosis. Un ensayo clínico aleatorizado específico en endometriosis profunda con dolor persistente pese a tratamiento hormonal demostró reducción significativa del dolor pélvico crónico y la dispareunia profunda. Un estudio prospectivo de 2026 (European Journal of Obstetrics and Gynecology) confirma mejoras en calidad de vida y reducción del uso de ibuprofeno durante los episodios de dolor.
+    </p>
+    <p class="int-body">
+      Existen dos tipos principales: TENS de alta frecuencia (80–150 Hz), más eficaz para analgesia inmediata durante crisis; y TENS de baja frecuencia o tipo acupuntura (2–8 Hz), con efecto más demorado pero potencialmente más duradero por activación endorfínica. Para endometriosis, ambos modos han mostrado beneficio con perfiles distintos.
+    </p>
+    <div class="int-divider"></div>
+    <div class="veredicto">
+      <div class="veredicto-label">Para qué sirve</div>
+      <div class="veredicto-text">Alivio del dolor durante las crisis, reducción del dolor pélvico crónico persistente, complemento al tratamiento hormonal en endometriosis profunda. Puede usarse en casa con dispositivos portátiles.</div>
+    </div>
+    <div class="int-caveat">
+      <strong>Cómo usarlo:</strong> los dispositivos TENS portátiles son accesibles y seguros para uso doméstico. Los electrodos se colocan en el abdomen bajo o la zona lumbar. No usar sobre piel dañada, durante el embarazo, o en personas con marcapasos. La posición de los electrodos afecta significativamente al resultado — un fisioterapeuta puede orientarte en la primera sesión.
+    </div>
+  </div>
+
+  <!-- CALOR -->
+  <div class="section-start" style="margin-top: 1.5rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Intervención 2</span>
+  </div>
+
+  <div class="int-card">
+    <div class="int-header">
+      <div>
+        <div class="int-tag">Termoterapia — Aplicación de calor</div>
+        <div class="int-title">La intervención más accesible con base fisiológica clara</div>
+      </div>
+      <span class="ev-badge ev-verde">Evidencia moderada</span>
+    </div>
+    <div class="int-mecanismo">Mecanismo: el calor local activa los receptores TRPV1 de la piel, que inhiben los receptores de dolor nociceptivo. También produce vasodilatación que mejora el flujo sanguíneo local y relajación del músculo liso uterino, reduciendo la intensidad de los espasmos.</div>
+    <p class="int-body">
+      La aplicación de calor — bolsa de agua caliente, parches térmicos, mantas eléctricas — es probablemente la intervención más usada de forma espontánea por pacientes con dismenorrea, y con razón: la evidencia en dolor menstrual es robusta. Estudios en dismenorrea primaria han encontrado una eficacia comparable al ibuprofeno en el control del dolor agudo. Su aplicación específica en endometriosis tiene menos ensayos clínicos directos, pero el mecanismo de acción es el mismo y la extrapolación es razonable.
+    </p>
+    <p class="int-body">
+      La combinación de calor y TENS ha mostrado efectos sinérgicos en varios estudios de dolor pélvico — aplicar ambos simultáneamente puede ser más eficaz que cualquiera de ellos por separado.
+    </p>
+    <div class="int-divider"></div>
+    <div class="veredicto">
+      <div class="veredicto-label">Para qué sirve</div>
+      <div class="veredicto-text">Alivio inmediato del dolor menstrual y el espasmo uterino. Complemento de bajo coste y sin efectos adversos para usar durante las crisis. No modifica la enfermedad — alivia el síntoma.</div>
+    </div>
+  </div>
+
+  <blockquote>
+    <p>Diversas terapias físicas — incluyendo el TENS, la termoterapia y el ejercicio supervisado — han demostrado mejoras en el dolor, la calidad de vida y la función sexual en mujeres con endometriosis. Estas opciones merecen mayor integración en los protocolos clínicos.</p>
+    <cite>ICS 2024 Abstract #478 · Holistic Approaches in Endometriosis as Effective Method of Pain Management, 2024</cite>
+  </blockquote>
+
+  <!-- ACUPUNTURA -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Intervención 3</span>
+  </div>
+
+  <div class="int-card">
+    <div class="int-header">
+      <div>
+        <div class="int-tag">Acupuntura</div>
+        <div class="int-title">Evidencia creciente, pero con matices importantes</div>
+      </div>
+      <span class="ev-badge ev-ambar">Evidencia moderada</span>
+    </div>
+    <div class="int-mecanismo">Mecanismo propuesto: modulación del sistema nervioso central y periférico, estimulación de vías endorfínicas, reducción de citoquinas proinflamatorias locales y sistémicas. El mecanismo exacto no está completamente elucidado.</div>
+    <p class="int-body">
+      La acupuntura tiene la base de evidencia más amplia entre las terapias complementarias en endometriosis. Un metaanálisis de 2024 (Archives of Gynecology and Obstetrics, 9 ensayos clínicos, 535 pacientes) encontró una reducción significativa de la intensidad del dolor con una diferencia media de −1,67 puntos en escala EVA frente a no acupuntura. Una revisión de redes publicada en 2024 (Journal of Pain Research) concluyó que la acupuntura es eficaz y segura para el dolor en endometriosis. Otros metaanálisis más restrictivos han calificado la evidencia como de certeza baja a moderada por limitaciones metodológicas en los estudios incluidos.
+    </p>
+    <p class="int-body">
+      El punto de consenso es que la acupuntura muestra beneficio en dolor pélvico y dismenorrea asociados a endometriosis, con un perfil de efectos adversos muy favorable. La variabilidad de resultados entre estudios se explica en parte por las diferencias en protocolos de puntos, número de sesiones y formación del acupuntor.
+    </p>
+    <div class="int-divider"></div>
+    <div class="veredicto">
+      <div class="veredicto-label">Para qué sirve</div>
+      <div class="veredicto-text">Reducción del dolor menstrual y pélvico crónico, mejora de la calidad de vida. Opción especialmente relevante para pacientes que no toleran o no quieren tratamiento hormonal. No modifica las lesiones — actúa sobre la percepción del dolor.</div>
+    </div>
+    <div class="int-caveat">
+      <strong>Qué buscar:</strong> un acupuntor con formación acreditada y experiencia en dolor pélvico o ginecológico. El número de sesiones importa — los estudios con mejores resultados usan protocolos de al menos 8–12 sesiones. Los efectos suelen ser graduales.
+    </div>
+  </div>
+
+  <!-- OSTEOPATÍA -->
+  <div class="section-start" style="margin-top: 1.5rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Intervención 4</span>
+  </div>
+
+  <div class="int-card">
+    <div class="int-header">
+      <div>
+        <div class="int-tag">Osteopatía y terapia manual sistémica</div>
+        <div class="int-title">Base racional, evidencia específica aún limitada</div>
+      </div>
+      <span class="ev-badge ev-gris">Evidencia limitada</span>
+    </div>
+    <div class="int-mecanismo">Mecanismo propuesto: la osteopatía busca restaurar la movilidad articular y visceral, reducir restricciones fasciales y mejorar la función del sistema nervioso autónomo — todo ello con impacto potencial sobre el dolor pélvico crónico.</div>
+    <p class="int-body">
+      La osteopatía como abordaje sistémico — distinto de la terapia visceral específica que hace una fisioterapeuta especializada en suelo pélvico — tiene base racional en el contexto del dolor crónico y las alteraciones posturales que genera la endometriosis. Sin embargo, los ensayos clínicos específicos en endometriosis son escasos y de pequeño tamaño. La evidencia más sólida en dolor pélvico crónico proviene de estudios en los que se combina la osteopatía con otras técnicas dentro de abordajes multimodales.
+    </p>
+    <p class="int-body">
+      Esto no significa que sea inútil — significa que la evidencia no ha alcanzado aún el volumen ni el rigor metodológico suficiente para hacer afirmaciones definitivas. Muchas pacientes refieren beneficio subjetivo, especialmente en la movilidad y el dolor postural asociado a la enfermedad.
+    </p>
+    <div class="int-divider"></div>
+    <div class="veredicto">
+      <div class="veredicto-label">Veredicto honesto</div>
+      <div class="veredicto-text">Puede ser útil como parte de un abordaje multimodal, especialmente si hay restricciones posturales o adherencias que contribuyen al dolor. No debe sustituir a la fisioterapia de suelo pélvico especializada ni al tratamiento médico. Si lo pruebas, hazlo con expectativas calibradas.</div>
+    </div>
+  </div>
+
+  <!-- MINDFULNESS Y EJERCICIO -->
+  <div class="section-start" style="margin-top: 1.5rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Intervención 5</span>
+  </div>
+
+  <div class="int-card">
+    <div class="int-header">
+      <div>
+        <div class="int-tag">Mindfulness, yoga y ejercicio aeróbico</div>
+        <div class="int-title">El impacto de la inflamación sistémica y el sistema nervioso</div>
+      </div>
+      <span class="ev-badge ev-ambar">Evidencia moderada</span>
+    </div>
+    <div class="int-mecanismo">Mecanismo: el ejercicio aeróbico moderado reduce marcadores inflamatorios sistémicos (IL-6, TNF-α), mejora la regulación del eje HPA y potencia la inhibición descendente del dolor. El mindfulness actúa sobre la respuesta al dolor desde el procesamiento cognitivo-emocional.</div>
+    <p class="int-body">
+      El ejercicio físico regular — de intensidad moderada y adaptado a la tolerancia de cada paciente — tiene evidencia de reducción del dolor y mejora de la calidad de vida en endometriosis a través de múltiples mecanismos: antiinflamatorio sistémico, mejora del sueño, regulación hormonal y bienestar psicológico. El yoga combina el componente físico con respiración y regulación del sistema nervioso autónomo, con resultados prometedores en estudios piloto. El mindfulness ha mostrado reducción de la catastrofización del dolor — un factor que amplifica significativamente la experiencia dolorosa en enfermedades crónicas.
+    </p>
+    <div class="int-divider"></div>
+    <div class="veredicto">
+      <div class="veredicto-label">Para qué sirve</div>
+      <div class="veredicto-text">Reducción del dolor a medio plazo, mejora del estado de ánimo y la calidad de vida, reducción de la inflamación sistémica. El ejercicio en días de dolor intenso puede ser contraproducente — la clave es la regularidad adaptada al ciclo.</div>
+    </div>
+    <div class="int-caveat">
+      <strong>Importante:</strong> el ejercicio en endometriosis no sigue las mismas reglas que en población general. Hay días en que el cuerpo necesita reposo — y ese reposo también es parte del manejo. Forzar el ejercicio durante una crisis puede empeorar los síntomas.
+    </div>
+  </div>
+
+  <!-- LO QUE PUEDES HACER -->
+  <div class="section-start" style="margin-top: 2rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+  <h2>Cómo integrar estas opciones de forma inteligente</h2>
+
+  <div class="highlight-box">
+    <p>Ninguna de estas intervenciones sustituye al tratamiento médico. Todas pueden complementarlo. La clave es elegir con criterio, registrar el efecto y ajustar según lo que funciona en tu caso concreto.</p>
+    <span class="highlight-source">Holistic Approaches in Endometriosis, 2024 · ICS Abstract #478, 2024</span>
+  </div>
+
+  <div class="info-box">
+    <div class="info-box-title">Criterios para elegir qué añadir a tu plan</div>
+    <ul class="info-list">
+      <li>Empieza por las intervenciones con mejor perfil de evidencia y menor coste: calor y TENS son accesibles, seguros y con base documentada.</li>
+      <li>Incorpora de una en una — no añadas tres cosas a la vez. Necesitas saber qué está funcionando y qué no.</li>
+      <li>Registra la intensidad del dolor antes y después de cada sesión o intervención durante al menos 4 semanas antes de decidir si continúas.</li>
+      <li>Busca profesionales con formación específica en dolor pélvico o endometriosis — la experiencia del practicante importa tanto como la técnica.</li>
+      <li>Informa a tu ginecóloga de todo lo que estás usando — algunas combinaciones pueden interferir con el tratamiento médico.</li>
+      <li>Ajusta según el ciclo: lo que funciona en días con poco dolor puede no funcionar — o ser contraproducente — durante una crisis intensa.</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>Pre-post prospective study on the use of TENS in the management of endometriosis pain. <em>Eur J Obstet Gynecol Reprod Biol.</em> 2026. <a href="https://www.ejog.org/article/S0301-2115(26)00108-9/abstract" target="_blank">Ver artículo</a></li>
+      <li>Effectiveness of complementary pain treatment with TENS in deep endometriosis: randomized controlled trial. <em>ScienceDirect.</em> 2015. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0301211515002468" target="_blank">Ver artículo</a></li>
+      <li>Acupuncture for endometriosis: A systematic review and meta-analysis. <em>Integr Med Res.</em> 2023. <a href="https://doaj.org/article/61dcbe124b474a41989dc3a29064e106" target="_blank">Ver artículo</a></li>
+      <li>Chen C et al. Acupuncture for clinical improvement of endometriosis-related pain: a systematic review and meta-analysis. <em>Arch Gynecol Obstet.</em> 2024;310(4):2101–2114. <a href="https://pubmed.ncbi.nlm.nih.gov/39110208/" target="_blank">PubMed</a></li>
+      <li>Acupuncture and Related Therapies for Endometriosis: A Network Meta-Analysis of Randomized Controlled Trials. <em>J Pain Res.</em> 2024. <a href="https://www.tandfonline.com/doi/full/10.2147/JPR.S488343" target="_blank">Ver artículo</a></li>
+      <li>Acupuncture monotherapy for endometriosis-related pain: meta-analysis. <em>Medicine.</em> 2025. <a href="https://journals.lww.com/md-journal/fulltext/2025/08220/acupuncture_monotherapy_for_endometriosis_related.4.aspx" target="_blank">Ver artículo</a></li>
+      <li>ICS 2024 Abstract #478. Pelvic Pain caused by Endometriosis — a systematic overview about conservative options. <a href="https://www.ics.org/2024/abstract/478" target="_blank">Ver abstract</a></li>
+      <li>Wang YX et al. Acupuncture and moxibustion for endometriosis: a systematic review. <em>Complement Ther Med.</em> 2023;76:102963.</li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Registra el efecto de cada intervención en tu dolor.</strong>
+      <p>Fora te permite hacer seguimiento semana a semana para saber qué funciona en tu caso concreto.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

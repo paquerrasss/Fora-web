@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Magnesio: el mineral del dolor menstrual y el sueño — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #27131C; --surface: #36041C; --surface-2: #2F0F1E;
+    --accent: #C4607A; --highlight: #D4899A; --text: #F7EDE7;
+    --muted: #C9A8B4; --border: #5A2A3C; --divider: #3D1A28;
+    --inverted-bg: #F7EDE7; --inverted-text: #27131C;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.75; min-height: 100vh; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--divider); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.5rem; color: var(--text); text-decoration: none; }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.8rem; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; }
+  article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+  .label { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .label::after { content: ''; display: inline-block; width: 2rem; height: 0.5px; background: var(--accent); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; color: var(--text); margin-bottom: 1rem; }
+  .meta { margin: 1.75rem 0 2.5rem; padding-bottom: 1.75rem; border-bottom: 0.5px solid var(--divider); }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+  .body-text { font-size: 1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 1.65rem; color: var(--text); margin: 3rem 0 1rem; line-height: 1.3; }
+  .section-start { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+  /* STAT CENTRAL */
+  .stat-central { text-align: center; padding: 2.5rem 2rem; margin: 2.5rem 0; background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; }
+  .big-number { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(3rem, 9vw, 5rem); color: var(--highlight); line-height: 1; display: block; }
+  .big-label { font-size: 0.85rem; color: var(--muted); margin-top: 0.6rem; line-height: 1.5; }
+  .big-source { font-size: 0.7rem; color: var(--border); margin-top: 0.75rem; }
+
+  /* MECANISMO CARD */
+  .mec-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 0.75rem 0; display: flex; gap: 1rem; align-items: flex-start; }
+  .mec-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; font-weight: 300; color: var(--accent); flex-shrink: 0; line-height: 1; min-width: 1.25rem; }
+  .mec-title { font-size: 0.875rem; font-weight: 500; color: var(--text); margin-bottom: 0.25rem; }
+  .mec-body { font-size: 0.83rem; color: var(--muted); line-height: 1.65; }
+  .mec-body strong { color: var(--text); font-weight: 400; }
+
+  /* FORMAS TABLA */
+  .formas-tabla { margin: 1.5rem 0; border: 0.5px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .formas-header { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; background: var(--surface-2); border-bottom: 0.5px solid var(--border); }
+  .formas-header-cell { padding: 0.75rem 1rem; font-size: 9px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+  .formas-row { display: grid; grid-template-columns: 1.5fr 1fr 1.5fr; border-bottom: 0.5px solid var(--divider); }
+  .formas-row:last-child { border-bottom: none; }
+  .formas-row:nth-child(even) .formas-cell { background: var(--surface-2); }
+  .formas-cell { padding: 0.9rem 1rem; font-size: 0.83rem; line-height: 1.5; background: var(--surface); }
+  .formas-cell.nombre { color: var(--highlight); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; }
+  .formas-cell.abs { color: var(--text); }
+  .formas-cell.mejor { color: var(--muted); }
+  .forma-badge { display: inline-block; font-size: 0.65rem; font-weight: 500; padding: 0.15rem 0.4rem; border-radius: 4px; margin-top: 0.2rem; }
+  .fb-top { background: #0a2010; color: #5cba7a; border: 0.5px solid #1a4a2a; }
+  .fb-buena { background: #2a1a08; color: #c9903a; border: 0.5px solid #5a3a10; }
+  .fb-evitar { background: #2a0a0a; color: #ba5a5a; border: 0.5px solid #4a1a1a; }
+
+  /* ESTUDIO */
+  .estudio-card { background: var(--inverted-bg); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
+  .estudio-label { font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #7A3D52; margin-bottom: 0.5rem; }
+  .estudio-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; font-weight: 400; color: var(--inverted-text); line-height: 1.4; margin-bottom: 0.75rem; }
+  .estudio-hallazgo { font-size: 0.87rem; color: #4a2030; line-height: 1.65; margin-bottom: 0.5rem; }
+  .estudio-cite { font-size: 0.72rem; color: #9a5566; }
+
+  blockquote { margin: 2.5rem 0; padding: 1.75rem 2rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 10px 10px 0; }
+  blockquote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.25rem; color: var(--text); line-height: 1.6; margin-bottom: 0.75rem; }
+  blockquote cite { font-size: 0.75rem; color: var(--muted); font-style: normal; }
+
+  .highlight-box { background: var(--inverted-bg); border-radius: 10px; padding: 1.75rem 2rem; margin: 2.5rem 0; }
+  .highlight-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.3rem; color: var(--inverted-text); line-height: 1.55; }
+  .highlight-box .highlight-source { display: block; margin-top: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: #7A3D52; font-style: normal; }
+
+  .info-box { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 2rem 0; }
+  .info-box-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li { display: flex; gap: 0.75rem; font-size: 0.9rem; color: var(--text); line-height: 1.55; }
+  .info-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.55rem; }
+
+  .references { margin-top: 4rem; padding-top: 2rem; border-top: 0.5px solid var(--divider); }
+  .references-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li { counter-increment: ref; display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+  .references ol li::before { content: counter(ref) "."; color: var(--accent); font-weight: 500; flex-shrink: 0; min-width: 1.2rem; }
+  .references ol li a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; opacity: 0.7; }
+
+  .article-cta { margin-top: 3.5rem; background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; font-weight: 300; color: var(--text); }
+  .cta-btn { background: var(--accent); color: var(--inverted-bg); font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; padding: 0.7rem 1.4rem; border-radius: 8px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+  footer { border-top: 0.5px solid var(--divider); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; } .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .formas-header, .formas-row { grid-template-columns: 1fr; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Nutrición</div>
+
+  <h1>Magnesio: el mineral<br>del dolor menstrual<br>y el sueño</h1>
+
+  <div class="meta">
+    <div class="meta-info">Nutrición · 7 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    El magnesio está implicado en más de 300 reacciones bioquímicas del cuerpo humano. Regula la contracción muscular, la transmisión nerviosa, la producción de energía y la síntesis de proteínas. Y sin embargo, es uno de los minerales con mayor prevalencia de ingesta insuficiente en la dieta occidental. En endometriosis, su relevancia es específica: actúa directamente sobre el dolor menstrual, la calidad del sueño y el sistema nervioso — tres áreas que en esta enfermedad están frecuentemente comprometidas.
+  </p>
+
+  <div class="stat-central">
+    <span class="big-number">~50%</span>
+    <div class="big-label">de la población general no alcanza la ingesta diaria recomendada de magnesio<br>a través de la alimentación</div>
+    <div class="big-source">Global Dietary Magnesium Deficiency · IMRPRESS 2025 · Magnesium: Health Effects and Deficiency Burden, Nutrients 2025</div>
+  </div>
+
+  <!-- POR QUÉ IMPORTA EN ENDOMETRIOSIS -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Los mecanismos relevantes</span>
+  </div>
+  <h2>Cuatro razones por las que el magnesio importa en endometriosis</h2>
+
+  <div class="mec-card">
+    <div class="mec-num">1</div>
+    <div>
+      <div class="mec-title">Relajación del músculo liso uterino</div>
+      <div class="mec-body">El magnesio actúa como antagonista natural del calcio a nivel celular. El calcio desencadena la contracción muscular — el magnesio la regula y facilita la relajación. <strong>En endometriosis, el músculo liso uterino hipercontráctil durante la menstruación genera parte del dolor cíclico.</strong> El magnesio puede atenuar esas contracciones de forma similar a como lo hace el ibuprofeno — aunque por un mecanismo diferente y más suave.</div>
+    </div>
+  </div>
+
+  <div class="mec-card">
+    <div class="mec-num">2</div>
+    <div>
+      <div class="mec-title">Modulación de la transmisión del dolor</div>
+      <div class="mec-body">El magnesio actúa como antagonista de los receptores NMDA del sistema nervioso central — los mismos receptores implicados en la sensibilización central y el dolor crónico. <strong>En endometriosis con sensibilización establecida, el magnesio puede contribuir a reducir la amplificación central del dolor.</strong> Es uno de los mecanismos por los que se usa en el manejo del dolor neuropático y la fibromialgia.</div>
+    </div>
+  </div>
+
+  <div class="mec-card">
+    <div class="mec-num">3</div>
+    <div>
+      <div class="mec-title">Regulación del sueño</div>
+      <div class="mec-body">El magnesio regula los niveles de GABA — el principal neurotransmisor inhibitorio del sistema nervioso — y activa el sistema nervioso parasimpático. <strong>Niveles insuficientes de magnesio se asocian con peor calidad del sueño, más interrupciones nocturnas y mayor tiempo hasta conciliar el sueño</strong> — todos problemas frecuentes en personas con dolor crónico. Un estudio de 2024 (Journal of Affective Disorders) encontró correlación significativa entre déficit de magnesio y mala calidad del sueño en población adulta.</div>
+    </div>
+  </div>
+
+  <div class="mec-card">
+    <div class="mec-num">4</div>
+    <div>
+      <div class="mec-title">Antiinflamatorio e inhibidor de prostaglandinas</div>
+      <div class="mec-body">El magnesio inhibe la síntesis de prostaglandinas proinflamatorias — las mismas moléculas que amplifican el dolor menstrual y la inflamación local en endometriosis. También reduce marcadores sistémicos de inflamación como la PCR. <strong>Actúa sobre el mismo mecanismo que el ibuprofeno, aunque con menor potencia y de forma más gradual.</strong></div>
+    </div>
+  </div>
+
+  <!-- EVIDENCIA CLÍNICA -->
+  <div class="section-start" style="margin-top: 2rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que dicen los estudios</span>
+  </div>
+  <h2>La evidencia: sólida en dismenorrea, prometedora en dolor crónico</h2>
+
+  <div class="estudio-card">
+    <div class="estudio-label">Ensayo clínico aleatorizado · IJWHR 2024</div>
+    <div class="estudio-title">Effectiveness of Magnesium on Menstrual Symptoms Among Dysmenorrheal College Students — Yaralizadeh et al.</div>
+    <div class="estudio-hallazgo">60 mujeres con dismenorrea moderada-severa recibieron magnesio (150 mg o 300 mg) o placebo durante dos ciclos. Ambas dosis redujeron significativamente los síntomas menstruales — calambres, dolor de cabeza, dolor lumbar, irritabilidad y dolor abdominal — frente a placebo. La dosis de 300 mg fue más eficaz en todas las variables. Sin efectos adversos reportados en ningún grupo.</div>
+    <div class="estudio-cite">Yaralizadeh M et al. · Int J Women's Health Reprod Sci. 2024;12(2):70–76</div>
+  </div>
+
+  <p class="body-text">
+    La evidencia en dismenorrea primaria es robusta y consistente a través de múltiples ensayos clínicos. Para endometriosis específicamente, los estudios directos son más escasos — pero el mecanismo de acción sobre el espasmo uterino y la inflamación es el mismo, y la mayoría de los expertos en manejo no hormonal de la endometriosis lo incluyen como complemento con justificación racional.
+  </p>
+
+  <p class="body-text">
+    Un estudio de 2023 también comparó el magnesio con anticonceptivos orales combinados en dismenorrea — encontrando eficacia comparable en reducción del dolor menstrual, lo que subraya la potencia real de este mineral cuando se usa correctamente.
+  </p>
+
+  <blockquote>
+    <p>El magnesio actúa sobre múltiples vías del dolor menstrual — relajación muscular, inhibición de prostaglandinas, modulación nerviosa — con una seguridad excelente y sin los efectos secundarios de los antiinflamatorios o los tratamientos hormonales.</p>
+    <cite>Magnesium: Exploring Gender Differences in Its Health Impact · Nutrients 2025;17(13):2226 · Magnesium: Role in Oxidative Stress and Inflammation · PMC12189353</cite>
+  </blockquote>
+
+  <!-- FORMAS DE MAGNESIO -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El detalle que más importa al suplementar</span>
+  </div>
+  <h2>No todo el magnesio es igual: formas y absorción</h2>
+
+  <p class="body-text">
+    La forma química del magnesio determina cuánto llega realmente al cuerpo. El magnesio óxido — el más barato y frecuente en suplementos básicos — tiene una absorción muy baja y puede causar molestias digestivas e incluso efecto laxante. Las formas orgánicas se absorben significativamente mejor.
+  </p>
+
+  <div class="formas-tabla">
+    <div class="formas-header">
+      <div class="formas-header-cell">Forma</div>
+      <div class="formas-header-cell">Absorción</div>
+      <div class="formas-header-cell">Mejor para</div>
+    </div>
+    <div class="formas-row">
+      <div class="formas-cell nombre">Glicinato<br><span class="forma-badge fb-top">Mejor opción</span></div>
+      <div class="formas-cell abs">Muy alta · sin efecto laxante</div>
+      <div class="formas-cell mejor">Sueño, ansiedad, tensión muscular. La forma más recomendada para uso nocturno y digestión sensible.</div>
+    </div>
+    <div class="formas-row">
+      <div class="formas-cell nombre">Malato<br><span class="forma-badge fb-top">Muy buena</span></div>
+      <div class="formas-cell abs">Alta · buena tolerancia</div>
+      <div class="formas-cell mejor">Fatiga, dolor muscular, fibromialgia. El malato de magnesio aporta también ácido málico, implicado en producción de energía.</div>
+    </div>
+    <div class="formas-row">
+      <div class="formas-cell nombre">Citrato<br><span class="forma-badge fb-buena">Buena</span></div>
+      <div class="formas-cell abs">Alta · posible efecto laxante</div>
+      <div class="formas-cell mejor">Corrección de déficit rápida. Cuidado con dosis altas — puede causar heces blandas en personas sensibles.</div>
+    </div>
+    <div class="formas-row">
+      <div class="formas-cell nombre">Treonato<br><span class="forma-badge fb-buena">Específico</span></div>
+      <div class="formas-cell abs">Alta en cerebro</div>
+      <div class="formas-cell mejor">Función cognitiva, niebla mental. Penetra mejor la barrera hematoencefálica — puede ser especialmente útil en endometriosis con síntomas cognitivos.</div>
+    </div>
+    <div class="formas-row">
+      <div class="formas-cell nombre">Óxido<br><span class="forma-badge fb-evitar">Evitar</span></div>
+      <div class="formas-cell abs">Muy baja (~4%)</div>
+      <div class="formas-cell mejor">El más barato y peor absorbido. Efecto principalmente laxante. No es la forma adecuada para suplementar con objetivo de beneficio sistémico.</div>
+    </div>
+  </div>
+
+  <!-- FUENTES DIETÉTICAS -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Antes de suplementar</span>
+  </div>
+  <h2>Las fuentes dietéticas — y por qué suelen ser insuficientes</h2>
+
+  <p class="body-text">
+    El magnesio está presente en muchos alimentos — frutos secos, semillas, legumbres, cereales integrales, verduras de hoja verde, chocolate negro. El problema es que la dieta occidental moderna, procesada y refinada, pierde gran parte del magnesio natural de los alimentos. La cocción en agua también lixivia el magnesio de las verduras. Y el estrés crónico — como el que genera el dolor crónico — aumenta la excreción renal de magnesio, ampliando el déficit.
+  </p>
+
+  <div class="highlight-box">
+    <p>El magnesio es el mineral más subestimado en el manejo del dolor menstrual. Su perfil de seguridad es excelente, su mecanismo está documentado y su deficiencia es extraordinariamente frecuente. Y sin embargo, casi nadie lo prescribe.</p>
+    <span class="highlight-source">Magnesium: Health Effects and Deficiency Burden · Nutrients 2025;17(22):3626 · Investigation of Magnesium vs. OAC in Dysmenorrhea · PubMed 36600872</span>
+  </div>
+
+  <!-- LO QUE PUEDES HACER -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+  <h2>Guía práctica</h2>
+
+  <div class="info-box">
+    <div class="info-box-title">Cómo suplementar magnesio de forma inteligente</div>
+    <ul class="info-list">
+      <li><strong style="color: var(--highlight); font-weight: 400;">Forma preferida: glicinato o malato.</strong> Son las más absorbidas y mejor toleradas. Evita el óxido de magnesio — es mayoritariamente laxante con poco efecto sistémico real.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Dosis orientativa: 200–400 mg de magnesio elemental al día.</strong> El límite tolerable de suplementación sin supervisión médica es de 350 mg/día según la mayoría de guías. Dosis superiores requieren evaluación médica, especialmente si hay problemas renales.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Por la noche — para maximizar el beneficio en sueño.</strong> El efecto relajante del glicinato de magnesio es especialmente útil antes de dormir. Si también tienes calambres nocturnos o tensión muscular al despertarte, el momento nocturno es especialmente adecuado.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Con las comidas para mejorar la tolerancia digestiva.</strong> Aunque el glicinato se tolera bien en ayunas, tomarlo con alimentos reduce la posibilidad de molestias estomacales.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">La respuesta tarda semanas, no días.</strong> El magnesio no tiene un efecto analgésico inmediato como el ibuprofeno. Su beneficio se acumula a lo largo de 4–8 semanas de suplementación constante. Deja tiempo suficiente para evaluar.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Fuentes dietéticas como base:</strong> espinacas, almendras, semillas de calabaza, legumbres, avena, chocolate negro (>70%). Añadirlas a la dieta habitual siempre es el primer paso.</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>Yaralizadeh M et al. Effectiveness of Magnesium on Menstrual Symptoms Among Dysmenorrheal College Students: RCT. <em>Int J Women's Health Reprod Sci.</em> 2024;12(2):70–76. <a href="https://www.ijwhr.net/pdf/pdf_IJWHR_624.pdf" target="_blank">Ver artículo</a></li>
+      <li>Magnesium: Exploring Gender Differences in Its Health Impact and Dietary Intake. <em>Nutrients.</em> 2025;17(13):2226. <a href="https://www.mdpi.com/2072-6643/17/13/2226" target="_blank">Ver artículo</a></li>
+      <li>Magnesium: Health Effects, Deficiency Burden, and Future Public Health Directions. <em>Nutrients.</em> 2025;17(22):3626. <a href="https://www.mdpi.com/2072-6643/17/22/3626" target="_blank">Ver artículo</a></li>
+      <li>Unlocking the Power of Magnesium: Role in Oxidative Stress and Inflammation. <em>PMC.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12189353/" target="_blank">PMC12189353</a></li>
+      <li>Examining Effects of Supplemental Magnesium on Anxiety and Sleep Quality: Systematic Review. <em>PMC.</em> 2024. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11136869/" target="_blank">PMC11136869</a></li>
+      <li>Luo X et al. Association between magnesium deficiency score and sleep quality in adults. <em>J Affect Disord.</em> 2024;358:105–112.</li>
+      <li>Investigation of Laboratory and Clinical Features of Primary Dysmenorrhea: Comparison of Magnesium and Oral Contraceptives. <em>PubMed.</em> 2022. <a href="https://pubmed.ncbi.nlm.nih.gov/36600872/" target="_blank">PubMed 36600872</a></li>
+      <li>Global Dietary Magnesium Deficiency: Prevalence, Causes, Consequences, and Solutions. <em>IMRPRESS.</em> 2025. <a href="https://www.imrpress.com/journal/IJVNR/95/6/10.31083/IJVNR46828" target="_blank">Ver artículo</a></li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Registra el dolor y el sueño en paralelo.</strong>
+      <p>Fora te permite ver si la suplementación está mejorando tu calidad del sueño y tus síntomas menstruales semana a semana.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

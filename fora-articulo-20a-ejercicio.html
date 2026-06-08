@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El ejercicio en endometriosis: qué tipo, cuánto y cuándo — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #27131C; --surface: #36041C; --surface-2: #2F0F1E;
+    --accent: #C4607A; --highlight: #D4899A; --text: #F7EDE7;
+    --muted: #C9A8B4; --border: #5A2A3C; --divider: #3D1A28;
+    --inverted-bg: #F7EDE7; --inverted-text: #27131C;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.75; min-height: 100vh; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--divider); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.5rem; color: var(--text); text-decoration: none; }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.8rem; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; }
+  article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+  .label { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .label::after { content: ''; display: inline-block; width: 2rem; height: 0.5px; background: var(--accent); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; color: var(--text); margin-bottom: 1rem; }
+  .meta { margin: 1.75rem 0 2.5rem; padding-bottom: 1.75rem; border-bottom: 0.5px solid var(--divider); }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+  .body-text { font-size: 1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 1.65rem; color: var(--text); margin: 3rem 0 1rem; line-height: 1.3; }
+  .section-start { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+  /* BENEFICIOS GRID */
+  .beneficios-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--divider); border: 0.5px solid var(--border); border-radius: 12px; overflow: hidden; margin: 2rem 0; }
+  .beneficio-card { background: var(--surface); padding: 1.25rem 1.5rem; }
+  .beneficio-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.35rem; }
+  .beneficio-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; font-weight: 400; color: var(--text); margin-bottom: 0.4rem; line-height: 1.3; }
+  .beneficio-body { font-size: 0.82rem; color: var(--muted); line-height: 1.6; }
+  .beneficio-body strong { color: var(--text); font-weight: 400; }
+
+  /* TIPO EJERCICIO CARD */
+  .tipo-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 1.25rem 0; }
+  .tipo-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.75rem; flex-wrap: wrap; }
+  .tipo-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
+  .tipo-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; font-weight: 400; color: var(--text); line-height: 1.2; }
+  .rec-badge { font-size: 0.68rem; font-weight: 500; padding: 0.25rem 0.65rem; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+  .r-prioritario { background: #0a2010; color: #5cba7a; border: 0.5px solid #1a4a2a; }
+  .r-recomendado { background: #2a1a08; color: #c9903a; border: 0.5px solid #5a3a10; }
+  .r-cuidado { background: var(--surface-2); color: var(--muted); border: 0.5px solid var(--border); }
+  .tipo-body { font-size: 0.9rem; color: var(--text); line-height: 1.75; }
+  .tipo-tip { margin-top: 0.75rem; padding: 0.7rem 1rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 6px 6px 0; font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+  .tipo-tip strong { color: var(--text); font-weight: 400; }
+
+  /* CICLO EXERCISE GUIDE */
+  .ciclo-guide { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; overflow: hidden; margin: 2rem 0; }
+  .ciclo-guide-header { background: var(--surface-2); padding: 0.75rem 1.5rem; font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); border-bottom: 0.5px solid var(--border); }
+  .ciclo-row { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 0.5px solid var(--divider); }
+  .ciclo-row:last-child { border-bottom: none; }
+  .ciclo-cell { padding: 0.9rem 1.25rem; font-size: 0.83rem; line-height: 1.5; }
+  .ciclo-cell.fase { color: var(--highlight); font-style: italic; font-family: 'Cormorant Garamond', serif; font-size: 0.95rem; background: var(--surface-2); }
+  .ciclo-cell.actividad { color: var(--text); }
+  .ciclo-cell.intensidad { color: var(--muted); }
+
+  blockquote { margin: 2.5rem 0; padding: 1.75rem 2rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 10px 10px 0; }
+  blockquote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.25rem; color: var(--text); line-height: 1.6; margin-bottom: 0.75rem; }
+  blockquote cite { font-size: 0.75rem; color: var(--muted); font-style: normal; }
+
+  .highlight-box { background: var(--inverted-bg); border-radius: 10px; padding: 1.75rem 2rem; margin: 2.5rem 0; }
+  .highlight-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.3rem; color: var(--inverted-text); line-height: 1.55; }
+  .highlight-box .highlight-source { display: block; margin-top: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: #7A3D52; font-style: normal; }
+
+  .info-box { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 2rem 0; }
+  .info-box-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li { display: flex; gap: 0.75rem; font-size: 0.9rem; color: var(--text); line-height: 1.55; }
+  .info-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.55rem; }
+
+  .references { margin-top: 4rem; padding-top: 2rem; border-top: 0.5px solid var(--divider); }
+  .references-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li { counter-increment: ref; display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+  .references ol li::before { content: counter(ref) "."; color: var(--accent); font-weight: 500; flex-shrink: 0; min-width: 1.2rem; }
+  .references ol li a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; opacity: 0.7; }
+
+  .article-cta { margin-top: 3.5rem; background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; font-weight: 300; color: var(--text); }
+  .cta-btn { background: var(--accent); color: var(--inverted-bg); font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; padding: 0.7rem 1.4rem; border-radius: 8px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+  footer { border-top: 0.5px solid var(--divider); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; } .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .beneficios-grid { grid-template-columns: 1fr; }
+    .tipo-header { flex-direction: column; gap: 0.5rem; }
+    .ciclo-row { grid-template-columns: 1fr; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Nutrición y estilo de vida</div>
+
+  <h1>El ejercicio en endometriosis:<br>qué tipo, cuánto<br>y cuándo</h1>
+
+  <div class="meta">
+    <div class="meta-info">Estilo de vida · 8 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    El ejercicio en endometriosis es uno de los temas donde más confusión existe. Hay quien lo evita completamente por miedo al dolor. Hay quien lo fuerza en los peores días porque "hay que ser constante". Y hay quien intenta aplicar consejos genéricos de fitness que no tienen en cuenta las particularidades de una enfermedad crónica con dolor variable.
+  </p>
+
+  <p class="body-text">
+    La evidencia es clara: el ejercicio regular, adaptado y constante tiene beneficios documentados en endometriosis. Pero "ejercicio" en este contexto no significa lo mismo que en la población general. Este artículo explica qué funciona, por qué, y cómo adaptarlo al ciclo.
+  </p>
+
+  <!-- BENEFICIOS DOCUMENTADOS -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que dice la evidencia</span>
+  </div>
+  <h2>Los beneficios documentados en endometriosis</h2>
+
+  <p class="body-text">
+    Un metaanálisis publicado en PLOS One en 2025 — que incluye ensayos clínicos aleatorizados con pacientes de endometriosis — confirma que el ejercicio tiene un impacto significativo en múltiples dimensiones de la enfermedad.
+  </p>
+
+  <div class="beneficios-grid">
+    <div class="beneficio-card">
+      <div class="beneficio-tag">Beneficio 1</div>
+      <div class="beneficio-title">Reducción del dolor</div>
+      <div class="beneficio-body">El ejercicio aeróbico moderado reduce la intensidad del dolor pélvico crónico. <strong>El metaanálisis mostró mejoras significativas en calidad de vida relacionada con el dolor (p&lt;0.0001).</strong> No elimina el dolor — lo reduce y mejora la tolerancia al mismo.</div>
+    </div>
+    <div class="beneficio-card">
+      <div class="beneficio-tag">Beneficio 2</div>
+      <div class="beneficio-title">Reducción de la inflamación sistémica</div>
+      <div class="beneficio-body">El ejercicio moderado regular aumenta las citoquinas antiinflamatorias e inhibe las proinflamatorias — IL-6 en modo antiinflamatorio, IL-10, IL-1ra. <strong>Es uno de los pocos mecanismos no farmacológicos que actúa directamente sobre la carga inflamatoria.</strong></div>
+    </div>
+    <div class="beneficio-card">
+      <div class="beneficio-tag">Beneficio 3</div>
+      <div class="beneficio-title">Salud mental y bienestar</div>
+      <div class="beneficio-body">El ejercicio mejora significativamente el estado de ánimo, la ansiedad y la sensación de control sobre la enfermedad. <strong>Las mejoras en bienestar emocional (p=0.006) fueron independientes de las mejoras en dolor físico.</strong></div>
+    </div>
+    <div class="beneficio-card">
+      <div class="beneficio-tag">Beneficio 4</div>
+      <div class="beneficio-title">Densidad ósea</div>
+      <div class="beneficio-body">Especialmente relevante en personas que toman análogos de GnRH o antagonistas que producen hipoestrogenismo. <strong>El ejercicio con carga (caminar, yoga, pilates) ayuda a mantener la densidad ósea que estos tratamientos pueden reducir.</strong></div>
+    </div>
+  </div>
+
+  <!-- QUÉ TIPO -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Qué funciona — y qué no en endometriosis</span>
+  </div>
+  <h2>Los tipos de ejercicio con mejor evidencia</h2>
+
+  <div class="tipo-card">
+    <div class="tipo-header">
+      <div>
+        <div class="tipo-tag">Mejor punto de partida</div>
+        <div class="tipo-title">Ejercicio aeróbico de intensidad moderada</div>
+      </div>
+      <span class="rec-badge r-prioritario">Evidencia sólida</span>
+    </div>
+    <p class="tipo-body">
+      Caminar, nadar, bicicleta suave, elíptica, baile. Son las modalidades con mayor respaldo en endometriosis y las más fáciles de sostener en el tiempo. La clave es la intensidad moderada — puedes mantener una conversación mientras lo haces — y la regularidad. 20–30 minutos, 3–4 veces por semana, es más efectivo a largo plazo que sesiones intensas ocasionales.
+    </p>
+    <div class="tipo-tip">
+      <strong>Por qué la regularidad importa más que la intensidad:</strong> el efecto antiinflamatorio del ejercicio se acumula con la práctica constante — no aparece después de una sola sesión intensa. Y el efecto en el estado de ánimo y el sueño también es acumulativo.
+    </div>
+  </div>
+
+  <div class="tipo-card">
+    <div class="tipo-header">
+      <div>
+        <div class="tipo-tag">Altamente recomendado</div>
+        <div class="tipo-title">Yoga, pilates y ejercicio de conciencia corporal</div>
+      </div>
+      <span class="rec-badge r-recomendado">Evidencia creciente</span>
+    </div>
+    <p class="tipo-body">
+      Revisiones narrativas muestran que el yoga Hatha, la relajación muscular progresiva y ejercicios de conciencia corporal reducen el dolor y el estrés en endometriosis. El yoga combina el componente físico con respiración y regulación del sistema nervioso autónomo — particularmente útil cuando hay sensibilización central. El pilates mejora la estabilidad lumbopélvica sin sobrecargar el suelo pélvico.
+    </p>
+    <div class="tipo-tip">
+      <strong>Cuidado con el yoga de alta intensidad:</strong> el yoga restaurativo o suave es lo más adecuado. Posturas de inversión o que aumentan la presión intraabdominal pueden agravar el dolor en algunos casos — especialmente con endometriosis profunda o en días con más inflamación.
+    </div>
+  </div>
+
+  <div class="tipo-card">
+    <div class="tipo-header">
+      <div>
+        <div class="tipo-tag">Añadir con precaución</div>
+        <div class="tipo-title">Ejercicio de fuerza y alta intensidad</div>
+      </div>
+      <span class="rec-badge r-cuidado">Adaptar al estado del día</span>
+    </div>
+    <p class="tipo-body">
+      El ejercicio de fuerza tiene beneficios para la densidad ósea y el metabolismo que pueden ser relevantes en endometriosis. El problema no es el tipo de ejercicio — es el momento. El HIIT y el ejercicio de alta intensidad en días de dolor intenso o durante la menstruación pueden aumentar la respuesta inflamatoria y empeorar los síntomas. No están contraindicados — requieren escucha activa del cuerpo y adaptación al ciclo.
+    </p>
+  </div>
+
+  <blockquote>
+    <p>El ejercicio físico tiene un impacto beneficioso sobre la calidad de vida, la intensidad del dolor, la salud mental, la disfunción del suelo pélvico y la densidad ósea en personas con endometriosis. Es una intervención segura y eficaz como complemento al tratamiento médico.</p>
+    <cite>The effectiveness and safety of physical activity and exercise in endometriosis: systematic review and meta-analysis · PLOS One 2025 · PMC11824993</cite>
+  </blockquote>
+
+  <!-- ADAPTAR AL CICLO -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que cambia todo</span>
+  </div>
+  <h2>Cómo adaptar el ejercicio al ciclo menstrual</h2>
+
+  <p class="body-text">
+    El cuerpo no es igual todos los días del mes — y en endometriosis esa variación es especialmente marcada. Diseñar el ejercicio en función de las fases del ciclo no es excusa para no moverse — es inteligencia aplicada al propio cuerpo.
+  </p>
+
+  <div class="ciclo-guide">
+    <div class="ciclo-guide-header">Guía de ejercicio por fase del ciclo</div>
+    <div class="ciclo-row">
+      <div class="ciclo-cell fase">Menstruación<br><span style="font-size:0.72rem; color: var(--muted); font-style: normal;">Días 1–5 (aprox.)</span></div>
+      <div class="ciclo-cell actividad">Caminata suave, yoga restaurativo, estiramientos, respiración diafragmática</div>
+      <div class="ciclo-cell intensidad">Baja · Escucha activa. Algunos días requieren descanso completo — es válido.</div>
+    </div>
+    <div class="ciclo-row">
+      <div class="ciclo-cell fase">Fase folicular<br><span style="font-size:0.72rem; color: var(--muted); font-style: normal;">Días 6–13 (aprox.)</span></div>
+      <div class="ciclo-cell actividad">Aumento gradual: aeróbico moderado, pilates, ejercicio de fuerza ligero, natación</div>
+      <div class="ciclo-cell intensidad">Moderada y creciente · Es la ventana con más energía disponible.</div>
+    </div>
+    <div class="ciclo-row">
+      <div class="ciclo-cell fase">Ovulación<br><span style="font-size:0.72rem; color: var(--muted); font-style: normal;">Días 14–16 (aprox.)</span></div>
+      <div class="ciclo-cell actividad">Pico de energía: ejercicio aeróbico, fuerza, actividades de mayor intensidad si se tolera</div>
+      <div class="ciclo-cell intensidad">Más alta del ciclo · Algunos días de dolor ovulatorio — ajustar si aparece.</div>
+    </div>
+    <div class="ciclo-row">
+      <div class="ciclo-cell fase">Fase lútea<br><span style="font-size:0.72rem; color: var(--muted); font-style: normal;">Días 17–28 (aprox.)</span></div>
+      <div class="ciclo-cell actividad">Reducción gradual: aeróbico suave, yoga, pilates, caminar. Evitar alta intensidad en la segunda mitad.</div>
+      <div class="ciclo-cell intensidad">Moderada decreciente · La inflamación puede aumentar los últimos días.</div>
+    </div>
+  </div>
+
+  <p class="body-text">
+    Estas son orientaciones generales — tu ciclo puede tener su propio patrón que solo conoces tú. El registro de cómo te sientes en cada fase durante dos o tres ciclos te dará un mapa mucho más preciso que cualquier guía general.
+  </p>
+
+  <!-- LO QUE NO ES EJERCICIO EN ENDOMETRIOSIS -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El error más frecuente</span>
+  </div>
+  <h2>Lo que no funciona aunque parezca que sí</h2>
+
+  <div class="highlight-box">
+    <p>Forzar el ejercicio en días de dolor intenso no es perseverancia — es ignorar información clínica relevante. El dolor es una señal, no un obstáculo a superar. La diferencia entre moverse con el cuerpo y moverse contra él es enorme a largo plazo.</p>
+    <span class="highlight-source">Impact of Physical Activity on Endometriosis Symptoms · Systematic Review 2024 · CRESCENDO Program Protocol, Trials 2023</span>
+  </div>
+
+  <!-- LO QUE PUEDES HACER -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+
+  <div class="info-box">
+    <div class="info-box-title">Cómo empezar si el ejercicio da miedo o duele</div>
+    <ul class="info-list">
+      <li><strong style="color: var(--highlight); font-weight: 400;">Empieza por caminar.</strong> 20 minutos de caminata suave a ritmo cómodo, 3–4 días a la semana, es un punto de partida con el mayor ratio beneficio/riesgo. No subestimes el caminar — tiene todos los beneficios antiinflamatorios del ejercicio aeróbico sin la sobrecarga.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Define tu "día malo mínimo".</strong> ¿Qué es lo mínimo que puedes hacer incluso en un día difícil? Puede ser 5 minutos de respiración diafragmática o un paseo corto. Tener eso definido evita el todo-o-nada.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Registra el antes y el después de cada sesión.</strong> ¿Cómo estabas antes? ¿Cómo estás una hora después? Esa información es más útil que cualquier regla general — te dice qué tipo de ejercicio funciona para ti y en qué condiciones.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Considera trabajar con un fisioterapeuta o entrenador con experiencia en dolor crónico.</strong> Especialmente si el movimiento genera miedo o si tienes historial de dolor durante el ejercicio — la supervisión inicial marca la diferencia.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">No te compares con tu yo anterior.</strong> Ni con estándares de fitness genéricos. El objetivo en endometriosis no es el rendimiento — es la función, el bienestar y la regularidad.</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>The effectiveness and safety of physical activity and exercise on women with endometriosis: systematic review and meta-analysis. <em>PLOS One.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11824993/" target="_blank">PMC11824993</a></li>
+      <li>Impact of Physical Activity and Exercise on Endometriosis Related Symptoms with Particular Emphasis on Pain: Systematic Review. 2024. <a href="https://www.researchgate.net/publication/384249045" target="_blank">Ver artículo</a></li>
+      <li>Tennfjord MK et al. Effect of physical activity and exercise on endometriosis-associated symptoms: a systematic review. <em>BMC Women's Health.</em> 2021. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8502311/" target="_blank">PMC8502311</a></li>
+      <li>CRESCENDO Program: Effects of physical activity and education on endometriosis symptoms — Protocol RCT. <em>Trials.</em> 2023. <a href="https://link.springer.com/article/10.1186/s13063-023-07792-1" target="_blank">Ver artículo</a></li>
+      <li>Impact of Physical Rehabilitation on Endometriosis and Adenomyosis-Related Symptoms: Systematic Review and Meta-Analysis. <em>PMC.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12692515/" target="_blank">PMC12692515</a></li>
+      <li>Supervised exercise and pelvic floor muscle training eases current pelvic and genital pain in women with endometriosis: RCT. <em>ScienceDirect.</em> 2025. <a href="https://www.sciencedirect.com/science/article/pii/S1836955325001092" target="_blank">Ver artículo</a></li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Registra cómo te sientes antes y después de cada sesión.</strong>
+      <p>Fora te ayuda a identificar qué tipo de movimiento funciona para ti y en qué fase del ciclo.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

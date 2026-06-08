@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cirugía en endometriosis: cuándo, por qué y qué esperar — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #27131C;
+    --surface: #36041C;
+    --surface-2: #2F0F1E;
+    --accent: #C4607A;
+    --highlight: #D4899A;
+    --text: #F7EDE7;
+    --muted: #C9A8B4;
+    --border: #5A2A3C;
+    --divider: #3D1A28;
+    --inverted-bg: #F7EDE7;
+    --inverted-text: #27131C;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .label::after {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 0.5px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .meta {
+    margin: 1.75rem 0 2.5rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.65rem;
+    color: var(--text);
+    margin: 3rem 0 1rem;
+    line-height: 1.3;
+  }
+
+  .section-start {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* TÉCNICA CARD */
+  .tecnica-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    margin: 1.25rem 0;
+  }
+  .tecnica-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .tecnica-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+  .tecnica-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .tecnica-badge {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.3rem 0.75rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.03em;
+  }
+  .badge-gold { background: #2a1a08; color: #c9903a; border: 0.5px solid #5a3a10; }
+  .badge-standard { background: var(--surface-2); color: var(--highlight); border: 0.5px solid var(--border); }
+  .badge-complex { background: #0d1a28; color: #5ca0ba; border: 0.5px solid #1a3a4a; }
+
+  .tecnica-body {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .tecnica-divider { height: 0.5px; background: var(--divider); margin: 1rem 0; }
+
+  .tecnica-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+  .tcol-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+  }
+  .tcol-title.pro { color: var(--highlight); }
+  .tcol-title.con { color: var(--muted); }
+  .tcol-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .tcol-list li {
+    display: flex;
+    gap: 0.5rem;
+    font-size: 0.82rem;
+    line-height: 1.5;
+  }
+  .tcol-list.pro li { color: var(--text); }
+  .tcol-list.con li { color: var(--muted); }
+  .tcol-list li::before {
+    content: '';
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+  .tcol-list.pro li::before { background: var(--highlight); }
+  .tcol-list.con li::before { background: var(--muted); }
+
+  .tecnica-caveat {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface-2);
+    border-left: 1px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .tecnica-caveat strong { color: var(--text); font-weight: 400; }
+
+  /* STAT INLINE */
+  .stat-inline {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .stat-inline .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--highlight);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .stat-inline .stat-text {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .stat-inline .stat-text strong { color: var(--text); font-weight: 400; display: block; }
+
+  blockquote {
+    margin: 2.5rem 0;
+    padding: 1.75rem 2rem;
+    background: var(--surface-2);
+    border-left: 1px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+  }
+  blockquote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  blockquote cite {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  .highlight-box {
+    background: var(--inverted-bg);
+    border-radius: 10px;
+    padding: 1.75rem 2rem;
+    margin: 2.5rem 0;
+  }
+  .highlight-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: var(--inverted-text);
+    line-height: 1.55;
+  }
+  .highlight-box .highlight-source {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    color: #7A3D52;
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  .info-box {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+  }
+  .info-box-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .info-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+
+  .references {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--divider);
+  }
+  .references-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li {
+    counter-increment: ref;
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .references ol li::before {
+    content: counter(ref) ".";
+    color: var(--accent);
+    font-weight: 500;
+    flex-shrink: 0;
+    min-width: 1.2rem;
+  }
+  .references ol li a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    opacity: 0.7;
+  }
+
+  .article-cta {
+    margin-top: 3.5rem;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--text);
+  }
+  .cta-btn {
+    background: var(--accent);
+    color: var(--inverted-bg);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.85; }
+
+  footer {
+    border-top: 0.5px solid var(--divider);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; }
+    .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .tecnica-cols { grid-template-columns: 1fr; }
+    .tecnica-header { flex-direction: column; gap: 0.5rem; }
+    .stat-inline { flex-direction: column; gap: 0.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Tratamiento</div>
+
+  <h1>Cirugía en endometriosis:<br>cuándo, por qué<br>y qué esperar</h1>
+
+  <div class="meta">
+    <div class="meta-info">Tratamiento · 8 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    La cirugía es una parte central del manejo de la endometriosis — pero no es la solución definitiva que muchas pacientes esperan. Puede reducir el dolor de forma significativa, mejorar la fertilidad y confirmar el diagnóstico. Lo que no hace es curar la enfermedad: las tasas de recurrencia son reales, y sin tratamiento médico postoperatorio, el riesgo de volver al punto de partida es alto.
+  </p>
+
+  <p class="body-text">
+    Entender cuándo está indicada, qué técnica es la más adecuada y qué ocurre después es información esencial para tomar decisiones con tu equipo.
+  </p>
+
+  <!-- CUÁNDO SE INDICA -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Cuándo está indicada</span>
+  </div>
+  <h2>La cirugía no siempre es el primer paso</h2>
+
+  <p class="body-text">
+    Las guías clínicas actuales (ESHRE, NICE) establecen que el tratamiento médico debe intentarse antes de la cirugía en la mayoría de los casos de dolor. La intervención quirúrgica se considera cuando el tratamiento hormonal no es suficiente, no es tolerado, o cuando hay situaciones que requieren resolución estructural que los fármacos no pueden ofrecer.
+  </p>
+
+  <div class="info-box">
+    <div class="info-box-title">Situaciones en las que la cirugía suele estar indicada</div>
+    <ul class="info-list">
+      <li>Dolor que no responde al tratamiento médico o que reaparece al suspenderlo.</li>
+      <li>Endometrioma ovárico de tamaño significativo (generalmente mayor de 3–4 cm) con impacto en reserva ovárica o síntomas importantes.</li>
+      <li>Sospecha o confirmación de endometriosis profunda con afectación intestinal, vesical o ureteral que genera síntomas obstructivos.</li>
+      <li>Infertilidad asociada a endometriosis cuando otras opciones no son viables o se quiere mejorar el pronóstico reproductivo.</li>
+      <li>Necesidad de diagnóstico histológico definitivo cuando la imagen no es concluyente.</li>
+    </ul>
+  </div>
+
+  <!-- ESCISIÓN VS ABLACIÓN -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Técnica 1</span>
+  </div>
+
+  <div class="tecnica-card">
+    <div class="tecnica-header">
+      <div>
+        <div class="tecnica-tag">Escisión laparoscópica (LAPEX)</div>
+        <div class="tecnica-title">Extirpación completa del tejido endometriósico</div>
+      </div>
+      <span class="tecnica-badge badge-gold">Estándar recomendado</span>
+    </div>
+    <p class="tecnica-body">
+      La escisión consiste en la extirpación física del tejido endometriósico con su base incluida. Es la técnica con mayor evidencia de eficacia a largo plazo: al eliminar la lesión completa, permite el análisis histológico del tejido retirado y reduce la tasa de recurrencia respecto a la ablación. Es el estándar recomendado por la mayoría de guías clínicas para endometriosis peritoneal y profunda.
+    </p>
+    <div class="tecnica-divider"></div>
+    <div class="tecnica-cols">
+      <div>
+        <div class="tcol-title pro">A favor</div>
+        <ul class="tcol-list pro">
+          <li>Mayor reducción del dolor a largo plazo</li>
+          <li>Menor tasa de recurrencia vs. ablación</li>
+          <li>Permite análisis histológico</li>
+          <li>Elimina la lesión en profundidad</li>
+        </ul>
+      </div>
+      <div>
+        <div class="tcol-title con">A tener en cuenta</div>
+        <ul class="tcol-list con">
+          <li>Requiere mayor habilidad quirúrgica</li>
+          <li>Mayor tiempo operatorio en casos complejos</li>
+          <li>No disponible en todos los centros</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABLACIÓN -->
+  <div class="section-start" style="margin-top: 1.5rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Técnica 2</span>
+  </div>
+
+  <div class="tecnica-card">
+    <div class="tecnica-header">
+      <div>
+        <div class="tecnica-tag">Ablación laparoscópica</div>
+        <div class="tecnica-title">Destrucción superficial del tejido</div>
+      </div>
+      <span class="tecnica-badge badge-standard">Uso en casos seleccionados</span>
+    </div>
+    <p class="tecnica-body">
+      La ablación destruye el tejido endometriósico con energía (láser, electrocirugía) sin extirparlo físicamente. Es técnicamente más sencilla, pero deja tejido residual que no puede analizarse y tiene tasas de recurrencia más altas que la escisión. Para endometriomas ováricos, la ablación sola no está recomendada: la tasa de recurrencia es hasta tres veces superior a la cistectomía.
+    </p>
+    <div class="tecnica-divider"></div>
+    <div class="tecnica-cols">
+      <div>
+        <div class="tcol-title pro">A favor</div>
+        <ul class="tcol-list pro">
+          <li>Técnicamente más sencilla</li>
+          <li>Menor tiempo operatorio</li>
+          <li>Útil en lesiones superficiales pequeñas</li>
+        </ul>
+      </div>
+      <div>
+        <div class="tcol-title con">A tener en cuenta</div>
+        <ul class="tcol-list con">
+          <li>Mayor tasa de recurrencia que la escisión</li>
+          <li>No permite análisis histológico</li>
+          <li>Puede dejar tejido endometriósico residual</li>
+          <li>No recomendada como técnica única en endometriomas</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- CIRUGÍA PROFUNDA / EIP -->
+  <div class="section-start" style="margin-top: 1.5rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Técnica 3</span>
+  </div>
+
+  <div class="tecnica-card">
+    <div class="tecnica-header">
+      <div>
+        <div class="tecnica-tag">Cirugía de endometriosis profunda (EIP)</div>
+        <div class="tecnica-title">Cuando la enfermedad afecta intestino, vejiga o uréteres</div>
+      </div>
+      <span class="tecnica-badge badge-complex">Equipo especializado</span>
+    </div>
+    <p class="tecnica-body">
+      La endometriosis profunda con afectación intestinal, vesical o ureteral requiere un abordaje multidisciplinar que incluye ginecólogos especializados, cirujanos colorrectales y urólogos. No es una cirugía que deba realizarse en cualquier centro. La complejidad aumenta con el tamaño de la lesión, la afectación de varias estructuras y la presencia de adherencias extensas.
+    </p>
+    <p class="tecnica-body">
+      Las opciones para la afectación intestinal incluyen la resección segmentaria (extirpación de un segmento del intestino) y técnicas más conservadoras como la escisión en disco o el "shaving". Los ensayos clínicos más recientes muestran resultados comparables entre la resección segmentaria y las técnicas conservadoras en términos de recurrencia a siete años, apoyando los abordajes menos agresivos cuando son técnicamente posibles.
+    </p>
+    <div class="tecnica-caveat">
+      <strong>Por qué importa el centro:</strong> la experiencia del equipo quirúrgico es el factor más determinante en los resultados. La tasa de complicaciones en cirugía de EIP intestinal (fístulas, dehiscencias) depende críticamente del volumen de casos del equipo. Ante endometriosis profunda, pregunta si el centro tiene una unidad especializada.
+    </div>
+  </div>
+
+  <blockquote>
+    <p>El objetivo de la cirugía en endometriosis profunda es la erradicación completa de la enfermedad preservando la anatomía funcional. Su complejidad hace imprescindible un equipo multidisciplinar con experiencia específica.</p>
+    <cite>Management Challenges of Deep Infiltrating Endometriosis · PMC8052801</cite>
+  </blockquote>
+
+  <!-- RECURRENCIA -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que ocurre después</span>
+  </div>
+  <h2>La recurrencia: lo que nadie te explica antes de operar</h2>
+
+  <p class="body-text">
+    La cirugía alivia el dolor en la mayoría de las pacientes. Pero no es permanente. Sin tratamiento médico postoperatorio, la endometriosis puede volver — y la tasa de recurrencia a largo plazo es significativa.
+  </p>
+
+  <div class="stat-inline">
+    <div class="num">34,7%</div>
+    <div class="stat-text">
+      <strong>Tasa de recurrencia en endometriosis profunda sin tratamiento hormonal postoperatorio</strong>
+      en series de seguimiento a medio plazo. Con tratamiento hormonal posterior, el riesgo se reduce significativamente.
+    </div>
+  </div>
+
+  <p class="body-text">
+    Las guías clínicas recomiendan iniciar tratamiento médico (anticonceptivos combinados o progestágenos) tras la cirugía para reducir el riesgo de recurrencia del dolor y la necesidad de reintervención. La excepción son las pacientes que buscan embarazo inmediatamente después de la cirugía.
+  </p>
+
+  <div class="highlight-box">
+    <p>La cirugía y el tratamiento médico no son opciones excluyentes. Para la mayoría de las pacientes, el mejor resultado a largo plazo viene de combinar ambas estrategias.</p>
+    <span class="highlight-source">Surgical Management of Endometriosis · exxcellence.org · J Obstet Gynaecol Research, 2021</span>
+  </div>
+
+  <!-- ENDOMETRIOMA ESPECÍFICO -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El endometrioma en particular</span>
+  </div>
+  <h2>Operar el endometrioma: el dilema de la reserva ovárica</h2>
+
+  <p class="body-text">
+    La cistectomía del endometrioma (extirpación del quiste) elimina la lesión y reduce la recurrencia, pero implica un riesgo real de daño al tejido ovárico sano durante la cirugía. La extirpación de la pared del quiste puede llevarse consigo folículos primordiales, reduciendo la reserva ovárica — medida por AMH — de forma que puede no recuperarse completamente.
+  </p>
+
+  <p class="body-text">
+    Por eso, en pacientes jóvenes o con reserva ovárica ya comprometida, la decisión de operar un endometrioma debe sopesarse con cuidado. El seguimiento activo con imagen y la evaluación del tamaño, los síntomas y la reserva ovárica son parte del proceso de decisión compartida.
+  </p>
+
+  <!-- LO QUE PUEDES HACER -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+  <h2>Preguntas esenciales antes de decidir operarte</h2>
+
+  <div class="info-box">
+    <div class="info-box-title">Llevar esto a la consulta preoperatoria</div>
+    <ul class="info-list">
+      <li>¿Qué técnica quirúrgica se va a usar: escisión o ablación? ¿Por qué esa y no la otra?</li>
+      <li>¿El equipo tiene experiencia específica en endometriosis profunda? ¿Cuántas cirugías de este tipo realizan al año?</li>
+      <li>Si hay afectación intestinal o vesical, ¿participan cirujanos colorrectal o urólogo en el equipo?</li>
+      <li>¿Cuál es el plan de tratamiento médico después de la cirugía para reducir la recurrencia?</li>
+      <li>Si tengo endometrioma, ¿se ha evaluado mi reserva ovárica? ¿Cuál es el riesgo de que la cirugía la afecte?</li>
+      <li>¿Qué seguimiento habrá después — con imagen, analítica, síntomas — y con qué frecuencia?</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>Management Challenges of Deep Infiltrating Endometriosis. <em>PMC.</em> 2021. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8052801/" target="_blank">PMC8052801</a></li>
+      <li>Safe multidisciplinary approach in deeply infiltrating endometriosis (DIE). <em>PMC.</em> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9239420/" target="_blank">PMC9239420</a></li>
+      <li>Yela DA et al. Risk factors for recurrence of deep infiltrating endometriosis after surgical treatment. <em>J Obstet Gynaecol Res.</em> 2021. <a href="https://pubmed.ncbi.nlm.nih.gov/33998109/" target="_blank">PubMed</a></li>
+      <li>Choi et al. Unresolved debate on surgery for deep infiltrating endometriosis of the rectum. <em>ANZ J Surg.</em> 2024. <a href="https://onlinelibrary.wiley.com/doi/10.1111/ans.19134" target="_blank">Ver artículo</a></li>
+      <li>Missori et al. Minimally-invasive multidisciplinary treatment of deep endometriosis: 103 cases. <em>Laparoscopic Surgery.</em> 2024. <a href="https://ls.amegroups.org/article/view/8678/html" target="_blank">Ver artículo</a></li>
+      <li>Recurrence after surgery for endometrioma: a systematic review and meta-analyses. <em>Fertility and Sterility.</em> 2024. <a href="https://www.sciencedirect.com/science/article/pii/S0015028224006290" target="_blank">Ver artículo</a></li>
+      <li>Surgical Management of Endometriosis — clinical pearls. <em>exxcellence.org.</em> <a href="https://www.exxcellence.org/list-of-pearls/surgical-management-of-endometriosis/" target="_blank">Ver artículo</a></li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Registra tus síntomas antes y después de la cirugía.</strong>
+      <p>Fora te ayuda a comparar cómo estabas y cómo evoluciona tu respuesta postoperatoria.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

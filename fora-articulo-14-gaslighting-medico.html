@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El gaslighting médico: cuando no te creen — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #27131C; --surface: #36041C; --surface-2: #2F0F1E;
+    --accent: #C4607A; --highlight: #D4899A; --text: #F7EDE7;
+    --muted: #C9A8B4; --border: #5A2A3C; --divider: #3D1A28;
+    --inverted-bg: #F7EDE7; --inverted-text: #27131C;
+  }
+
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.75; min-height: 100vh; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--divider); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.5rem; color: var(--text); text-decoration: none; }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.8rem; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+  .label { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .label::after { content: ''; display: inline-block; width: 2rem; height: 0.5px; background: var(--accent); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; color: var(--text); margin-bottom: 1rem; }
+  .meta { margin: 1.75rem 0 2.5rem; padding-bottom: 1.75rem; border-bottom: 0.5px solid var(--divider); }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+  .body-text { font-size: 1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 1.65rem; color: var(--text); margin: 3rem 0 1rem; line-height: 1.3; }
+  .section-start { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+  /* STAT GRID */
+  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 2.5rem 0; background: var(--divider); border-radius: 10px; overflow: hidden; border: 0.5px solid var(--border); }
+  .stat-card { background: var(--surface); padding: 1.5rem 1.25rem; text-align: center; }
+  .stat-number { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 2.4rem; font-weight: 300; color: var(--highlight); line-height: 1; display: block; margin-bottom: 0.4rem; }
+  .stat-label { font-size: 0.72rem; color: var(--muted); line-height: 1.4; }
+
+  /* TESTIMONIO */
+  .testimonio { background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 10px 10px 0; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
+  .testimonio-text { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; font-weight: 300; color: var(--text); line-height: 1.6; margin-bottom: 0.5rem; }
+  .testimonio-source { font-size: 0.72rem; color: var(--muted); letter-spacing: 0.04em; }
+
+  /* FORMA DE GASLIGHTING */
+  .forma-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 0.75rem 0; display: flex; gap: 1rem; align-items: flex-start; }
+  .forma-comillas { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; color: var(--accent); line-height: 1; flex-shrink: 0; padding-top: 0.1rem; }
+  .forma-content {}
+  .forma-frase { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--text); margin-bottom: 0.4rem; line-height: 1.4; }
+  .forma-explicacion { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+
+  /* IMPACTO */
+  .impacto-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.75rem 2rem; margin: 1.25rem 0; }
+  .impacto-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+  .impacto-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; font-weight: 400; color: var(--text); margin-bottom: 0.75rem; line-height: 1.3; }
+  .impacto-body { font-size: 0.9rem; color: var(--text); line-height: 1.75; }
+
+  blockquote { margin: 2.5rem 0; padding: 1.75rem 2rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 10px 10px 0; }
+  blockquote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.25rem; color: var(--text); line-height: 1.6; margin-bottom: 0.75rem; }
+  blockquote cite { font-size: 0.75rem; color: var(--muted); font-style: normal; letter-spacing: 0.04em; }
+
+  .highlight-box { background: var(--inverted-bg); border-radius: 10px; padding: 1.75rem 2rem; margin: 2.5rem 0; }
+  .highlight-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.3rem; color: var(--inverted-text); line-height: 1.55; }
+  .highlight-box .highlight-source { display: block; margin-top: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: #7A3D52; font-style: normal; letter-spacing: 0.04em; }
+
+  .info-box { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 2rem 0; }
+  .info-box-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li { display: flex; gap: 0.75rem; font-size: 0.9rem; color: var(--text); line-height: 1.55; }
+  .info-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.55rem; }
+
+  .references { margin-top: 4rem; padding-top: 2rem; border-top: 0.5px solid var(--divider); }
+  .references-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li { counter-increment: ref; display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+  .references ol li::before { content: counter(ref) "."; color: var(--accent); font-weight: 500; flex-shrink: 0; min-width: 1.2rem; }
+  .references ol li a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; opacity: 0.7; }
+
+  .article-cta { margin-top: 3.5rem; background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; font-weight: 300; color: var(--text); }
+  .cta-btn { background: var(--accent); color: var(--inverted-bg); font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; padding: 0.7rem 1.4rem; border-radius: 8px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: opacity 0.2s; }
+  .cta-btn:hover { opacity: 0.85; }
+  footer { border-top: 0.5px solid var(--divider); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; } .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .stat-grid { grid-template-columns: 1fr; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Salud Mental</div>
+
+  <h1>El gaslighting médico:<br>cuando no te creen</h1>
+
+  <div class="meta">
+    <div class="meta-info">Salud Mental · 7 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    "Es normal tener dolor con la regla." "Seguro que estás estresada." "Todas las pruebas han salido bien, no hay nada." "Eres muy joven para tener algo serio." Si has pasado por el sistema sanitario con endometriosis, es probable que hayas escuchado alguna de estas frases — o variantes de ellas. Hay un nombre para lo que describe esa experiencia: gaslighting médico.
+  </p>
+
+  <p class="body-text">
+    No es un término coloquial ni una exageración. Es un fenómeno documentado en la literatura científica, con consecuencias psicológicas reales y medibles. Y en endometriosis ocurre con una frecuencia que no debería seguir siendo aceptable.
+  </p>
+
+  <!-- ESTADÍSTICAS -->
+  <div class="stat-grid">
+    <div class="stat-card">
+      <span class="stat-number">55%</span>
+      <span class="stat-label">de mujeres con dolor pélvico crónico consideraron abandonar la búsqueda de atención médica</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">45%</span>
+      <span class="stat-label">recibieron la indicación de "aprender a relajarse" en lugar de evaluación médica</span>
+    </div>
+    <div class="stat-card">
+      <span class="stat-number">10+</span>
+      <span class="stat-label">visitas al médico antes del diagnóstico en casi la mitad de los casos</span>
+    </div>
+  </div>
+
+  <!-- QUÉ ES -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">De qué estamos hablando</span>
+  </div>
+  <h2>Qué es el gaslighting médico — y qué no es</h2>
+
+  <p class="body-text">
+    El gaslighting médico ocurre cuando los síntomas de una persona son minimizados, mal atribuidos o descartados directamente por el sistema sanitario, en lugar de recibir una evaluación clínica adecuada. No siempre es intencionado — en endometriosis, buena parte viene de la falta de formación específica sobre la enfermedad y de sesgos culturales sobre el dolor de las mujeres que llevan siglos instalados en la medicina.
+  </p>
+
+  <p class="body-text">
+    Lo que lo convierte en gaslighting — y no solo en un error diagnóstico — es la forma en que afecta a la paciente: cuando sales de la consulta dudando de tu propia experiencia, creyendo que quizás exageras, pensando que es culpa tuya por no saber explicarlo bien. Esa erosión de la confianza en la propia percepción es la huella específica del gaslighting.
+  </p>
+
+  <div class="testimonio">
+    <div class="testimonio-text">"Me dijeron que el dolor estaba en mi cabeza, que debía tener un umbral del dolor bajo o que estaba así por tener sobrepeso. Ahora siento mucha desconfianza hacia el sistema sanitario en general."</div>
+    <div class="testimonio-source">Alice, 27 años · Estudio Manchester Metropolitan University, Journal of Health Communication, 2024</div>
+  </div>
+
+  <!-- CÓMO SE MANIFIESTA -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Cómo ocurre en la práctica</span>
+  </div>
+  <h2>Las formas más frecuentes</h2>
+
+  <p class="body-text">
+    El gaslighting médico raramente llega en forma de hostilidad directa. Más frecuentemente viene en forma de frases que suenan razonables en el momento pero que, acumuladas a lo largo de años y visitas, construyen un patrón de invalidación sistemática.
+  </p>
+
+  <div class="forma-card">
+    <div class="forma-comillas">"</div>
+    <div class="forma-content">
+      <div class="forma-frase">Es normal tener dolor con la regla. Todas las mujeres lo tienen.</div>
+      <div class="forma-explicacion">Normaliza la dismenorrea incapacitante como variante fisiológica, cortando la conversación antes de que empiece. El dolor menstrual que interfiere con la vida diaria no es normal — es un síntoma.</div>
+    </div>
+  </div>
+
+  <div class="forma-card">
+    <div class="forma-comillas">"</div>
+    <div class="forma-content">
+      <div class="forma-frase">La ecografía ha salido bien, no hay nada.</div>
+      <div class="forma-explicacion">Atribuye la ausencia de hallazgos en imagen a la ausencia de enfermedad. Como se explica en el artículo sobre diagnóstico, una ecografía normal no descarta la endometriosis — especialmente la superficial o la peritoneal.</div>
+    </div>
+  </div>
+
+  <div class="forma-card">
+    <div class="forma-comillas">"</div>
+    <div class="forma-content">
+      <div class="forma-frase">Seguramente es estrés o ansiedad.</div>
+      <div class="forma-explicacion">Psicologiza síntomas físicos reales sin evaluación clínica. El componente psicológico puede estar presente — pero no es la causa, es la consecuencia. Y atribuirlo como causa cierra la puerta a seguir investigando.</div>
+    </div>
+  </div>
+
+  <div class="forma-card">
+    <div class="forma-comillas">"</div>
+    <div class="forma-content">
+      <div class="forma-frase">Eres muy joven para que sea algo serio. Ya verás cuando tengas hijos, se pasa.</div>
+      <div class="forma-explicacion">Dos mitos en una sola frase: que la endometriosis solo afecta a mujeres mayores, y que el embarazo la cura. Ninguno tiene base científica. Y ambos retrasan el diagnóstico.</div>
+    </div>
+  </div>
+
+  <div class="forma-card">
+    <div class="forma-comillas">"</div>
+    <div class="forma-content">
+      <div class="forma-frase">Aprende a gestionar mejor el dolor. ¿Has probado el ibuprofeno?</div>
+      <div class="forma-explicacion">Ofrece manejo sintomático sin investigar la causa, años después de que la paciente ya haya probado de todo. Cierra la conversación sin abrir el diagnóstico diferencial.</div>
+    </div>
+  </div>
+
+  <!-- POR QUÉ OCURRE -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Por qué sigue pasando</span>
+  </div>
+  <h2>Las causas que la ciencia ya ha documentado</h2>
+
+  <div class="impacto-card">
+    <div class="impacto-tag">Causa estructural</div>
+    <div class="impacto-title">Sesgo de género en la atención al dolor</div>
+    <p class="impacto-body">
+      Las mujeres esperan de media un 33% más que los hombres para recibir analgesia en urgencias ante el mismo cuadro de dolor. Son un 66% más propensas a recibir un diagnóstico erróneo. Y sus síntomas son atribuidos con mayor frecuencia a causas psicológicas que a causas físicas, en comparación con hombres con la misma presentación clínica. Esto no es anecdótico — está documentado en estudios con decenas de miles de pacientes.
+    </p>
+  </div>
+
+  <div class="impacto-card">
+    <div class="impacto-tag">Causa formativa</div>
+    <div class="impacto-title">Formación insuficiente sobre endometriosis en medicina</div>
+    <p class="impacto-body">
+      El estudio de Manchester Metropolitan (2024) encontró que uno de los principales factores del gaslighting en endometriosis es la falta de formación específica de los profesionales. Muchos médicos de atención primaria no reconocen los síntomas de endometriosis — especialmente los no menstruales — como señal de alerta. Sin esa formación, el camino por defecto es descartar, normalizar o derivar a salud mental.
+    </p>
+  </div>
+
+  <div class="impacto-card">
+    <div class="impacto-tag">Causa cultural</div>
+    <div class="impacto-title">El tabú del dolor menstrual</div>
+    <p class="impacto-body">
+      La normalización cultural del dolor menstrual — "es lo que hay", "así es ser mujer" — opera en ambos sentidos: en los médicos que lo desestiman y en las propias pacientes que tardan años en consultar porque asumen que su experiencia es normal. Ese tabú, transmitido a menudo de madres a hijas, retrasa tanto la demanda como la respuesta asistencial.
+    </p>
+  </div>
+
+  <!-- EL IMPACTO PSICOLÓGICO -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Las consecuencias reales</span>
+  </div>
+  <h2>Lo que deja el gaslighting médico</h2>
+
+  <p class="body-text">
+    Las consecuencias del gaslighting médico van más allá de la frustración. La investigación identifica un patrón específico de consecuencias psicológicas que incluye ansiedad, depresión, síntomas de estrés postraumático y — una de las más dañinas desde el punto de vista clínico — la pérdida de confianza en la propia percepción del cuerpo.
+  </p>
+
+  <div class="testimonio">
+    <div class="testimonio-text">"Después de años diciéndome que estaba bien, llegué a un punto en que yo misma no sabía si el dolor era real o si estaba exagerando. Eso es lo que más me ha costado recuperar."</div>
+    <div class="testimonio-source">Testimonio recurrente en estudios cualitativos sobre endometriosis · Manchester Metropolitan University, 2024</div>
+  </div>
+
+  <p class="body-text">
+    Esa pérdida de confianza en la propia experiencia tiene consecuencias clínicas directas: las pacientes tardan más en volver a buscar atención, se disculpan por sus síntomas, minimizan el dolor en consulta para no parecer exageradas — lo que a su vez dificulta el diagnóstico. El ciclo se retroalimenta.
+  </p>
+
+  <blockquote>
+    <p>El gaslighting médico no es solo una experiencia frustrante. Es una forma de daño clínico — con consecuencias documentadas en ansiedad, depresión, estrés postraumático y abandono de la búsqueda de atención.</p>
+    <cite>Medical gaslighting: navigating patient-clinician mistrust · PMC12675331, 2025 · CNN Health, 2025</cite>
+  </blockquote>
+
+  <!-- LO QUE PUEDES HACER -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+  <h2>Cómo protegerte — y cómo seguir adelante</h2>
+
+  <div class="highlight-box">
+    <p>Si has sido descartada, eso no significa que estuvieras equivocada. Significa que el sistema falló. Ambas cosas pueden ser ciertas al mismo tiempo.</p>
+    <span class="highlight-source">Experiences of disempowerment in endometriosis patients · PMC12678643, 2025</span>
+  </div>
+
+  <div class="info-box">
+    <div class="info-box-title">Estrategias concretas para navegar el sistema con más herramientas</div>
+    <ul class="info-list">
+      <li><strong style="color: var(--highlight); font-weight: 400;">Documenta antes de la consulta.</strong> Un registro escrito de síntomas — con fechas, intensidad y impacto en actividades — es más difícil de desestimar que una descripción verbal. Los datos tienen más peso que las narrativas, aunque ambos sean igualmente válidos.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Usa lenguaje clínico cuando puedas.</strong> "Tengo dismenorrea que no responde al ibuprofeno y dolor al defecar durante la menstruación" activa un circuito de reconocimiento clínico diferente a "me duele mucho la regla". No debería ser así — pero funciona.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Pide explicaciones, no solo conclusiones.</strong> "¿Por qué descartamos endometriosis con esta prueba?" es una pregunta legítima. Si la respuesta no tiene sentido clínico, tienes derecho a buscar una segunda opinión.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">No vayas sola si puedes evitarlo.</strong> Ir acompañada a consultas difíciles reduce la probabilidad de que los síntomas sean desestimados y ayuda a recordar lo que se dijo con más precisión.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Recuerda que tu percepción es válida.</strong> Años de invalidación pueden hacer que dudes de tu propia experiencia. No lo hagas. El dolor que sientes es real independientemente de lo que digan las pruebas.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Busca apoyo psicológico para procesar la experiencia.</strong> El gaslighting médico deja una huella específica que merece atención específica — no solo como paso previo a seguir buscando atención médica, sino como algo que sanar en sí mismo.</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>Hearn J et al. Endometriosis patients being failed and feel dismissed. Manchester Metropolitan University · <em>Journal of Health Communication.</em> 2024. <a href="https://www.mmu.ac.uk/news-and-events/news/story/endometriosis-patients-being-failed-and-feel-dismissed-new-study-shows" target="_blank">Ver estudio</a></li>
+      <li>Medical gaslighting: navigating patient-clinician mistrust in healthcare. <em>PMC.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12675331/" target="_blank">PMC12675331</a></li>
+      <li>Experiences of disempowerment amongst endometriosis patients. <em>PMC.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12678643/" target="_blank">PMC12678643</a></li>
+      <li>Chronic genital pain sufferers are often gaslit by doctors. <em>CNN Health.</em> Mayo 2025. <a href="https://www.cnn.com/2025/05/26/health/women-chronic-pain-endometriosis-partner-wellness" target="_blank">Ver artículo</a></li>
+      <li>Why Women Are Dismissed in Healthcare. <em>Endo Excision for All.</em> 2025. <a href="https://endoexcisionforall.org/blog/why-women-are-dismissed-in-healthcare" target="_blank">Ver artículo</a></li>
+      <li>"So It's Like a Painful Period?" Living with Endometriosis: My Journey. <em>Health Communication.</em> 2024;39(12):2950–2954. <a href="https://pubmed.ncbi.nlm.nih.gov/38111219/" target="_blank">PubMed</a></li>
+      <li>Medical Misogyny and Self-Diagnosis in Women's Health. <em>Samphire Neuroscience.</em> 2025. <a href="https://www.samphireneuro.com/en-us/blog/medical-misogyny-and-self-diagnosing" target="_blank">Ver artículo</a></li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Tus datos son tu defensa.</strong>
+      <p>Fora te ayuda a llegar a consulta con un registro estructurado que es más difícil de ignorar.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

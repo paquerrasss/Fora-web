@@ -39,6 +39,8 @@ nav.scrolled{background:rgba(26,10,18,.92);backdrop-filter:blur(24px);border-bot
 .tc:hover::before{transform:scaleX(1)}
 .tc-wide{grid-column:span 3;display:grid;grid-template-columns:auto 1fr;gap:48px;align-items:center}
 .av{width:80px;height:80px;border-radius:50%;margin-bottom:20px;position:relative;display:inline-flex;align-items:center;justify-content:center}
+.tc:not(.tc-wide){display:flex;flex-direction:column;align-items:flex-start}
+.tc:not(.tc-wide) .av{margin-bottom:12px}
 .av-wide{width:120px;height:120px;margin-bottom:0}
 .av-ring{position:absolute;inset:-3px;border-radius:50%;background:var(--grad);opacity:.3}
 .av-inner{width:100%;height:100%;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:300;color:#fff;position:relative;z-index:1}
@@ -117,10 +119,10 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:44px 56px;display:flex
         <div class="av-inner av-inner-lg" style="background:linear-gradient(135deg,rgba(168,92,122,.3),rgba(125,61,94,.3))">C</div>
       </div>
       <div>
-        <span class="role-tag tag-med" data-i18n="founder_tag">Fundadora & CEO</span>
-        <div class="tc-name tc-name-lg" data-i18n="founder_name">Claudia Martínez</div>
-        <div class="tc-title" data-i18n="founder_title">Ginecóloga especialista en endometriosis · Hospital Universitario La Paz, Madrid</div>
-        <p class="tc-bio" data-i18n="founder_bio">Tras 12 años atendiendo pacientes con endometriosis, Claudia fundó Fora con una convicción: el retraso diagnóstico no es inevitable. Es el resultado de no tener datos. Fora nació de sus consultas.</p>
+        <span class="role-tag tag-med">Fundadora</span>
+        <div class="tc-name tc-name-lg">Claudia López</div>
+        <div class="tc-title">Fundadora con diagnóstico propio de endometriosis estadio 4</div>
+        <p class="tc-bio">Claudia fundó Fora desde dentro. Conoce lo que significa esperar años para un diagnóstico, acudir a consultas sin datos y no ser escuchada. Esa experiencia es el motor de cada decisión que tomamos.</p>
       </div>
     </div>
   </div>
@@ -128,50 +130,25 @@ footer{border-top:1px solid rgba(255,255,255,.06);padding:44px 56px;display:flex
   <!-- Core team -->
   <div class="team-grid reveal">
     <div class="tc d1">
-      <div class="av"><div class="av-ring"></div><div class="av-inner av-inner-sm" style="background:linear-gradient(135deg,rgba(122,110,160,.3),rgba(90,138,160,.3))">S</div></div>
-      <span class="role-tag tag-tech" data-i18n="m2_tag">CTO & Cofundadora</span>
-      <div class="tc-name" data-i18n="m2_name">Sara López</div>
-      <div class="tc-title" data-i18n="m2_title">Ingeniería de Software · ex-Cabify, ex-Glovo</div>
-      <p class="tc-bio" data-i18n="m2_bio">Sara construyó los sistemas de datos de dos de las apps más usadas de España antes de decidir que quería construir algo que importara más.</p>
+      <div class="av"><div class="av-ring"></div><div class="av-inner av-inner-sm" style="background:linear-gradient(135deg,rgba(122,110,160,.3),rgba(90,138,160,.3))">F</div></div>
+      <span class="role-tag tag-tech">Cofundador · Tech Lead</span>
+      <div class="tc-name">Francisco Pérez</div>
+      <div class="tc-title">Ingeniero de software · Producto digital</div>
+      <p class="tc-bio">Más de 10 años construyendo productos digitales. Se unió a Fora convencido de que la tecnología puede cambiar el diagnóstico de la endometriosis.</p>
     </div>
     <div class="tc d2">
-      <div class="av"><div class="av-ring"></div><div class="av-inner av-inner-sm" style="background:linear-gradient(135deg,rgba(196,133,90,.25),rgba(168,92,122,.25))">L</div></div>
-      <span class="role-tag tag-design" data-i18n="m3_tag">Head of Design</span>
-      <div class="tc-name" data-i18n="m3_name">Laura Ferrer</div>
-      <div class="tc-title" data-i18n="m3_title">UX/Product Design · ex-Typeform, ex-Factorial</div>
-      <p class="tc-bio" data-i18n="m3_bio">Laura diseña productos digitales de salud desde 2016. En Fora es responsable de que una app de uso clínico se sienta humana y cálida.</p>
+      <div class="av"><div class="av-ring"></div><div class="av-inner av-inner-sm" style="background:linear-gradient(135deg,rgba(122,158,122,.25),rgba(90,138,160,.25))">A</div></div>
+      <span class="role-tag tag-med">Colaboradora clínica oficial</span>
+      <div class="tc-name">Dra. Alicia Martín</div>
+      <div class="tc-title">Jefa de Ginecología · Hospital Materno Insular de Gran Canaria</div>
+      <p class="tc-bio">Especialista en endometriosis y validación médica de Fora desde el primer día. Su respaldo institucional garantiza que cada función de la app responde a la realidad clínica.</p>
     </div>
     <div class="tc d3">
-      <div class="av"><div class="av-ring"></div><div class="av-inner av-inner-sm" style="background:linear-gradient(135deg,rgba(122,158,122,.25),rgba(90,138,160,.25))">A</div></div>
-      <span class="role-tag tag-research" data-i18n="m4_tag">Directora Científica</span>
-      <div class="tc-name" data-i18n="m4_name">Ana Puig</div>
-      <div class="tc-title" data-i18n="m4_title">Investigadora en endometriosis · IDIBELL, Barcelona</div>
-      <p class="tc-bio" data-i18n="m4_bio">Ana lleva 8 años investigando los mecanismos inflamatorios de la endometriosis. Diseñó la arquitectura de las 4 esferas alineada con el EHP-30.</p>
-    </div>
-  </div>
-
-  <!-- Advisors -->
-  <div style="margin-top:64px" class="reveal">
-    <h2 class="adv-title" data-i18n="advisors_title">Consejo asesor</h2>
-    <div class="adv-grid">
-      <div class="adv-card d1"><div class="adv-av">M</div><div class="adv-name">Dra. Marta Ros</div><div class="adv-role">Ginecología endoscópica · HU Quirón Salud Madrid</div></div>
-      <div class="adv-card d2"><div class="adv-av">P</div><div class="adv-name">Dr. Pablo Sánchez</div><div class="adv-role">Salud digital · Stanford Medicine X</div></div>
-      <div class="adv-card d3"><div class="adv-av">I</div><div class="adv-name">Dra. Isabel Vidal</div><div class="adv-role">Psicología del dolor crónico · UAB</div></div>
-      <div class="adv-card d4"><div class="adv-av">C</div><div class="adv-name">Carla Méndez</div><div class="adv-role">Privacidad de datos sanitarios · AEPD</div></div>
-    </div>
-  </div>
-</section>
-
-<section class="val-section">
-  <div class="val-inner">
-    <div class="val-header reveal">
-      <span class="eyebrow" data-i18n="values_eyebrow">Nuestros principios</span>
-      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:300;font-style:italic;font-size:clamp(32px,4vw,48px);color:#fff" data-i18n="values_title">Lo que nos guía</h2>
-    </div>
-    <div class="val-grid reveal">
-      <div class="val-item d1"><div class="val-icon">🔬</div><h3 class="val-title" data-i18n="v1_title">Evidencia, no tendencias</h3><p class="val-body" data-i18n="v1_body">Cada función de Fora está fundamentada en literatura científica revisada por pares.</p></div>
-      <div class="val-item d2"><div class="val-icon">🛡️</div><h3 class="val-title" data-i18n="v2_title">Privacidad sin compromisos</h3><p class="val-body" data-i18n="v2_body">Los datos de salud son los más sensibles. Nunca los vendemos, nunca los compartimos.</p></div>
-      <div class="val-item d3"><div class="val-icon">💬</div><h3 class="val-title" data-i18n="v3_title">Lenguaje que respeta</h3><p class="val-body" data-i18n="v3_body">Nunca "paciente". Nunca condescendencia. Fora habla a mujeres adultas.</p></div>
+      <div class="av"><div class="av-ring"></div><div class="av-inner av-inner-sm" style="background:linear-gradient(135deg,rgba(196,133,90,.25),rgba(168,92,122,.25))">D</div></div>
+      <span class="role-tag tag-research">Colaborador clínico</span>
+      <div class="tc-name">Daniel Ponce</div>
+      <div class="tc-title">Equipo de Ginecología · Hospital Materno Insular de Gran Canaria</div>
+      <p class="tc-bio">Parte del equipo de la Dra. Martín. Respaldo clínico institucional desde Gran Canaria.</p>
     </div>
   </div>
 </section>

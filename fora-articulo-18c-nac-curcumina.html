@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAC y curcumina en endometriosis: los antioxidantes con más respaldo — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #27131C; --surface: #36041C; --surface-2: #2F0F1E;
+    --accent: #C4607A; --highlight: #D4899A; --text: #F7EDE7;
+    --muted: #C9A8B4; --border: #5A2A3C; --divider: #3D1A28;
+    --inverted-bg: #F7EDE7; --inverted-text: #27131C;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.75; min-height: 100vh; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--divider); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.5rem; color: var(--text); text-decoration: none; }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.8rem; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; }
+  article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+  .label { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .label::after { content: ''; display: inline-block; width: 2rem; height: 0.5px; background: var(--accent); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; color: var(--text); margin-bottom: 1rem; }
+  .meta { margin: 1.75rem 0 2.5rem; padding-bottom: 1.75rem; border-bottom: 0.5px solid var(--divider); }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+  .body-text { font-size: 1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 1.65rem; color: var(--text); margin: 3rem 0 1rem; line-height: 1.3; }
+  .section-start { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+  /* SUPLEMENTO HERO */
+  .supl-hero { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 2rem; margin: 2rem 0; }
+  .supl-hero-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+  .supl-hero-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem; }
+  .supl-hero-name { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.65rem; font-weight: 300; color: var(--text); line-height: 1.2; }
+  .supl-hero-subtag { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+  .ev-badge { font-size: 0.68rem; font-weight: 500; padding: 0.25rem 0.7rem; border-radius: 20px; white-space: nowrap; flex-shrink: 0; }
+  .ev-verde { background: #0a2010; color: #5cba7a; border: 0.5px solid #1a4a2a; }
+  .ev-ambar { background: #2a1a08; color: #c9903a; border: 0.5px solid #5a3a10; }
+  .supl-hero-body { font-size: 0.9rem; color: var(--text); line-height: 1.75; margin-bottom: 1rem; }
+  .supl-hero-divider { height: 0.5px; background: var(--divider); margin: 1rem 0; }
+
+  /* FICHA RÁPIDA */
+  .ficha { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--divider); border-radius: 8px; overflow: hidden; margin: 1rem 0; }
+  .ficha-item { background: var(--surface-2); padding: 0.9rem 1rem; }
+  .ficha-label { font-size: 9px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.25rem; }
+  .ficha-value { font-size: 0.85rem; color: var(--highlight); line-height: 1.4; }
+
+  /* ESTUDIO CARD */
+  .estudio-card { background: var(--inverted-bg); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 1.25rem 0; }
+  .estudio-label { font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #7A3D52; margin-bottom: 0.5rem; }
+  .estudio-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; font-weight: 400; color: var(--inverted-text); line-height: 1.4; margin-bottom: 0.75rem; }
+  .estudio-resultados { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 0.75rem; }
+  .estudio-stat { text-align: center; background: white; border-radius: 6px; padding: 0.6rem 0.9rem; }
+  .estudio-stat-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem; font-weight: 300; color: #7A3D52; line-height: 1; display: block; }
+  .estudio-stat-label { font-size: 0.68rem; color: #9a5566; line-height: 1.3; }
+  .estudio-cite { font-size: 0.72rem; color: #9a5566; }
+
+  /* BIODISPONIBILIDAD */
+  .biodis { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 1.5rem 0; }
+  .biodis-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .biodis-opciones { display: flex; flex-direction: column; gap: 0.6rem; }
+  .biodis-opcion { display: flex; gap: 1rem; align-items: flex-start; padding: 0.75rem; background: var(--surface-2); border-radius: 8px; }
+  .biodis-rank { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; font-weight: 300; color: var(--accent); flex-shrink: 0; min-width: 1.5rem; line-height: 1.2; }
+  .biodis-content {}
+  .biodis-name { font-size: 0.85rem; font-weight: 500; color: var(--text); margin-bottom: 0.2rem; }
+  .biodis-desc { font-size: 0.78rem; color: var(--muted); line-height: 1.5; }
+
+  /* CAVEAT */
+  .caveat { margin: 1.25rem 0; padding: 0.85rem 1rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 8px 8px 0; font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+  .caveat strong { color: var(--text); font-weight: 400; }
+
+  blockquote { margin: 2.5rem 0; padding: 1.75rem 2rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 10px 10px 0; }
+  blockquote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.25rem; color: var(--text); line-height: 1.6; margin-bottom: 0.75rem; }
+  blockquote cite { font-size: 0.75rem; color: var(--muted); font-style: normal; }
+
+  .info-box { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 2rem 0; }
+  .info-box-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li { display: flex; gap: 0.75rem; font-size: 0.9rem; color: var(--text); line-height: 1.55; }
+  .info-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.55rem; }
+
+  .references { margin-top: 4rem; padding-top: 2rem; border-top: 0.5px solid var(--divider); }
+  .references-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li { counter-increment: ref; display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+  .references ol li::before { content: counter(ref) "."; color: var(--accent); font-weight: 500; flex-shrink: 0; min-width: 1.2rem; }
+  .references ol li a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; opacity: 0.7; }
+
+  .article-cta { margin-top: 3.5rem; background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; font-weight: 300; color: var(--text); }
+  .cta-btn { background: var(--accent); color: var(--inverted-bg); font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; padding: 0.7rem 1.4rem; border-radius: 8px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: opacity 0.2s; }
+  .cta-btn:hover { opacity: 0.85; }
+  footer { border-top: 0.5px solid var(--divider); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; } .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .ficha { grid-template-columns: 1fr; }
+    .estudio-resultados { flex-direction: column; }
+    .supl-hero-header { flex-direction: column; gap: 0.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Nutrición</div>
+
+  <h1>NAC y curcumina:<br>los antioxidantes<br>con más respaldo</h1>
+
+  <div class="meta">
+    <div class="meta-info">Nutrición · 8 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    El estrés oxidativo es uno de los mecanismos clave en endometriosis — y dos compuestos antioxidantes tienen más evidencia clínica directa en esta enfermedad que cualquier otro: la N-acetilcisteína (NAC) y la curcumina. No son lo mismo, no actúan igual y su evidencia tiene matices importantes. Este artículo los explica de forma separada y honesta.
+  </p>
+
+  <!-- POR QUÉ LOS ANTIOXIDANTES IMPORTAN -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El contexto</span>
+  </div>
+  <h2>Por qué el estrés oxidativo importa en endometriosis</h2>
+
+  <p class="body-text">
+    El tejido endometriósico — especialmente el de los endometriomas ováricos — genera grandes cantidades de radicales libres cuando la sangre acumulada se oxida. Esos radicales libres dañan las células circundantes, activan vías inflamatorias, favorecen la implantación de nuevas lesiones y, en el caso de los endometriomas, contribuyen al daño sobre los folículos ováricos sanos que están justo al lado.
+  </p>
+
+  <p class="body-text">
+    Los antioxidantes actúan neutralizando esos radicales libres. No eliminan las lesiones — pero pueden reducir el entorno oxidativo que las alimenta y proteger el tejido sano del daño colateral.
+  </p>
+
+  <!-- NAC -->
+  <div class="section-start" style="margin-top: 2rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Suplemento 1</span>
+  </div>
+
+  <div class="supl-hero">
+    <div class="supl-hero-header">
+      <div>
+        <div class="supl-hero-tag">N-acetilcisteína</div>
+        <div class="supl-hero-name">NAC</div>
+        <div class="supl-hero-subtag">Precursor del glutatión — el antioxidante maestro del cuerpo</div>
+      </div>
+      <span class="ev-badge ev-verde">Evidencia clínica directa</span>
+    </div>
+
+    <p class="supl-hero-body">
+      La NAC es un precursor del glutatión — el principal antioxidante intracelular que produce el propio organismo. Al suplementar con NAC, se aumenta la disponibilidad de cisteína, que es el aminoácido limitante en la síntesis de glutatión. El resultado es más capacidad antioxidante en las células, especialmente en el tejido sometido a mayor estrés oxidativo — como el peritoneo pélvico y el tejido ovárico en endometriosis.
+    </p>
+
+    <p class="supl-hero-body">
+      Es el suplemento antioxidante con más estudios clínicos directos en endometriosis. El grupo de investigación de la Dra. Porpora (Universidad Sapienza de Roma) ha publicado los ensayos más relevantes, mostrando reducción del tamaño de endometriomas en seguimiento ecográfico, reducción del dolor y disminución de Ca125 sérico con una pauta intermitente de 3 meses.
+    </p>
+
+    <div class="supl-hero-divider"></div>
+    <div class="ficha">
+      <div class="ficha-item">
+        <div class="ficha-label">Pauta Porpora</div>
+        <div class="ficha-value">600 mg × 3 comp/día · 3 días/semana</div>
+      </div>
+      <div class="ficha-item">
+        <div class="ficha-label">Duración</div>
+        <div class="ficha-value">Ciclos de 3 meses</div>
+      </div>
+      <div class="ficha-item">
+        <div class="ficha-label">Sin tratamiento hormonal</div>
+        <div class="ficha-value">Compatible con búsqueda de embarazo</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="estudio-card">
+    <div class="estudio-label">Estudio clave · Sapienza University of Rome · IJERPH 2023</div>
+    <div class="estudio-title">Efficacy of N-Acetylcysteine on Endometriosis-Related Pain, Size Reduction of Ovarian Endometriomas, and Fertility Outcomes — Anastasi, Porpora et al.</div>
+    <div class="estudio-resultados">
+      <div class="estudio-stat">
+        <span class="estudio-stat-num">↓ dolor</span>
+        <div class="estudio-stat-label">reducción dismenorrea y dolor pélvico</div>
+      </div>
+      <div class="estudio-stat">
+        <span class="estudio-stat-num">↓ Ca125</span>
+        <div class="estudio-stat-label">marcador inflamatorio sérico</div>
+      </div>
+      <div class="estudio-stat">
+        <span class="estudio-stat-num">↓ tamaño</span>
+        <div class="estudio-stat-label">reducción ecográfica del endometrioma</div>
+      </div>
+    </div>
+    <div class="estudio-cite">Anastasi E, Scaramuzzino S, Viscardi MF, Porpora MG et al. · Int J Environ Res Public Health. 2023;20(6):4686 · doi:10.3390/ijerph20064686</div>
+  </div>
+
+  <div class="caveat">
+    <strong>Importante sobre la pauta:</strong> la NAC en endometriosis se usa de forma intermitente — 3 días consecutivos a la semana, no todos los días. Esta pauta es específica del protocolo Porpora y difiere del uso en otras indicaciones clínicas. No uses otras pautas sin orientación de un profesional. La NAC tiene un perfil de seguridad excelente, pero puede generar molestias gástricas si se toma sin comida.
+  </div>
+
+  <!-- CURCUMINA -->
+  <div class="section-start" style="margin-top: 2.5rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Suplemento 2</span>
+  </div>
+
+  <div class="supl-hero">
+    <div class="supl-hero-header">
+      <div>
+        <div class="supl-hero-tag">Curcumina · Curcuma longa</div>
+        <div class="supl-hero-name">Curcumina</div>
+        <div class="supl-hero-subtag">El pigmento amarillo de la cúrcuma con múltiples dianas antiinflamatorias</div>
+      </div>
+      <span class="ev-badge ev-ambar">Evidencia prometedora — biodisponibilidad clave</span>
+    </div>
+
+    <p class="supl-hero-body">
+      La curcumina es el principal componente activo de la cúrcuma (Curcuma longa). Tiene múltiples efectos documentados en endometriosis: inhibe NF-κB y COX-2 — dos vías centrales de la inflamación —, reduce la angiogénesis que alimenta las lesiones, frena la proliferación de células endometriósicas e induce apoptosis (muerte celular programada) en tejido ectópico. En teoría, es uno de los compuestos con más dianas terapéuticas en la enfermedad.
+    </p>
+
+    <p class="supl-hero-body">
+      El problema central de la curcumina es su biodisponibilidad. Tomada sola, apenas se absorbe en el intestino — se degrada rápidamente y casi no llega a la sangre. Es un compuesto con mucha actividad biológica en laboratorio y con resultados clínicos más variables en personas, precisamente por esta limitación.
+    </p>
+
+    <div class="supl-hero-divider"></div>
+    <div class="ficha">
+      <div class="ficha-item">
+        <div class="ficha-label">Dosis orientativa</div>
+        <div class="ficha-value">500–1.000 mg/día</div>
+      </div>
+      <div class="ficha-item">
+        <div class="ficha-label">Formulación clave</div>
+        <div class="ficha-value">Con piperina, liposomal o fitosoma</div>
+      </div>
+      <div class="ficha-item">
+        <div class="ficha-label">Con las comidas</div>
+        <div class="ficha-value">Sí — mejora absorción con grasas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BIODISPONIBILIDAD -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El punto crítico de la curcumina</span>
+  </div>
+  <h2>El problema de la biodisponibilidad — y cómo resolverlo</h2>
+
+  <p class="body-text">
+    La curcumina estándar tomada sola apenas llega a la sangre. Hay varias estrategias documentadas para mejorar su absorción, con resultados muy distintos entre ellas.
+  </p>
+
+  <div class="biodis">
+    <div class="biodis-title">Formas con mejor biodisponibilidad — de mayor a menor evidencia</div>
+    <div class="biodis-opciones">
+      <div class="biodis-opcion">
+        <div class="biodis-rank">1</div>
+        <div class="biodis-content">
+          <div class="biodis-name">Curcumina liposomal / nanotecnología</div>
+          <div class="biodis-desc">5–10 veces mejor absorción que la curcumina estándar. Encapsula la molécula en vesículas lipídicas que protegen de la degradación intestinal. NovaSOl, Longvida o formulaciones nanomicelares son las más estudiadas. Es la forma con mayor evidencia de biodisponibilidad real en sangre.</div>
+        </div>
+      </div>
+      <div class="biodis-opcion">
+        <div class="biodis-rank">2</div>
+        <div class="biodis-content">
+          <div class="biodis-name">Curcumina + piperina (BioPerine)</div>
+          <div class="biodis-desc">La piperina inhibe las enzimas hepáticas que metabolizan la curcumina, manteniéndola más tiempo en circulación. Muy popular en el mercado — y con evidencia de mejora de niveles en sangre. Limitación importante: la piperina puede interferir con el metabolismo de algunos medicamentos. Consulta con tu médico si tomas fármacos de metabolización hepática.</div>
+        </div>
+      </div>
+      <div class="biodis-opcion">
+        <div class="biodis-rank">3</div>
+        <div class="biodis-content">
+          <div class="biodis-name">Curcumina fitosoma (Meriva)</div>
+          <div class="biodis-desc">Combina curcumina con fosfolípidos para mejorar la absorción intestinal. Tiene la mayor cantidad de ensayos clínicos en condiciones inflamatorias crónicas como artritis. Biodisponibilidad intermedia entre curcumina estándar y liposomal.</div>
+        </div>
+      </div>
+      <div class="biodis-opcion">
+        <div class="biodis-rank">4</div>
+        <div class="biodis-content">
+          <div class="biodis-name">Curcumina estándar sola</div>
+          <div class="biodis-desc">Absorción muy baja. La mayoría del contenido se degrada antes de llegar a la sangre. No es la forma más útil para suplementación si el objetivo es efecto sistémico.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVIDENCIA CLÍNICA CURCUMINA -->
+  <div class="estudio-card">
+    <div class="estudio-label">Ensayo clínico aleatorizado triple ciego · Tabriz University · Phytother Res 2024</div>
+    <div class="estudio-title">Effect of curcumin on painful symptoms of endometriosis: A triple-blind randomized controlled trial — Gudarzi et al.</div>
+    <div class="estudio-resultados">
+      <div class="estudio-stat">
+        <span class="estudio-stat-num">68</span>
+        <div class="estudio-stat-label">mujeres con endometriosis</div>
+      </div>
+      <div class="estudio-stat">
+        <span class="estudio-stat-num">↓ dolor</span>
+        <div class="estudio-stat-label">reducción significativa de dismenorrea</div>
+      </div>
+    </div>
+    <div class="estudio-cite">Gudarzi R et al. · Phytother Res. 2024;38(1):147–155 · doi:10.1002/ptr.8030</div>
+  </div>
+
+  <div class="caveat">
+    <strong>El matiz importante:</strong> otro ensayo con curcumina estándar (500 mg dos veces al día, 8 semanas) no encontró diferencias significativas en dolor frente a placebo. La diferencia probablemente está en la formulación — la biodisponibilidad importa tanto como la dosis. No todos los suplementos de curcumina son equivalentes.
+  </div>
+
+  <blockquote>
+    <p>N-acetilcisteína, curcumina, melatonina y la combinación de vitaminas C y E han mostrado resultados prometedores en el tratamiento de la endometriosis actuando sobre el estrés oxidativo, aunque se necesitan más estudios para establecer pautas clínicas definitivas.</p>
+    <cite>Targeting Oxidative Stress in Endometriosis · PMC9405905, 2022 · Oxidative Imbalance in Endometriosis · PMC11204103, 2024</cite>
+  </blockquote>
+
+  <!-- LO QUE PUEDES HACER -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+  <h2>Cómo incorporarlos de forma inteligente</h2>
+
+  <div class="info-box">
+    <div class="info-box-title">Guía práctica para NAC y curcumina</div>
+    <ul class="info-list">
+      <li><strong style="color: var(--highlight); font-weight: 400;">NAC — empieza aquí si quieres antioxidantes con la mayor evidencia directa.</strong> Pauta Porpora: 600 mg tres veces al día, tres días consecutivos por semana. Con las comidas para evitar molestias gástricas. Ciclos de tres meses con evaluación de respuesta.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Curcumina — elige siempre una formulación con biodisponibilidad mejorada.</strong> Liposomal o con piperina son las más accesibles. Evita la curcumina estándar sola — es muy probable que no estés absorbiendo prácticamente nada.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Si tomas medicamentos — consulta antes de añadir piperina.</strong> La piperina interfiere con el metabolismo de varios fármacos, incluyendo algunos anticoagulantes, antiepilépticos y antidepresivos. La formulación liposomal no tiene esta interacción.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">No los combines todos a la vez al inicio.</strong> Incorpora uno primero durante 4–6 semanas antes de añadir otro. Es la única forma de saber cuál está funcionando para ti.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Registra los síntomas antes de empezar y durante.</strong> Sin un punto de referencia, es imposible saber si algo está mejorando. El seguimiento sistemático es parte del proceso.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Coméntalo con tu médico o ginecólogo.</strong> Especialmente si estás en tratamiento hormonal, en proceso de FIV o en período postquirúrgico — el contexto clínico puede cambiar la indicación.</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>Anastasi E, Porpora MG et al. Efficacy of NAC on Endometriosis-Related Pain, Size Reduction of Ovarian Endometriomas, and Fertility Outcomes. <em>Int J Environ Res Public Health.</em> 2023;20(6):4686. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10048621/" target="_blank">PMC10048621</a></li>
+      <li>Gudarzi R et al. Effect of curcumin on painful symptoms of endometriosis: triple-blind RCT. <em>Phytother Res.</em> 2024;38(1):147–155. <a href="https://pubmed.ncbi.nlm.nih.gov/37818734/" target="_blank">PubMed</a></li>
+      <li>Targeting Oxidative Stress Involved in Endometriosis and Its Pain. <em>PMC.</em> 2022. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9405905/" target="_blank">PMC9405905</a></li>
+      <li>Oxidative Imbalance in Endometriosis-Related Infertility — The Therapeutic Role of Antioxidants. <em>PMC.</em> 2024. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11204103/" target="_blank">PMC11204103</a></li>
+      <li>Curcumin modulates oxidative stress to inhibit pyroptosis in endometriosis. <em>PMC.</em> 2024. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10827401/" target="_blank">PMC10827401</a></li>
+      <li>Methods Used for Enhancing the Bioavailability of Oral Curcumin in RCTs: meta-research study. <em>Pharmaceuticals.</em> 2022;15(8):939. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9416704/" target="_blank">PMC9416704</a></li>
+      <li>Porpora MG, Brunelli R et al. A promise in treatment of endometriosis: ovarian endometrioma reduction by NAC. <em>Evid Based Complement Alternat Med.</em> 2013. <a href="https://pubmed.ncbi.nlm.nih.gov/23737821/" target="_blank">PubMed</a></li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Registra tu suplementación y evolución de síntomas.</strong>
+      <p>Fora te permite hacer seguimiento de lo que tomas y ver si hay cambios reales semana a semana.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

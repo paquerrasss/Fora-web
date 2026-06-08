@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Más allá de la píldora: hacia dónde va el tratamiento de la endometriosis — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #27131C; --surface: #36041C; --surface-2: #2F0F1E;
+    --accent: #C4607A; --highlight: #D4899A; --text: #F7EDE7;
+    --muted: #C9A8B4; --border: #5A2A3C; --divider: #3D1A28;
+    --inverted-bg: #F7EDE7; --inverted-text: #27131C;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.75; min-height: 100vh; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--divider); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.5rem; color: var(--text); text-decoration: none; }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.8rem; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+  .label { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .label::after { content: ''; display: inline-block; width: 2rem; height: 0.5px; background: var(--accent); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; color: var(--text); margin-bottom: 1rem; }
+  .meta { margin: 1.75rem 0 2.5rem; padding-bottom: 1.75rem; border-bottom: 0.5px solid var(--divider); }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+  .body-text { font-size: 1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 1.65rem; color: var(--text); margin: 3rem 0 1rem; line-height: 1.3; }
+  .section-start { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+  /* NOVEDAD CARD */
+  .nov-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.75rem 2rem; margin: 1.25rem 0; }
+  .nov-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+  .nov-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.3rem; }
+  .nov-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; font-weight: 400; color: var(--text); line-height: 1.2; }
+  .estado-badge { font-size: 0.68rem; font-weight: 500; padding: 0.25rem 0.7rem; border-radius: 20px; white-space: nowrap; flex-shrink: 0; letter-spacing: 0.03em; }
+  .e-ya { background: #0a2010; color: #5cba7a; border: 0.5px solid #1a4a2a; }
+  .e-pronto { background: #2a1a08; color: #c9903a; border: 0.5px solid #5a3a10; }
+  .e-futuro { background: #1a0a20; color: #9a6aaa; border: 0.5px solid #3a1a5a; }
+  .nov-body { font-size: 0.9rem; color: var(--text); line-height: 1.75; margin-bottom: 0.75rem; }
+  .nov-dato { margin-top: 0.75rem; padding: 0.9rem 1rem; background: var(--surface-2); border-radius: 8px; font-size: 0.85rem; color: var(--muted); line-height: 1.55; }
+  .nov-dato strong { color: var(--highlight); font-weight: 400; }
+  .nov-caveat { margin-top: 1rem; padding: 0.75rem 1rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 6px 6px 0; font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+  .nov-caveat strong { color: var(--text); font-weight: 400; }
+
+  blockquote { margin: 2.5rem 0; padding: 1.75rem 2rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 10px 10px 0; }
+  blockquote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.25rem; color: var(--text); line-height: 1.6; margin-bottom: 0.75rem; }
+  blockquote cite { font-size: 0.75rem; color: var(--muted); font-style: normal; letter-spacing: 0.04em; }
+
+  .highlight-box { background: var(--inverted-bg); border-radius: 10px; padding: 1.75rem 2rem; margin: 2.5rem 0; }
+  .highlight-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.3rem; color: var(--inverted-text); line-height: 1.55; }
+  .highlight-box .highlight-source { display: block; margin-top: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: #7A3D52; font-style: normal; letter-spacing: 0.04em; }
+
+  .info-box { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 2rem 0; }
+  .info-box-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li { display: flex; gap: 0.75rem; font-size: 0.9rem; color: var(--text); line-height: 1.55; }
+  .info-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.55rem; }
+
+  .references { margin-top: 4rem; padding-top: 2rem; border-top: 0.5px solid var(--divider); }
+  .references-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li { counter-increment: ref; display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+  .references ol li::before { content: counter(ref) "."; color: var(--accent); font-weight: 500; flex-shrink: 0; min-width: 1.2rem; }
+  .references ol li a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; opacity: 0.7; }
+
+  .article-cta { margin-top: 3.5rem; background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; font-weight: 300; color: var(--text); }
+  .cta-btn { background: var(--accent); color: var(--inverted-bg); font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; padding: 0.7rem 1.4rem; border-radius: 8px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: opacity 0.2s; }
+  .cta-btn:hover { opacity: 0.85; }
+  footer { border-top: 0.5px solid var(--divider); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; } .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .nov-header { flex-direction: column; gap: 0.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Tratamiento</div>
+
+  <h1>Más allá de la píldora:<br>hacia dónde va el<br>tratamiento</h1>
+
+  <div class="meta">
+    <div class="meta-info">Tratamiento · 7 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    Si llevas tiempo con endometriosis, probablemente ya conoces el protocolo habitual: anticonceptivos, dienogest, cirugía, repetir. Durante décadas eso ha sido prácticamente todo lo que existía. Pero en los últimos años algo está cambiando — y de forma bastante significativa.
+  </p>
+
+  <p class="body-text">
+    Hay nuevos tratamientos que ya están disponibles aunque tu médico puede no haberlos mencionado. Hay otros que están siendo probados ahora mismo en ensayos clínicos con resultados prometedores. Y hay líneas de investigación que apuntan a una forma completamente nueva de entender y tratar la enfermedad. Este artículo te lo explica en lenguaje normal.
+  </p>
+
+  <div class="highlight-box">
+    <p>Por primera vez en décadas, la investigación en endometriosis está produciendo tratamientos con mecanismos completamente nuevos — que no dependen de apagar las hormonas.</p>
+    <span class="highlight-source">Global landscape of clinical trials for endometriosis · PMC12527674, 2025 · 744 ensayos registrados a abril 2025</span>
+  </div>
+
+  <!-- YA DISPONIBLE: INHIBIDORES AROMATASA -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Ya existe — pero pocos lo saben</span>
+  </div>
+  <h2>Un tratamiento que bloquea el estrógeno donde se produce la lesión</h2>
+
+  <p class="body-text">
+    El estrógeno es el principal combustible de la endometriosis — lo cual explica por qué todos los tratamientos actuales intentan reducirlo. Pero hay un problema: los tratamientos hormonales habituales actúan sobre los ovarios. Y resulta que las propias lesiones de endometriosis pueden fabricar su propio estrógeno de forma local, independientemente de los ovarios.
+  </p>
+
+  <div class="nov-card">
+    <div class="nov-header">
+      <div>
+        <div class="nov-tag">Disponible en consulta especializada</div>
+        <div class="nov-title">Inhibidores de aromatasa (letrozol y anastrozol)</div>
+      </div>
+      <span class="estado-badge e-ya">Disponible ahora</span>
+    </div>
+    <p class="nov-body">
+      Los inhibidores de aromatasa son fármacos que bloquean la enzima que fabrican las lesiones para producir ese estrógeno local. Son medicamentos que ya existen — se usan en cáncer de mama desde hace años — y que algunos especialistas en endometriosis ya prescriben en casos resistentes a otros tratamientos.
+    </p>
+    <p class="nov-body">
+      La evidencia muestra que pueden reducir el dolor significativamente, y en algunos casos reducir el tamaño de las lesiones. La clave es que siempre se usan combinados con otro fármaco — no solos — porque de lo contrario pueden estimular los ovarios y causar efectos no deseados.
+    </p>
+    <div class="nov-dato">
+      <strong>¿Para quién puede ser una opción?</strong> Para pacientes con dolor que no responde bien a otras opciones hormonales, especialmente en endometriosis severa o recurrente. No es la primera línea, pero existe — y vale la pena preguntar.
+    </div>
+    <div class="nov-caveat">
+      <strong>Lo importante:</strong> en España no están aprobados específicamente para endometriosis, pero su uso está recogido en las guías europeas. Requieren un especialista con experiencia, y hay que vigilar los huesos con el tiempo porque pueden reducir la densidad ósea.
+    </div>
+  </div>
+
+  <!-- EN CAMINO: HMI-115 -->
+  <div class="section-start" style="margin-top: 2rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">El avance más importante de los últimos años</span>
+  </div>
+  <h2>El primer tratamiento que no toca las hormonas</h2>
+
+  <p class="body-text">
+    Todos los tratamientos médicos actuales para la endometriosis funcionan de la misma forma: reducen el estrógeno. Eso funciona, pero tiene un coste — los efectos secundarios del hipoestrogenismo, que van desde sofocos hasta pérdida de densidad ósea, pasando por cambios de humor. La gran pregunta de la investigación ha sido siempre: ¿puede la endometriosis tratarse sin tocar las hormonas?
+  </p>
+
+  <div class="nov-card">
+    <div class="nov-header">
+      <div>
+        <div class="nov-tag">Ensayo clínico completado — en camino a aprobación</div>
+        <div class="nov-title">HMI-115: un anticuerpo que actúa sobre el sistema inmune</div>
+      </div>
+      <span class="estado-badge e-pronto">Resultados prometedores</span>
+    </div>
+    <p class="nov-body">
+      HMI-115 es un fármaco de un tipo llamado anticuerpo monoclonal — básicamente una molécula diseñada para bloquear un receptor específico que ayuda a que el tejido endometriósico sobreviva y crezca. La novedad radical es que actúa sobre el sistema inmune, no sobre las hormonas.
+    </p>
+    <p class="nov-body">
+      Los resultados del ensayo clínico publicados a finales de 2024 son los más llamativos en investigación de endometriosis en muchos años: las mujeres que lo tomaron redujeron su dolor menstrual un 42% y su dolor pélvico fuera de la regla un 52%, comparado con placebo. Sin los efectos secundarios típicos de suprimir las hormonas.
+    </p>
+    <div class="nov-dato">
+      <strong>¿Cuándo podría estar disponible?</strong> Aún no hay fecha confirmada para Europa. El proceso de aprobación regulatoria lleva varios años. Pero es el candidato más avanzado con un mecanismo completamente nuevo — y sus datos son sólidos.
+    </div>
+  </div>
+
+  <blockquote>
+    <p>Si los datos se confirman en estudios más grandes, HMI-115 podría ser el primer tratamiento médico para la endometriosis que no requiere suprimir las hormonas. Eso cambiaría radicalmente las opciones para muchas pacientes.</p>
+    <cite>Hope Medicine Phase II interim analysis, octubre 2024 · Labiotech, noviembre 2025</cite>
+  </blockquote>
+
+  <!-- FUTURO: FIBROSIS Y CICATRIZ -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que viene — en investigación activa</span>
+  </div>
+  <h2>Tratar la cicatriz, no solo la inflamación</h2>
+
+  <p class="body-text">
+    Hay algo que todos los tratamientos actuales — hormonales y quirúrgicos — tienen en común: ninguno actúa sobre el tejido cicatricial que deja la endometriosis. Las lesiones profundas generan una especie de fibrosis, una cicatriz interna que adhiere órganos entre sí, deforma la anatomía pélvica y genera dolor de una forma que los fármacos no tocan y la cirugía solo puede corregir parcialmente.
+  </p>
+
+  <div class="nov-card">
+    <div class="nov-header">
+      <div>
+        <div class="nov-tag">Investigación en curso — horizonte a varios años</div>
+        <div class="nov-title">Terapias para revertir la fibrosis de las lesiones</div>
+      </div>
+      <span class="estado-badge e-futuro">En investigación</span>
+    </div>
+    <p class="nov-body">
+      Inspirándose en los avances para tratar la fibrosis pulmonar y hepática, hay grupos de investigación que están intentando aplicar ese mismo enfoque a la endometriosis. La idea es desarrollar tratamientos que puedan "ablandar" o revertir el tejido cicatricial ya formado — algo que no existe en ningún tratamiento actual.
+    </p>
+    <p class="nov-body">
+      Es una de las líneas más prometedoras conceptualmente, pero también de las más lejanas en tiempo. No hay todavía ningún fármaco en ensayo clínico en pacientes con endometriosis. Lo que sí hay es investigación de laboratorio activa y creciente financiación en esta área.
+    </p>
+    <div class="nov-caveat">
+      <strong>Perspectiva honesta:</strong> esto es investigación real y relevante — pero estamos hablando de años, no de meses. No hay nada que solicitar a tu médico ahora mismo en este campo.
+    </div>
+  </div>
+
+  <!-- ESTRÓGENO LOCAL: OTRO ENFOQUE -->
+  <div class="section-start" style="margin-top: 1.5rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">También en investigación</span>
+  </div>
+
+  <div class="nov-card">
+    <div class="nov-header">
+      <div>
+        <div class="nov-tag">Ensayos en fase inicial</div>
+        <div class="nov-title">Cortar el suministro de sangre a las lesiones</div>
+      </div>
+      <span class="estado-badge e-futuro">Fase inicial</span>
+    </div>
+    <p class="nov-body">
+      Las lesiones de endometriosis, como cualquier tejido vivo, necesitan vasos sanguíneos para sobrevivir y crecer. Una línea de investigación activa busca fármacos que interrumpan ese suministro — básicamente "ahogar" las lesiones cortándoles la irrigación. Existen fármacos de este tipo aprobados en oncología, y algunos investigadores están probando si pueden adaptarse a la endometriosis con dosis más bajas y mejor toleradas. Los resultados en modelos de laboratorio son prometedores, pero los datos en pacientes reales son aún muy limitados.
+    </p>
+  </div>
+
+  <!-- LO QUE PUEDES HACER -->
+  <div class="section-start" style="margin-top: 2rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+  <h2>Cómo navegar la información sin perderte</h2>
+
+  <p class="body-text">
+    La investigación en endometriosis avanza más rápido ahora que en las dos décadas anteriores. Pero entre un titular prometedor y un tratamiento disponible en la consulta de tu ginecólogo hay una distancia enorme. No todo lo que funciona en laboratorio funciona en personas. No todo lo que funciona en personas llega a aprobarse. Y no todo lo que se aprueba llega a España al mismo tiempo que en otros países.
+  </p>
+
+  <div class="info-box">
+    <div class="info-box-title">Cómo distinguir información fiable de ruido</div>
+    <ul class="info-list">
+      <li>Si el titular dice "científicos descubren cura para la endometriosis" — desconfía. Los estudios de laboratorio o en animales son el punto de partida, no el final.</li>
+      <li>Fíjate en si hay datos reales en pacientes humanas. "Ensayo clínico fase II con X pacientes y resultado Y" es muy diferente a "estudio en células muestra que Z podría funcionar".</li>
+      <li>Las fuentes más fiables para seguir la investigación son ClinicalTrials.gov (ensayos registrados) y PubMed (estudios publicados con revisión científica).</li>
+      <li>Si lees sobre algo que te parece relevante para tu caso, llévalo a tu especialista — no para automedicarte, sino para preguntar si aplica a tu situación clínica concreta.</li>
+      <li>Los inhibidores de aromatasa sí existen ya — si tienes dolor que no responde a otros tratamientos, es una pregunta legítima que hacerle a tu ginecólogo.</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>He S et al. Global landscape of clinical trials for endometriosis: dynamic trends and future directions. <em>Int J Surg.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12527674/" target="_blank">PMC12527674</a></li>
+      <li>Peitsidis P et al. A Systematic Review of Systematic Reviews on the Use of Aromatase Inhibitors for the Treatment of Endometriosis. <em>Drug Des Devel Ther.</em> 2023;17:1329–1346. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10166210/" target="_blank">PMC10166210</a></li>
+      <li>Aromatase inhibitors in the pharmacotherapy of endometriosis. <em>Expert Opin Pharmacother.</em> 2023;24(9):1067–1073. <a href="https://www.tandfonline.com/doi/full/10.1080/14656566.2023.2209315" target="_blank">Ver artículo</a></li>
+      <li>Hope Medicine Inc. HMI-115 Phase II interim analysis — resultados positivos en dolor asociado a endometriosis moderada-severa. Octubre 2024.</li>
+      <li>The future of endometriosis research: biotech breakthroughs to watch in 2025. <em>Labiotech.eu.</em> Noviembre 2025. <a href="https://www.labiotech.eu/best-biotech/endometriosis-research-latest-advancements/" target="_blank">Ver artículo</a></li>
+      <li>Pharmaceuticals targeting signaling pathways of endometriosis as potential new medical treatment. <em>PMC.</em> 2021. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8252000/" target="_blank">PMC8252000</a></li>
+    </ol>
+  </div>
+
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Registra tu respuesta al tratamiento actual.</strong>
+      <p>Mientras la investigación avanza, Fora te ayuda a optimizar lo que ya tienes disponible.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

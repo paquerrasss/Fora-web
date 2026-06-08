@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>El intestino y la endometriosis: microbiota, estrógenos y síntomas digestivos — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #27131C; --surface: #36041C; --surface-2: #2F0F1E;
+    --accent: #C4607A; --highlight: #D4899A; --text: #F7EDE7;
+    --muted: #C9A8B4; --border: #5A2A3C; --divider: #3D1A28;
+    --inverted-bg: #F7EDE7; --inverted-text: #27131C;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.75; min-height: 100vh; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--divider); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.5rem; color: var(--text); text-decoration: none; }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.8rem; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; }
+  article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+  .label { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .label::after { content: ''; display: inline-block; width: 2rem; height: 0.5px; background: var(--accent); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; color: var(--text); margin-bottom: 1rem; }
+  .meta { margin: 1.75rem 0 2.5rem; padding-bottom: 1.75rem; border-bottom: 0.5px solid var(--divider); }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+  .body-text { font-size: 1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 1.65rem; color: var(--text); margin: 3rem 0 1rem; line-height: 1.3; }
+  .section-start { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+  /* CONCEPTO VISUAL */
+  .concepto-visual { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.75rem 2rem; margin: 2rem 0; }
+  .concepto-visual-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.2rem; font-weight: 400; color: var(--highlight); margin-bottom: 0.75rem; }
+  .concepto-visual-body { font-size: 0.9rem; color: var(--text); line-height: 1.75; }
+
+  /* FLECHA MECANISMO */
+  .mecanismo-flujo { display: flex; flex-direction: column; gap: 0; margin: 2rem 0; }
+  .mecanismo-paso { display: flex; gap: 1.25rem; align-items: flex-start; padding-bottom: 1.25rem; }
+  .mecanismo-paso:last-child { padding-bottom: 0; }
+  .mecanismo-izq { display: flex; flex-direction: column; align-items: center; flex-shrink: 0; width: 2.5rem; }
+  .mecanismo-circulo { width: 2rem; height: 2rem; border-radius: 50%; background: var(--surface); border: 0.5px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: var(--accent); }
+  .mecanismo-linea { width: 1px; flex: 1; background: var(--divider); min-height: 1.5rem; margin-top: 4px; }
+  .mecanismo-paso:last-child .mecanismo-linea { display: none; }
+  .mecanismo-contenido { padding-top: 0.2rem; }
+  .mecanismo-label { font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.25rem; }
+  .mecanismo-texto { font-size: 0.875rem; color: var(--text); line-height: 1.65; }
+  .mecanismo-texto em { color: var(--muted); font-style: normal; font-size: 0.82rem; }
+
+  /* SÍNTOMAS DIGESTIVOS */
+  .sintoma-digest { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 0.75rem 0; display: flex; gap: 1rem; align-items: flex-start; }
+  .sintoma-digest-icono { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.4rem; color: var(--accent); flex-shrink: 0; line-height: 1; padding-top: 0.1rem; }
+  .sintoma-digest-content {}
+  .sintoma-digest-nombre { font-size: 0.875rem; font-weight: 500; color: var(--text); margin-bottom: 0.2rem; }
+  .sintoma-digest-desc { font-size: 0.83rem; color: var(--muted); line-height: 1.6; }
+  .sintoma-digest-desc strong { color: var(--text); font-weight: 400; }
+
+  blockquote { margin: 2.5rem 0; padding: 1.75rem 2rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 10px 10px 0; }
+  blockquote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.25rem; color: var(--text); line-height: 1.6; margin-bottom: 0.75rem; }
+  blockquote cite { font-size: 0.75rem; color: var(--muted); font-style: normal; }
+
+  .highlight-box { background: var(--inverted-bg); border-radius: 10px; padding: 1.75rem 2rem; margin: 2.5rem 0; }
+  .highlight-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.3rem; color: var(--inverted-text); line-height: 1.55; }
+  .highlight-box .highlight-source { display: block; margin-top: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: #7A3D52; font-style: normal; }
+
+  .info-box { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 2rem 0; }
+  .info-box-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li { display: flex; gap: 0.75rem; font-size: 0.9rem; color: var(--text); line-height: 1.55; }
+  .info-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.55rem; }
+
+  .aviso { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+  .aviso strong { color: var(--text); font-weight: 400; }
+
+  .references { margin-top: 4rem; padding-top: 2rem; border-top: 0.5px solid var(--divider); }
+  .references-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li { counter-increment: ref; display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+  .references ol li::before { content: counter(ref) "."; color: var(--accent); font-weight: 500; flex-shrink: 0; min-width: 1.2rem; }
+  .references ol li a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; opacity: 0.7; }
+
+  .article-cta { margin-top: 3.5rem; background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; font-weight: 300; color: var(--text); }
+  .cta-btn { background: var(--accent); color: var(--inverted-bg); font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; padding: 0.7rem 1.4rem; border-radius: 8px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+  footer { border-top: 0.5px solid var(--divider); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; } .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Nutrición</div>
+
+  <h1>El intestino y la<br>endometriosis: microbiota,<br>estrógenos y síntomas</h1>
+
+  <div class="meta">
+    <div class="meta-info">Nutrición · 8 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    La hinchazón que empeora con la regla. El tránsito que cambia según el momento del ciclo. El dolor al defecar que aparece y desaparece. Muchas personas con endometriosis viven con síntomas digestivos que nadie les ha explicado bien — y que a menudo se atribuyen a "colon irritable" sin más investigación.
+  </p>
+
+  <p class="body-text">
+    La conexión entre el intestino y la endometriosis es real, bidireccional y cada vez mejor documentada. Este artículo explica por qué ocurre, qué papel juega la microbiota intestinal en la enfermedad y qué puedes hacer para mejorar la salud digestiva en este contexto.
+  </p>
+
+  <!-- EL ESTROBOLOMA -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El concepto más importante</span>
+  </div>
+  <h2>El estroboloma: cómo tu microbiota regula el estrógeno</h2>
+
+  <div class="concepto-visual">
+    <div class="concepto-visual-title">¿Qué es el estroboloma?</div>
+    <p class="concepto-visual-body">
+      El estroboloma es el conjunto de bacterias intestinales que tienen la capacidad de metabolizar el estrógeno. Estas bacterias producen una enzima llamada beta-glucuronidasa que "desconjuga" el estrógeno que el hígado había inactivado y preparado para eliminar — reactivándolo y permitiendo que vuelva a la sangre en lugar de ser excretado.
+    </p>
+  </div>
+
+  <p class="body-text">
+    Cuando la microbiota está desequilibrada — con mayor abundancia de bacterias productoras de beta-glucuronidasa, como ciertos tipos de <em>Escherichia coli</em> — se reabsorbe más estrógeno del que debería. Y dado que la endometriosis es una enfermedad dependiente del estrógeno, esta recirculación excesiva puede contribuir a alimentar las lesiones y amplificar la inflamación.
+  </p>
+
+  <p class="body-text">
+    Un metaanálisis publicado en 2025 (Frontiers in Microbiology) que incluye los estudios más recientes confirma que las mujeres con endometriosis tienen una composición de microbiota intestinal diferente a los controles sanos, con menor diversidad — un marcador general de peor salud intestinal. Una revisión sistemática de 2025 sobre el estroboloma concluye que la alteración en el metabolismo bacteriano del estrógeno puede jugar un papel en la patogénesis de la endometriosis, aunque la evidencia de causalidad directa sigue siendo incompleta.
+  </p>
+
+  <!-- EL MECANISMO COMPLETO -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Cómo se conecta todo</span>
+  </div>
+  <h2>El circuito intestino–inflamación–endometriosis</h2>
+
+  <div class="mecanismo-flujo">
+    <div class="mecanismo-paso">
+      <div class="mecanismo-izq">
+        <div class="mecanismo-circulo">1</div>
+        <div class="mecanismo-linea"></div>
+      </div>
+      <div class="mecanismo-contenido">
+        <div class="mecanismo-label">Disbiosis intestinal</div>
+        <div class="mecanismo-texto">El desequilibrio en la microbiota reduce la diversidad bacteriana y aumenta las bacterias proinflamatorias. <em>Factores que contribuyen: antibióticos, estrés crónico, dieta baja en fibra, ultraprocesados.</em></div>
+      </div>
+    </div>
+    <div class="mecanismo-paso">
+      <div class="mecanismo-izq">
+        <div class="mecanismo-circulo">2</div>
+        <div class="mecanismo-linea"></div>
+      </div>
+      <div class="mecanismo-contenido">
+        <div class="mecanismo-label">Permeabilidad intestinal aumentada</div>
+        <div class="mecanismo-texto">La disbiosis debilita las uniones entre las células del epitelio intestinal — el "intestino permeable". Sustancias que deberían quedarse en el intestino pasan a la sangre, activando una respuesta inflamatoria sistémica.</div>
+      </div>
+    </div>
+    <div class="mecanismo-paso">
+      <div class="mecanismo-izq">
+        <div class="mecanismo-circulo">3</div>
+        <div class="mecanismo-linea"></div>
+      </div>
+      <div class="mecanismo-contenido">
+        <div class="mecanismo-label">Inflamación sistémica</div>
+        <div class="mecanismo-texto">Las bacterias y sus productos activan receptores del sistema inmune (TLRs), provocando la producción de citoquinas proinflamatorias — IL-1β, IL-6, TNF-α — que ya están elevadas en endometriosis. <em>El intestino amplifica la inflamación que la enfermedad ya genera.</em></div>
+      </div>
+    </div>
+    <div class="mecanismo-paso">
+      <div class="mecanismo-izq">
+        <div class="mecanismo-circulo">4</div>
+        <div class="mecanismo-linea"></div>
+      </div>
+      <div class="mecanismo-contenido">
+        <div class="mecanismo-label">Estroboloma alterado</div>
+        <div class="mecanismo-texto">Las bacterias que producen beta-glucuronidasa en exceso reabsorben estrógeno que debería eliminarse. El estrógeno circulante extra alimenta el crecimiento de las lesiones endometriósicas. <em>La microbiota se convierte en un factor adicional que mantiene el ambiente hormonal que favorece la enfermedad.</em></div>
+      </div>
+    </div>
+    <div class="mecanismo-paso">
+      <div class="mecanismo-izq">
+        <div class="mecanismo-circulo">5</div>
+        <div class="mecanismo-linea"></div>
+      </div>
+      <div class="mecanismo-contenido">
+        <div class="mecanismo-label">Síntomas digestivos y pélvicos</div>
+        <div class="mecanismo-texto">El resultado final son síntomas que se solapan: hinchazón, cambios en el tránsito, dolor pélvico relacionado con la digestión, intolerancia a ciertos alimentos. <em>Y un sistema nervioso entérico (el "segundo cerebro" intestinal) que también puede contribuir a amplificar el dolor pélvico.</em></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SÍNTOMAS DIGESTIVOS EN ENDOMETRIOSIS -->
+  <div class="section-start" style="margin-top: 2rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que experimentan muchas pacientes</span>
+  </div>
+  <h2>Los síntomas digestivos de la endometriosis</h2>
+
+  <p class="body-text">
+    Algunos síntomas digestivos son directamente causados por las lesiones — endometriosis intestinal. Otros son consecuencia de la inflamación sistémica, la disbiosis o el solapamiento con síndrome del intestino irritable (SII). Distinguir el origen es importante porque el manejo puede ser diferente.
+  </p>
+
+  <div class="sintoma-digest">
+    <div class="sintoma-digest-icono">·</div>
+    <div class="sintoma-digest-content">
+      <div class="sintoma-digest-nombre">Hinchazón abdominal con patrón cíclico</div>
+      <div class="sintoma-digest-desc">La hinchazón que empeora en la fase perimenstrual — especialmente los días antes y durante la regla — es un síntoma frecuente y específico. <strong>La relación con el ciclo es la clave para distinguirla de un problema digestivo puramente funcional.</strong></div>
+    </div>
+  </div>
+
+  <div class="sintoma-digest">
+    <div class="sintoma-digest-icono">·</div>
+    <div class="sintoma-digest-content">
+      <div class="sintoma-digest-nombre">Cambios en el tránsito intestinal cíclicos</div>
+      <div class="sintoma-digest-desc">Diarrea o estreñimiento que aparecen con la menstruación, o que varían a lo largo del ciclo. <strong>En endometriosis intestinal, puede haber sangre en las heces durante la regla</strong> — un síntoma que siempre requiere evaluación médica.</div>
+    </div>
+  </div>
+
+  <div class="sintoma-digest">
+    <div class="sintoma-digest-icono">·</div>
+    <div class="sintoma-digest-content">
+      <div class="sintoma-digest-nombre">Dolor al defecar (disquecia)</div>
+      <div class="sintoma-digest-desc">Especialmente si aparece o empeora durante la menstruación. Es uno de los síntomas más específicos de endometriosis profunda con afectación del tabique rectovaginal o del intestino. <strong>No lo normalices — es un síntoma clínico relevante que mencionar al ginecólogo.</strong></div>
+    </div>
+  </div>
+
+  <div class="sintoma-digest">
+    <div class="sintoma-digest-icono">·</div>
+    <div class="sintoma-digest-content">
+      <div class="sintoma-digest-nombre">Náuseas y sensación de llenado precoz</div>
+      <div class="sintoma-digest-desc">Frecuentes durante la menstruación, posiblemente relacionadas con la elevación de prostaglandinas y la respuesta inflamatoria sistémica que afecta también a la motilidad gastrointestinal.</div>
+    </div>
+  </div>
+
+  <div class="sintoma-digest">
+    <div class="sintoma-digest-icono">·</div>
+    <div class="sintoma-digest-content">
+      <div class="sintoma-digest-nombre">Intolerancia a ciertos alimentos</div>
+      <div class="sintoma-digest-desc">Especialmente a alimentos ricos en FODMAP (ciertos azúcares fermentables), que pueden empeorar la hinchazón y el dolor en personas con endometriosis y SII coexistente. <strong>La sensibilidad puede ser mayor en las fases del ciclo con más inflamación.</strong></div>
+    </div>
+  </div>
+
+  <blockquote>
+    <p>La microbiota intestinal y el eje intestino-cerebro son factores emergentes en la patogénesis de la endometriosis. La disbiosis puede amplificar la inflamación sistémica y alterar el metabolismo del estrógeno — creando un circuito que se retroalimenta con la propia enfermedad.</p>
+    <cite>Impact of gut microbiota on endometriosis · Front Cell Infect Microbiol 2025 · PMC11227073 · Gut Microbiota Alterations in Endometriosis: Systematic Review, PMC12942269</cite>
+  </blockquote>
+
+  <!-- QUÉ DICE LA EVIDENCIA SOBRE INTERVENCIONES -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Las intervenciones con más respaldo</span>
+  </div>
+  <h2>Qué puede mejorar la microbiota en endometriosis</h2>
+
+  <div class="highlight-box">
+    <p>No hay un probiótico específico aprobado para endometriosis. Pero las intervenciones dietéticas que mejoran la diversidad microbiana tienen una base biológica sólida y un perfil de seguridad excelente.</p>
+    <span class="highlight-source">The link between gut microbiome and endometriosis · Gut Microbiota for Health, 2025</span>
+  </div>
+
+  <p class="body-text">
+    La investigación sobre probióticos específicos en endometriosis es todavía muy preliminar — hay estudios en modelos animales con resultados prometedores, pero los ensayos clínicos en humanos son escasos y de pequeño tamaño. Lo que sí tiene respaldo es el efecto de la dieta sobre la diversidad microbiana, que a su vez actúa sobre el estroboloma y la inflamación.
+  </p>
+
+  <div class="aviso">
+    <strong>El trasplante de microbiota fecal (FMT) en endometriosis:</strong> es una línea de investigación activa y teóricamente prometedora — podría restaurar el equilibrio microbiano de forma directa. Sin embargo, su aplicación en endometriosis es todavía experimental y no hay protocolos establecidos para esta indicación. No está disponible como tratamiento estándar.
+  </div>
+
+  <!-- LO QUE PUEDES HACER -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+  <h2>Cómo cuidar tu microbiota desde la alimentación</h2>
+
+  <div class="info-box">
+    <div class="info-box-title">Estrategias dietéticas con mayor impacto en la microbiota</div>
+    <ul class="info-list">
+      <li><strong style="color: var(--highlight); font-weight: 400;">Aumenta la diversidad vegetal.</strong> El número de especies vegetales distintas que comes a la semana es uno de los predictores más sólidos de diversidad microbiana. Objetivo orientativo: más de 30 alimentos vegetales diferentes por semana — incluye frutas, verduras, legumbres, frutos secos, semillas, hierbas y especias.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Prioriza la fibra prebiótica.</strong> Los prebióticos son el alimento de las bacterias beneficiosas. Ajo, cebolla, puerro, espárragos, alcachofas, plátano poco maduro y avena son especialmente ricos. Ojo: en algunas personas con SII coexistente, estos alimentos empeoran la hinchazón — lee el artículo sobre dieta baja en FODMAP si es tu caso.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Incorpora alimentos fermentados.</strong> Yogur con cultivos vivos, kéfir, chucrut, kimchi y miso aportan bacterias beneficiosas de forma directa. Empieza con pequeñas cantidades para ver cómo los toleras.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Reduce los ultraprocesados.</strong> Los aditivos, emulsionantes y azúcares añadidos de los ultraprocesados tienen un efecto negativo documentado sobre la diversidad microbiana.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Si tienes síntomas digestivos significativos — consulta con un dietista especializado.</strong> La microbiota en endometriosis con SII coexistente puede requerir un enfoque más específico (como la dieta baja en FODMAP) que el general. No todas las estrategias para la microbiota son adecuadas para todas las personas.</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>Association between endometriosis and gut microbiota: systematic review and meta-analysis. <em>Front Microbiol.</em> 2025. <a href="https://www.frontiersin.org/journals/microbiology/articles/10.3389/fmicb.2025.1552134/full" target="_blank">Ver artículo</a></li>
+      <li>Gut Microbiota Alterations and Reproductive Tract Dysbiosis in Endometriosis: A Systematic Review. <em>PMC.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12942269/" target="_blank">PMC12942269</a></li>
+      <li>Could the estrobolome have a role in endometriosis pathogenesis and infertility? A systematic review. <em>PMC.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12821278/" target="_blank">PMC12821278</a></li>
+      <li>Impact of gut microbiota on endometriosis: linking physical injury to mental health. <em>Front Cell Infect Microbiol.</em> 2025. <a href="https://www.frontiersin.org/journals/cellular-and-infection-microbiology/articles/10.3389/fcimb.2025.1526063/full" target="_blank">Ver artículo</a></li>
+      <li>Microbiome: gut-brain axis in endometriosis-associated symptoms. <em>PMC.</em> 2024. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11227073/" target="_blank">PMC11227073</a></li>
+      <li>Gut Microbiome–Estrobolome Profile in Reproductive-Age Women with Endometriosis. <em>PMC.</em> 2023. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10671785/" target="_blank">PMC10671785</a></li>
+      <li>The link between the gut microbiome and endometriosis. <em>Gut Microbiota for Health.</em> 2025. <a href="https://www.gutmicrobiotaforhealth.com/the-link-between-the-gut-microbiome-and-endometriosis/" target="_blank">Ver artículo</a></li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Registra tus síntomas digestivos junto al ciclo.</strong>
+      <p>Fora te ayuda a detectar si hay patrón entre tus síntomas intestinales y las fases del ciclo.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fisioterapia de suelo pélvico en endometriosis: qué es, cómo funciona y qué esperar — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #27131C;
+    --surface: #36041C;
+    --surface-2: #2F0F1E;
+    --accent: #C4607A;
+    --highlight: #D4899A;
+    --text: #F7EDE7;
+    --muted: #C9A8B4;
+    --border: #5A2A3C;
+    --divider: #3D1A28;
+    --inverted-bg: #F7EDE7;
+    --inverted-text: #27131C;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .label::after {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 0.5px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .meta {
+    margin: 1.75rem 0 2.5rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.65rem;
+    color: var(--text);
+    margin: 3rem 0 1rem;
+    line-height: 1.3;
+  }
+
+  .section-start {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* STAT CENTRAL */
+  .stat-central {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    margin: 2.5rem 0;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+  }
+  .stat-central .big-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(3rem, 9vw, 5rem);
+    color: var(--highlight);
+    line-height: 1;
+    display: block;
+  }
+  .stat-central .big-label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.6rem;
+    line-height: 1.5;
+  }
+  .stat-central .big-source {
+    font-size: 0.7rem;
+    color: var(--border);
+    margin-top: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* TÉCNICA CARD */
+  .tecnica-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    margin: 1.25rem 0;
+  }
+  .tecnica-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+  }
+  .tecnica-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+  .tecnica-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .ev-badge {
+    font-size: 0.68rem;
+    font-weight: 500;
+    padding: 0.25rem 0.65rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.03em;
+  }
+  .ev-alta { background: #0a2010; color: #5cba7a; border: 0.5px solid #1a4a2a; }
+  .ev-media { background: #2a1a08; color: #c9903a; border: 0.5px solid #5a3a10; }
+
+  .tecnica-mecanismo {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-style: italic;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+  }
+  .tecnica-body {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.75;
+  }
+  .tecnica-caveat {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface-2);
+    border-left: 1px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .tecnica-caveat strong { color: var(--text); font-weight: 400; }
+
+  blockquote {
+    margin: 2.5rem 0;
+    padding: 1.75rem 2rem;
+    background: var(--surface-2);
+    border-left: 1px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+  }
+  blockquote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  blockquote cite {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  .highlight-box {
+    background: var(--inverted-bg);
+    border-radius: 10px;
+    padding: 1.75rem 2rem;
+    margin: 2.5rem 0;
+  }
+  .highlight-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: var(--inverted-text);
+    line-height: 1.55;
+  }
+  .highlight-box .highlight-source {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    color: #7A3D52;
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  .info-box {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+  }
+  .info-box-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .info-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+
+  /* MITO/REALIDAD */
+  .mito-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--divider);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+  .mito-card {
+    background: var(--surface);
+    padding: 1.25rem 1.5rem;
+  }
+  .mito-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .mito-label.mito { color: var(--muted); }
+  .mito-label.realidad { color: var(--highlight); }
+  .mito-text {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+  .mito-text.mito { color: var(--muted); }
+  .mito-text.realidad { color: var(--text); }
+
+  .references {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--divider);
+  }
+  .references-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li {
+    counter-increment: ref;
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .references ol li::before {
+    content: counter(ref) ".";
+    color: var(--accent);
+    font-weight: 500;
+    flex-shrink: 0;
+    min-width: 1.2rem;
+  }
+  .references ol li a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    opacity: 0.7;
+  }
+
+  .article-cta {
+    margin-top: 3.5rem;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--text);
+  }
+  .cta-btn {
+    background: var(--accent);
+    color: var(--inverted-bg);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.85; }
+
+  footer {
+    border-top: 0.5px solid var(--divider);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; }
+    .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .mito-grid { grid-template-columns: 1fr; }
+    .tecnica-header { flex-direction: column; gap: 0.5rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Tratamiento</div>
+
+  <h1>Fisioterapia de suelo pélvico<br>en endometriosis</h1>
+
+  <div class="meta">
+    <div class="meta-info">Tratamiento · 8 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    La fisioterapia de suelo pélvico es una de las intervenciones más infraprescritas en endometriosis — y una de las que más impacto puede tener en la calidad de vida. No es un complemento opcional ni una alternativa "blanda" al tratamiento médico. Es una herramienta clínica con ensayos controlados aleatorizados que respaldan su uso específico en dolor pélvico crónico, dispareunia y disfunción urinaria e intestinal asociadas a la enfermedad.
+  </p>
+
+  <p class="body-text">
+    Y sin embargo, pocas pacientes la reciben como parte de su plan de tratamiento. La mayoría llegan a ella por cuenta propia, años después del diagnóstico.
+  </p>
+
+  <div class="stat-central">
+    <span class="big-number">80%</span>
+    <div class="big-label">de las pacientes con endometriosis y dolor pélvico crónico<br>presentan hipertonía o puntos gatillo en el suelo pélvico</div>
+    <div class="big-source">Pelvic floor hypertension in endometriosis patients · PMC10579168</div>
+  </div>
+
+  <!-- POR QUÉ EL SUELO PÉLVICO -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El problema que nadie evalúa</span>
+  </div>
+  <h2>Por qué el suelo pélvico está implicado</h2>
+
+  <p class="body-text">
+    En endometriosis, el suelo pélvico responde al dolor crónico con un mecanismo de protección: los músculos se tensan de forma sostenida para intentar reducir la señal dolorosa. Con el tiempo, esta tensión se vuelve crónica. Los músculos dejan de relajarse con normalidad, desarrollan puntos gatillo — zonas de hiperirritabilidad que generan dolor referido — y contribuyen a amplificar síntomas que en apariencia parecen independientes: dispareunia, disquecia, urgencia urinaria, dolor lumbar bajo.
+  </p>
+
+  <p class="body-text">
+    Es un círculo que se retroalimenta: la enfermedad genera dolor, el dolor genera tensión muscular, la tensión muscular genera más dolor. Romper ese círculo requiere actuar sobre el músculo — y eso es exactamente lo que hace la fisioterapia de suelo pélvico especializada en endometriosis.
+  </p>
+
+  <blockquote>
+    <p>Las disfunciones musculoesqueléticas — como la hipertonía del suelo pélvico, los puntos gatillo miofasciales y la inestabilidad lumbopélvica — se observan frecuentemente en endometriosis y contribuyen a la persistencia y amplificación del dolor.</p>
+    <cite>Impact of Physical Rehabilitation on Endometriosis · PMC12692515, 2025</cite>
+  </blockquote>
+
+  <!-- MITO/REALIDAD -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que no es</span>
+  </div>
+  <h2>Suelo pélvico en endometriosis: lo que muchas pacientes no saben</h2>
+
+  <div class="mito-grid">
+    <div class="mito-card">
+      <div class="mito-label mito">Lo que se suele pensar</div>
+      <div class="mito-text mito">La fisio de suelo pélvico es para el posparto o la incontinencia. No tiene que ver con el dolor de la endometriosis.</div>
+    </div>
+    <div class="mito-card">
+      <div class="mito-label realidad">La evidencia dice</div>
+      <div class="mito-text realidad">Hay ensayos clínicos aleatorizados específicos en endometriosis, incluyendo endometriosis profunda, que demuestran mejoras significativas en dispareunia, dolor pélvico crónico y función intestinal y urinaria.</div>
+    </div>
+    <div class="mito-card">
+      <div class="mito-label mito">Lo que se suele pensar</div>
+      <div class="mito-text mito">El suelo pélvico débil es el problema. Hay que fortalecer con Kegel.</div>
+    </div>
+    <div class="mito-card">
+      <div class="mito-label realidad">La evidencia dice</div>
+      <div class="mito-text realidad">En endometriosis el problema suele ser el exceso de tono, no la debilidad. Los Kegel pueden empeorar los síntomas. El objetivo inicial es aprender a relajar, no a contraer.</div>
+    </div>
+    <div class="mito-card">
+      <div class="mito-label mito">Lo que se suele pensar</div>
+      <div class="mito-text mito">Si la cirugía fue bien, el dolor debería haber desaparecido.</div>
+    </div>
+    <div class="mito-card">
+      <div class="mito-label realidad">La evidencia dice</div>
+      <div class="mito-text realidad">La sensibilización central y la tensión muscular pueden perpetuar el dolor incluso tras una cirugía exitosa. La fisioterapia actúa sobre estos mecanismos que la cirugía no resuelve.</div>
+    </div>
+  </div>
+
+  <!-- TÉCNICAS -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Qué hace la fisioterapeuta</span>
+  </div>
+  <h2>Las técnicas con evidencia en endometriosis</h2>
+
+  <div class="tecnica-card">
+    <div class="tecnica-header">
+      <div>
+        <div class="tecnica-tag">Técnica principal</div>
+        <div class="tecnica-title">Terapia manual interna y liberación miofascial</div>
+      </div>
+      <span class="ev-badge ev-alta">Evidencia sólida</span>
+    </div>
+    <div class="tecnica-mecanismo">Liberación manual de los puntos gatillo y el exceso de tono muscular mediante técnicas internas (vaginales) y externas sobre los músculos del suelo pélvico, ligamentos y tejido cicatricial.</div>
+    <p class="tecnica-body">
+      Es la técnica central en el tratamiento del dolor pélvico crónico con hipertonía. El masaje de Thiele — técnica de deslizamiento digital sobre los músculos puborrectal y elevador del ano — ha demostrado eficacia específica en endometriosis profunda con dispareunia superficial. La terapia manual mejora el tono de reposo, reduce la sensibilidad de los puntos gatillo y amplía el área del hiato del elevador del ano — un marcador ecográfico de la relajación pélvica.
+    </p>
+    <div class="tecnica-caveat">
+      <strong>Importante:</strong> esta técnica requiere un fisioterapeuta especializado en suelo pélvico con experiencia en endometriosis. No es equivalente a una fisio general.
+    </div>
+  </div>
+
+  <div class="tecnica-card">
+    <div class="tecnica-header">
+      <div>
+        <div class="tecnica-tag">Técnica complementaria</div>
+        <div class="tecnica-title">Ejercicio terapéutico y reeducación lumbopélvica</div>
+      </div>
+      <span class="ev-badge ev-alta">Evidencia sólida</span>
+    </div>
+    <div class="tecnica-mecanismo">Programa supervisado de ejercicio orientado a mejorar la estabilidad lumbopélvica, la coordinación muscular y la respuesta al dolor — sin sobrecargar un suelo pélvico ya hipertónico.</div>
+    <p class="tecnica-body">
+      Un ensayo clínico aleatorizado noruego (2022–2024) demostró que el ejercicio supervisado de suelo pélvico reduce significativamente el dolor pélvico y genital actual en mujeres con endometriosis confirmada, con sesiones semanales de 60 minutos durante 4 meses. El abordaje incluye respiración diafragmática, relajación activa del suelo pélvico, trabajo postural y progresión gradual hacia actividades de mayor demanda. Importante: en endometriosis, el ejercicio no empieza por fortalecer, sino por aprender a soltar.
+    </p>
+  </div>
+
+  <div class="tecnica-card">
+    <div class="tecnica-header">
+      <div>
+        <div class="tecnica-tag">Técnica complementaria</div>
+        <div class="tecnica-title">Terapia visceral y movilización de adherencias</div>
+      </div>
+      <span class="ev-badge ev-media">Evidencia creciente</span>
+    </div>
+    <div class="tecnica-mecanismo">Técnicas manuales orientadas a movilizar las restricciones de movilidad visceral generadas por adherencias endometriósicas entre órganos y estructuras pélvicas.</div>
+    <p class="tecnica-body">
+      Las adherencias — tejido cicatricial que une estructuras que deberían poder moverse independientemente — son una fuente de dolor específica en endometriosis que el tratamiento farmacológico no aborda. La terapia visceral busca restaurar la movilidad relativa entre órganos (útero, intestino, vejiga) y las estructuras que los rodean. Un ensayo clínico aleatorizado de la Universidad de Valencia (2023) mostró mejoras significativas en intensidad del dolor, movilidad lumbar y calidad de vida con un protocolo de terapia manual de 4 semanas.
+    </p>
+    <div class="tecnica-caveat">
+      <strong>Nota sobre la evidencia:</strong> la terapia visceral tiene base fisiológica sólida pero los estudios clínicos específicos en endometriosis son aún limitados en número. Los resultados son prometedores, pero se necesitan más ensayos de mayor tamaño.
+    </div>
+  </div>
+
+  <div class="tecnica-card">
+    <div class="tecnica-header">
+      <div>
+        <div class="tecnica-tag">Técnica complementaria</div>
+        <div class="tecnica-title">Biofeedback y electroestimulación</div>
+      </div>
+      <span class="ev-badge ev-media">Evidencia moderada</span>
+    </div>
+    <div class="tecnica-mecanismo">El biofeedback usa señales electromiográficas (EMG) para que la paciente aprenda a visualizar y controlar la actividad muscular del suelo pélvico en tiempo real. La electroestimulación reduce directamente el tono muscular elevado.</div>
+    <p class="tecnica-body">
+      La electroestimulación intravaginal dirigida a los músculos hipertónicos ha mostrado reducción significativa del tono de reposo en pacientes con endometriosis y dolor pélvico crónico. El biofeedback es especialmente útil para pacientes que tienen dificultad para percibir y controlar voluntariamente su musculatura pélvica. Ambas técnicas se usan como complemento a la terapia manual, no como sustituto.
+    </p>
+  </div>
+
+  <!-- QUÉ ESPERAR -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">La realidad de las sesiones</span>
+  </div>
+  <h2>Qué esperar cuando empiezas</h2>
+
+  <p class="body-text">
+    La primera sesión es principalmente una evaluación: historia clínica detallada, exploración postural y lumbopélvica externa, y evaluación del suelo pélvico — interna o externa según el caso y el consentimiento de la paciente. La fisioterapeuta necesita entender el patrón de dolor, la historia quirúrgica, el tratamiento médico actual y las expectativas antes de proponer ninguna técnica.
+  </p>
+
+  <p class="body-text">
+    El proceso es gradual. Las primeras sesiones suelen ser más suaves — orientadas a reducir la hiperactivación del sistema nervioso y establecer confianza con el cuerpo — antes de progresar hacia técnicas más específicas. Algunas pacientes notan mejoría desde las primeras sesiones. Otras tardan varias semanas. Y es habitual que algunas técnicas generen un aumento transitorio de los síntomas antes de la mejora.
+  </p>
+
+  <div class="highlight-box">
+    <p>En endometriosis, el objetivo inicial de la fisioterapia no es fortalecer — es aprender a relajar. Un suelo pélvico tenso que aprende a soltarse es el primer paso hacia un dolor que disminuye.</p>
+    <span class="highlight-source">Physiotherapy for endometriosis-associated pelvic pain · Pain Medicine, 2025 · PMC12773736</span>
+  </div>
+
+  <!-- LO QUE PUEDES HACER -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+  <h2>Cómo acceder y qué preguntar</h2>
+
+  <div class="info-box">
+    <div class="info-box-title">Antes de tu primera cita con la fisioterapeuta</div>
+    <ul class="info-list">
+      <li>Busca una fisioterapeuta especializada en suelo pélvico con experiencia específica en dolor pélvico crónico o endometriosis — no cualquier fisioterapeuta tiene esta formación.</li>
+      <li>Lleva tu historial clínico: diagnóstico, tipo de endometriosis, cirugías previas, tratamiento médico actual y una descripción precisa de tus síntomas (cuándo aparecen, dónde, con qué actividades).</li>
+      <li>Pregunta si hace evaluación interna — es más informativa, pero no es obligatoria si no te sientes cómoda. Una buena fisioterapeuta respeta tu ritmo.</li>
+      <li>Infórmate sobre si la sesión incluye trabajo en casa — los ejercicios entre sesiones son parte del proceso, no opcionales.</li>
+      <li>Comunica cualquier empeoramiento de síntomas entre sesiones — es información clínica relevante, no un fracaso del tratamiento.</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>Impact of Physical Rehabilitation on Endometriosis and Adenomyosis-Related Symptoms: A Systematic Review and Meta-Analysis. <em>PMC.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12692515/" target="_blank">PMC12692515</a></li>
+      <li>Physiotherapy for endometriosis-associated pelvic pain: a systematic review and meta-analysis. <em>Pain Medicine.</em> 2025. <a href="https://academic.oup.com/painmedicine/article/27/1/95/8211830" target="_blank">Ver artículo</a> · <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12773736/" target="_blank">PMC12773736</a></li>
+      <li>Del Forno S et al. Effects of Pelvic Floor Muscle Physiotherapy on Urinary, Bowel, and Sexual Functions in Women with DIE: A Randomized Controlled Trial. <em>Medicina.</em> 2024;60(1):67. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10818504/" target="_blank">PMC10818504</a></li>
+      <li>Pelvic floor hypertension: possible factors for pelvic floor tenderness in endometriosis patients. <em>PMC.</em> 2023. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10579168/" target="_blank">PMC10579168</a></li>
+      <li>Effectiveness of a Manual Therapy Protocol in Women with Pelvic Pain Due to Endometriosis: A Randomized Clinical Trial. <em>J Clin Med.</em> 2023;12(9):3310. <a href="https://doi.org/10.3390/jcm12093310" target="_blank">doi:10.3390/jcm12093310</a></li>
+      <li>Supervised exercise and pelvic floor muscle training eases current pelvic and genital pain in women with endometriosis: a randomised trial. <em>ScienceDirect.</em> 2025. <a href="https://www.sciencedirect.com/science/article/pii/S1836955325001092" target="_blank">Ver artículo</a></li>
+      <li>ICS 2024 Abstract #478. Pelvic Pain caused by Endometriosis — a systematic overview about conservative options. <a href="https://www.ics.org/2024/abstract/478" target="_blank">Ver abstract</a></li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Registra tu evolución sesión a sesión.</strong>
+      <p>Fora te permite hacer seguimiento del dolor antes y después de cada sesión para ver cómo responde tu cuerpo.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

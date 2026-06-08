@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo se diagnostica la endometriosis: ecografía, resonancia y laparoscopia — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #27131C;
+    --surface: #36041C;
+    --surface-2: #2F0F1E;
+    --accent: #C4607A;
+    --highlight: #D4899A;
+    --text: #F7EDE7;
+    --muted: #C9A8B4;
+    --border: #5A2A3C;
+    --divider: #3D1A28;
+    --inverted-bg: #F7EDE7;
+    --inverted-text: #27131C;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .label::after {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 0.5px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .meta {
+    margin: 1.75rem 0 2.5rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.65rem;
+    color: var(--text);
+    margin: 3rem 0 1rem;
+    line-height: 1.3;
+  }
+
+  .section-start {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* PRUEBA CARD — cada herramienta diagnóstica */
+  .prueba-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    margin: 1.25rem 0;
+  }
+  .prueba-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  .prueba-title-group {}
+  .prueba-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+  .prueba-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .prueba-badge {
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    white-space: nowrap;
+    flex-shrink: 0;
+    letter-spacing: 0.03em;
+  }
+  .badge-first { background: var(--surface-2); color: var(--highlight); border: 0.5px solid var(--border); }
+  .badge-gold { background: #2a1a08; color: #c9903a; border: 0.5px solid #5a3a10; }
+  .badge-second { background: var(--surface-2); color: var(--muted); border: 0.5px solid var(--border); }
+
+  .prueba-body {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .prueba-divider {
+    height: 0.5px;
+    background: var(--divider);
+    margin: 1rem 0;
+  }
+  .prueba-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .prueba-stat {}
+  .prueba-stat-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 0.2rem;
+  }
+  .prueba-stat-value {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.3rem;
+    font-weight: 300;
+    color: var(--highlight);
+    line-height: 1;
+  }
+  .prueba-caveat {
+    margin-top: 1rem;
+    padding: 0.75rem 1rem;
+    background: var(--surface-2);
+    border-left: 1px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .prueba-caveat strong { color: var(--text); font-weight: 400; }
+
+  blockquote {
+    margin: 2.5rem 0;
+    padding: 1.75rem 2rem;
+    background: var(--surface-2);
+    border-left: 1px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+  }
+  blockquote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  blockquote cite {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  .highlight-box {
+    background: var(--inverted-bg);
+    border-radius: 10px;
+    padding: 1.75rem 2rem;
+    margin: 2.5rem 0;
+  }
+  .highlight-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: var(--inverted-text);
+    line-height: 1.55;
+  }
+  .highlight-box .highlight-source {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    color: #7A3D52;
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  .info-box {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+  }
+  .info-box-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .info-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+
+  /* FLUJO DIAGNÓSTICO */
+  .flujo {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 2rem 0;
+  }
+  .flujo-paso {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding-bottom: 1.25rem;
+  }
+  .flujo-paso:last-child { padding-bottom: 0; }
+  .flujo-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 2.5rem;
+  }
+  .flujo-circle {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--accent);
+    flex-shrink: 0;
+  }
+  .flujo-line {
+    width: 1px;
+    flex: 1;
+    background: var(--divider);
+    min-height: 1.5rem;
+    margin-top: 4px;
+  }
+  .flujo-paso:last-child .flujo-line { display: none; }
+  .flujo-content { padding-top: 0.2rem; }
+  .flujo-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.25rem;
+  }
+  .flujo-text {
+    font-size: 0.875rem;
+    color: var(--text);
+    line-height: 1.65;
+  }
+  .flujo-text em { color: var(--muted); font-style: normal; font-size: 0.82rem; }
+
+  .references {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--divider);
+  }
+  .references-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li {
+    counter-increment: ref;
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .references ol li::before {
+    content: counter(ref) ".";
+    color: var(--accent);
+    font-weight: 500;
+    flex-shrink: 0;
+    min-width: 1.2rem;
+  }
+  .references ol li a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    opacity: 0.7;
+  }
+
+  .article-cta {
+    margin-top: 3.5rem;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--text);
+  }
+  .cta-btn {
+    background: var(--accent);
+    color: var(--inverted-bg);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.85; }
+
+  footer {
+    border-top: 0.5px solid var(--divider);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; }
+    .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .prueba-header { flex-direction: column; }
+    .prueba-stats { gap: 1rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Diagnóstico</div>
+
+  <h1>Cómo se diagnostica<br>la endometriosis</h1>
+
+  <div class="meta">
+    <div class="meta-info">Diagnóstico · 7 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    Llegar al diagnóstico de endometriosis no es un proceso lineal ni rápido. Hay varias pruebas disponibles, cada una con sus propias capacidades y limitaciones, y su uso correcto depende tanto de la clínica de cada paciente como de la experiencia del equipo que las interpreta. Entender qué puede y qué no puede decirte cada una es información que vale la pena tener antes de entrar a consulta.
+  </p>
+
+  <div class="highlight-box">
+    <p>Una ecografía normal no descarta la endometriosis. Las guías ESHRE 2022 y NICE 2024 son explícitas al respecto: un resultado negativo en imagen no excluye el diagnóstico.</p>
+    <span class="highlight-source">ESHRE Endometriosis Guidelines, 2022 · NICE NG73, actualización 2024</span>
+  </div>
+
+  <!-- FLUJO DIAGNÓSTICO -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El camino habitual</span>
+  </div>
+  <h2>Cómo suele desarrollarse el proceso</h2>
+
+  <div class="flujo">
+    <div class="flujo-paso">
+      <div class="flujo-left">
+        <div class="flujo-circle">1</div>
+        <div class="flujo-line"></div>
+      </div>
+      <div class="flujo-content">
+        <div class="flujo-label">Historia clínica y síntomas</div>
+        <div class="flujo-text">El primer paso es siempre clínico. Una historia detallada de síntomas — con su intensidad, relación con el ciclo y evolución en el tiempo — es la base del diagnóstico. <em>Cuanto más estructurado y documentado esté tu registro, más útil es esta fase.</em></div>
+      </div>
+    </div>
+    <div class="flujo-paso">
+      <div class="flujo-left">
+        <div class="flujo-circle">2</div>
+        <div class="flujo-line"></div>
+      </div>
+      <div class="flujo-content">
+        <div class="flujo-label">Exploración ginecológica</div>
+        <div class="flujo-text">La exploración puede detectar nódulos dolorosos, útero en retroversión fija o sensibilidad en ligamentos uterosacros. Pero también puede ser completamente normal en presencia de endometriosis confirmada. <em>Un resultado normal no descarta la enfermedad.</em></div>
+      </div>
+    </div>
+    <div class="flujo-paso">
+      <div class="flujo-left">
+        <div class="flujo-circle">3</div>
+        <div class="flujo-line"></div>
+      </div>
+      <div class="flujo-content">
+        <div class="flujo-label">Ecografía transvaginal</div>
+        <div class="flujo-text">Primera prueba de imagen recomendada. Alta precisión para endometriomas ováricos y endometriosis profunda posterior cuando la realiza un especialista con experiencia. Limitada para lesiones superficiales peritoneales. <em>Las guías NICE 2024 recomiendan ofrecerla incluso si la exploración es normal.</em></div>
+      </div>
+    </div>
+    <div class="flujo-paso">
+      <div class="flujo-left">
+        <div class="flujo-circle">4</div>
+        <div class="flujo-line"></div>
+      </div>
+      <div class="flujo-content">
+        <div class="flujo-label">Resonancia magnética (RM)</div>
+        <div class="flujo-text">Indicada cuando se sospecha endometriosis profunda con afectación de compartimentos poco accesibles a la ecografía: uréteres, vejiga, compartimento anterior. También para planificación quirúrgica en casos complejos. <em>Su interpretación requiere experiencia específica en imagen ginecológica.</em></div>
+      </div>
+    </div>
+    <div class="flujo-paso">
+      <div class="flujo-left">
+        <div class="flujo-circle">5</div>
+        <div class="flujo-line"></div>
+      </div>
+      <div class="flujo-content">
+        <div class="flujo-label">Laparoscopia diagnóstica y/o quirúrgica</div>
+        <div class="flujo-text">Cuando la imagen es positiva, según las guías ESHRE 2022, ya no es imprescindible confirmar con cirugía para iniciar tratamiento. Si la imagen es negativa pero la sospecha clínica persiste, la laparoscopia sigue siendo el único método que permite ver directamente las lesiones y obtener biopsia. <em>Incluso una laparoscopia normal no descarta endometriosis microscópica.</em></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ECOGRAFÍA TRANSVAGINAL -->
+  <div class="section-start" style="margin-top: 2rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Prueba 1</span>
+  </div>
+
+  <div class="prueba-card">
+    <div class="prueba-header">
+      <div class="prueba-title-group">
+        <div class="prueba-tag">Ecografía transvaginal (TVUS)</div>
+        <div class="prueba-title">La primera línea de imagen</div>
+      </div>
+      <span class="prueba-badge badge-first">Primera línea</span>
+    </div>
+    <p class="prueba-body">
+      La ecografía transvaginal especializada — realizada según el protocolo IDEA (International Deep Endometriosis Analysis) — tiene una precisión diagnóstica alta para endometriomas ováricos y para endometriosis profunda del compartimento posterior. Es accesible, no invasiva, en tiempo real y permite mapear la localización de las lesiones antes de una cirugía.
+    </p>
+    <p class="prueba-body">
+      Su principal limitación es la endometriosis superficial peritoneal, que generalmente no es visible en imagen. Y su rendimiento depende críticamente de la experiencia del operador: la misma paciente puede obtener resultados muy diferentes según quién realice la prueba.
+    </p>
+    <div class="prueba-divider"></div>
+    <div class="prueba-stats">
+      <div class="prueba-stat">
+        <div class="prueba-stat-label">Sensibilidad endometrioma</div>
+        <div class="prueba-stat-value">~95%</div>
+      </div>
+      <div class="prueba-stat">
+        <div class="prueba-stat-label">Sensibilidad EIP rectosigma</div>
+        <div class="prueba-stat-value">79–94%</div>
+      </div>
+      <div class="prueba-stat">
+        <div class="prueba-stat-label">Sensibilidad EIP vesical</div>
+        <div class="prueba-stat-value">25–83%</div>
+      </div>
+    </div>
+    <div class="prueba-caveat">
+      <strong>Importante:</strong> un resultado negativo no descarta la enfermedad. La sensibilidad baja drásticamente fuera de manos expertas y en lesiones no ováricas ni profundas.
+    </div>
+  </div>
+
+  <!-- RESONANCIA -->
+  <div class="section-start" style="margin-top: 1.5rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Prueba 2</span>
+  </div>
+
+  <div class="prueba-card">
+    <div class="prueba-header">
+      <div class="prueba-title-group">
+        <div class="prueba-tag">Resonancia magnética (RM)</div>
+        <div class="prueba-title">Mapa completo para casos complejos</div>
+      </div>
+      <span class="prueba-badge badge-second">Segunda línea</span>
+    </div>
+    <p class="prueba-body">
+      La resonancia magnética ofrece una visión panorámica de toda la pelvis y tiene ventajas concretas en compartimentos difíciles: uréteres, tabique rectovaginal, espacio retroperitoneal, vejiga. Su especificidad para lesiones rectosigmoides es superior a la ecografía, lo que la hace especialmente útil para planificar cirugías complejas o en casos donde la ecografía no ha sido concluyente.
+    </p>
+    <p class="prueba-body">
+      Su limitación principal es la disponibilidad, el coste y la necesidad de interpretación por parte de radiólogos con experiencia específica en ginecología. Las guías ESUR 2025 han establecido criterios estandarizados de informe para mejorar la consistencia diagnóstica.
+    </p>
+    <div class="prueba-divider"></div>
+    <div class="prueba-stats">
+      <div class="prueba-stat">
+        <div class="prueba-stat-label">Especificidad rectosigma</div>
+        <div class="prueba-stat-value">94%</div>
+      </div>
+      <div class="prueba-stat">
+        <div class="prueba-stat-label">Sensibilidad uterosacros</div>
+        <div class="prueba-stat-value">66%</div>
+      </div>
+      <div class="prueba-stat">
+        <div class="prueba-stat-label">Precisión global DIE</div>
+        <div class="prueba-stat-value">85%</div>
+      </div>
+    </div>
+    <div class="prueba-caveat">
+      <strong>Importante:</strong> la RM es más sensible para planificación quirúrgica que para diagnóstico inicial. Su rendimiento depende de que la interprete alguien con formación específica en imagen ginecológica.
+    </div>
+  </div>
+
+  <!-- LAPAROSCOPIA -->
+  <div class="section-start" style="margin-top: 1.5rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Prueba 3</span>
+  </div>
+
+  <div class="prueba-card">
+    <div class="prueba-header">
+      <div class="prueba-title-group">
+        <div class="prueba-tag">Laparoscopia</div>
+        <div class="prueba-title">Visión directa de las lesiones</div>
+      </div>
+      <span class="prueba-badge badge-gold">Gold standard histórico</span>
+    </div>
+    <p class="prueba-body">
+      Durante décadas, la laparoscopia fue el único método reconocido para diagnosticar endometriosis con certeza. Permite ver directamente las lesiones, evaluar su extensión, obtener biopsias y, si está indicado, tratar quirúrgicamente en el mismo acto. Sigue siendo imprescindible cuando la imagen es negativa pero la sospecha clínica es alta, o cuando hay decisiones quirúrgicas que tomar.
+    </p>
+    <p class="prueba-body">
+      El cambio importante vino en 2022 con las guías ESHRE: si la imagen muestra endometriosis de forma clara, ya no es obligatorio confirmarla quirúrgicamente antes de iniciar tratamiento. Esto reduce el número de cirugías innecesarias sin retrasar el manejo.
+    </p>
+    <div class="prueba-caveat">
+      <strong>Lo que muchas pacientes no saben:</strong> incluso una laparoscopia con resultado normal no descarta la endometriosis por completo. Existe endometriosis microscópica que no es visible a simple vista durante la cirugía.
+    </div>
+  </div>
+
+  <blockquote>
+    <p>Si la imagen revela endometriosis de forma clara, la cirugía ya no es necesaria para confirmar el diagnóstico. Pero un resultado negativo en imagen no excluye la enfermedad.</p>
+    <cite>ESHRE Endometriosis Guidelines, 2022 · Fertility and Sterility, 2023</cite>
+  </blockquote>
+
+  <!-- EXPERTO IMPORTA -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El factor más determinante</span>
+  </div>
+  <h2>La experiencia del equipo importa más que la prueba</h2>
+
+  <p class="body-text">
+    Uno de los hallazgos más consistentes en la literatura es que el rendimiento de las pruebas de imagen para endometriosis depende críticamente de quién las realiza e interpreta. La misma ecografía transvaginal puede tener una sensibilidad del 25% o del 95% para endometriosis profunda según la experiencia del profesional.
+  </p>
+
+  <p class="body-text">
+    Por eso las guías internacionales recomiendan que tanto la ecografía especializada como la resonancia magnética sean realizadas e interpretadas por profesionales con formación específica en imagen ginecológica y endometriosis. No cualquier ecografía es una ecografía de endometriosis.
+  </p>
+
+  <!-- LO QUE PUEDES HACER -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+  <h2>Preguntas que vale la pena hacer</h2>
+
+  <div class="info-box">
+    <div class="info-box-title">Antes o durante tu consulta diagnóstica</div>
+    <ul class="info-list">
+      <li>¿Quién va a realizar la ecografía? ¿Tiene experiencia específica en endometriosis y conoce el protocolo IDEA?</li>
+      <li>Si la ecografía es normal pero mis síntomas persisten, ¿cuál es el siguiente paso? ¿Se considera resonancia o laparoscopia?</li>
+      <li>¿La imagen muestra lesiones suficientes para iniciar tratamiento sin necesidad de confirmar con cirugía?</li>
+      <li>Si hay sospecha de afectación intestinal o vesical, ¿el equipo incluye especialistas en esas áreas?</li>
+      <li>¿Se va a documentar y registrar el resultado de la imagen con criterios estandarizados?</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>ESHRE Endometriosis Guideline Development Group. Endometriosis. <em>ESHRE Guidelines.</em> 2022. <a href="https://www.eshre.eu/Guidelines-and-Legal/Guidelines/Endometriosis-guideline" target="_blank">eshre.eu</a></li>
+      <li>NICE. Endometriosis: diagnosis and management. <em>NICE Guideline NG73.</em> Actualización 2024. <a href="https://www.nice.org.uk/guidance/ng73" target="_blank">nice.org.uk</a></li>
+      <li>Diagnostic Accuracy of TVUS vs MRI for Deep Infiltrating Endometriosis. <em>PMC.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12651815/" target="_blank">PMC12651815</a></li>
+      <li>Diagnostic Performance of TVUS for Posterior Compartment Endometriosis. <em>PMC.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12563166/" target="_blank">PMC12563166</a></li>
+      <li>TVS vs MRI: Optimal Imaging Modality for Endometriosis. <em>PMC.</em> 2023. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10604115/" target="_blank">PMC10604115</a></li>
+      <li>Diagnostic Accuracy of TVUS for Endometriosis Phenotypes. <em>O&G Open.</em> 2025. <a href="https://journals.lww.com/ogopen/fulltext/2025/02000/diagnostic_accuracy_of_transvaginal.10.aspx" target="_blank">Ver artículo</a></li>
+      <li>Noninvasive diagnostic imaging for endometriosis. <em>Fertility and Sterility.</em> 2023. <a href="https://www.fertstert.org/article/S0015-0282(23)02075-7/fulltext" target="_blank">Ver artículo</a></li>
+      <li>Deslandes A. Are sonographers the future gold standard in endometriosis diagnosis? <em>Sonography.</em> 2024. <a href="https://onlinelibrary.wiley.com/doi/10.1002/sono.12402" target="_blank">Ver artículo</a></li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Lleva tu historial de síntomas listo para la consulta.</strong>
+      <p>Fora organiza tu registro en un brief médico que tu ginecóloga puede leer en segundos.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

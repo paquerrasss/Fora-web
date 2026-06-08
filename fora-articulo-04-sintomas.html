@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Los síntomas de la endometriosis que no son "solo la regla" — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #27131C;
+    --surface: #36041C;
+    --surface-2: #2F0F1E;
+    --accent: #C4607A;
+    --highlight: #D4899A;
+    --text: #F7EDE7;
+    --muted: #C9A8B4;
+    --border: #5A2A3C;
+    --divider: #3D1A28;
+    --inverted-bg: #F7EDE7;
+    --inverted-text: #27131C;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .label::after {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 0.5px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .meta {
+    margin: 1.75rem 0 2.5rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.65rem;
+    color: var(--text);
+    margin: 3rem 0 1rem;
+    line-height: 1.3;
+  }
+
+  .section-start {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* GRID DE SÍNTOMAS */
+  .sintomas-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--divider);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin: 2rem 0;
+  }
+  .sintoma-card {
+    background: var(--surface);
+    padding: 1.5rem;
+  }
+  .sintoma-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--highlight);
+    margin-bottom: 0.35rem;
+    line-height: 1.2;
+  }
+  .sintoma-def {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-bottom: 0.6rem;
+    line-height: 1.5;
+  }
+  .sintoma-body {
+    font-size: 0.85rem;
+    color: var(--text);
+    line-height: 1.65;
+  }
+
+  /* SÍNTOMA DESTACADO FULL WIDTH */
+  .sintoma-full {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin: 1rem 0;
+  }
+  .sintoma-full .sintoma-name { font-size: 1.15rem; }
+  .sintoma-full .sintoma-body { font-size: 0.9rem; }
+
+  blockquote {
+    margin: 2.5rem 0;
+    padding: 1.75rem 2rem;
+    background: var(--surface-2);
+    border-left: 1px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+  }
+  blockquote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  blockquote cite {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  .highlight-box {
+    background: var(--inverted-bg);
+    border-radius: 10px;
+    padding: 1.75rem 2rem;
+    margin: 2.5rem 0;
+  }
+  .highlight-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: var(--inverted-text);
+    line-height: 1.55;
+  }
+  .highlight-box .highlight-source {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    color: #7A3D52;
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  .info-box {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+  }
+  .info-box-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .info-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+
+  /* STAT INLINE */
+  .stat-inline {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1.25rem 1.5rem;
+    margin: 1.5rem 0;
+  }
+  .stat-inline .num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--highlight);
+    line-height: 1;
+    flex-shrink: 0;
+  }
+  .stat-inline .stat-text {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .stat-inline .stat-text strong { color: var(--text); font-weight: 400; display: block; }
+
+  .references {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--divider);
+  }
+  .references-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li {
+    counter-increment: ref;
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .references ol li::before {
+    content: counter(ref) ".";
+    color: var(--accent);
+    font-weight: 500;
+    flex-shrink: 0;
+    min-width: 1.2rem;
+  }
+  .references ol li a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    opacity: 0.7;
+  }
+
+  .article-cta {
+    margin-top: 3.5rem;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--text);
+  }
+  .cta-btn {
+    background: var(--accent);
+    color: var(--inverted-bg);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.85; }
+
+  footer {
+    border-top: 0.5px solid var(--divider);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; }
+    .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .sintomas-grid { grid-template-columns: 1fr; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+    .stat-inline { flex-direction: column; gap: 0.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Diagnóstico</div>
+
+  <h1>Los síntomas que no son<br>"solo la regla"</h1>
+
+  <div class="meta">
+    <div class="meta-info">Diagnóstico · 8 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    La endometriosis tiene síntomas que van mucho más allá del dolor menstrual. Algunos son más conocidos. Otros se normalizan durante años sin que nadie los relacione con la enfermedad. Conocerlos — con nombre, con descripción clínica y con el contexto de cuándo aparecen — cambia la conversación con tu especialista.
+  </p>
+
+  <p class="body-text">
+    Esta es la lista completa. No todas las mujeres los tienen todos, y su intensidad varía. Pero ninguno de ellos debería ignorarse.
+  </p>
+
+  <!-- DOLOR: LA TRÍADA CLÁSICA -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El dolor — tríada clásica</span>
+  </div>
+  <h2>Los tres síntomas que orientan el diagnóstico</h2>
+
+  <p class="body-text">
+    La medicina clínica habla de una tríada cardinal: dismenorrea, dispareunia e infertilidad. Pero incluso dentro del dolor hay matices que importan.
+  </p>
+
+  <div class="sintomas-grid">
+    <div class="sintoma-card">
+      <div class="sintoma-name">Dismenorrea</div>
+      <div class="sintoma-def">Dolor durante la menstruación</div>
+      <div class="sintoma-body">Diferente al "dolor normal". Interfiere con actividades cotidianas, no cede con analgésicos habituales y puede aparecer días antes del inicio del sangrado. Presente en el 94% de pacientes con endometriosis confirmada.</div>
+    </div>
+    <div class="sintoma-card">
+      <div class="sintoma-name">Dispareunia</div>
+      <div class="sintoma-def">Dolor durante o después del sexo</div>
+      <div class="sintoma-body">Síntoma cardinal en endometriosis profunda. Especialmente relevante si el dolor es profundo (no superficial) y aparece en ciertas posiciones. Presente en el 70% de casos. Con frecuencia no se menciona espontáneamente.</div>
+    </div>
+    <div class="sintoma-card">
+      <div class="sintoma-name">Dolor pélvico crónico</div>
+      <div class="sintoma-def">Dolor pélvico fuera de la menstruación</div>
+      <div class="sintoma-body">No relacionado con el ciclo. Puede ser constante o intermitente. Cuando persiste más de seis meses, orienta a endometriosis profunda o a sensibilización central. Presente en cerca del 50% de las pacientes.</div>
+    </div>
+    <div class="sintoma-card">
+      <div class="sintoma-name">Infertilidad</div>
+      <div class="sintoma-def">Dificultad para concebir</div>
+      <div class="sintoma-body">Para algunas mujeres, la dificultad para quedarse embarazada es el primer — y único — síntoma que las lleva al diagnóstico. La endometriosis se detecta en el 30–50% de las mujeres que consultan por infertilidad.</div>
+    </div>
+  </div>
+
+  <!-- SÍNTOMAS DIGESTIVOS Y URINARIOS -->
+  <div class="section-start" style="margin-top: 2rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Síntomas que nadie pregunta</span>
+  </div>
+  <h2>Lo que no se menciona en consulta</h2>
+
+  <p class="body-text">
+    Estos síntomas son frecuentes, tienen nombre clínico y orientan específicamente hacia endometriosis profunda. Sin embargo, muchas pacientes no los reportan porque no los relacionan con ginecología, o porque han aprendido a considerarlos normales.
+  </p>
+
+  <div class="sintoma-full">
+    <div class="sintoma-name">Disquecia</div>
+    <div class="sintoma-def">Dolor al defecar, especialmente durante la menstruación</div>
+    <div class="sintoma-body">Uno de los síntomas más específicos de endometriosis intestinal o del tabique rectovaginal. Puede acompañarse de cambios en el tránsito intestinal (diarrea o estreñimiento cíclicos), hinchazón abdominal con patrón menstrual o sangre en las heces durante la regla. Presente en el 44,9% de pacientes según series de pacientes reportadas.</div>
+  </div>
+
+  <div class="sintoma-full">
+    <div class="sintoma-name">Disuria</div>
+    <div class="sintoma-def">Dolor o escozor al orinar, urgencia urinaria, sensación de vaciado incompleto</div>
+    <div class="sintoma-body">Orientador de endometriosis vesical o ureteral. Se estudió que las mujeres con endometriosis sufren disuria con una frecuencia 7,5 veces mayor que las mujeres sin la enfermedad. Frecuentemente se confunde con infecciones urinarias de repetición.</div>
+  </div>
+
+  <div class="stat-inline">
+    <div class="num">7,5×</div>
+    <div class="stat-text">
+      <strong>Mayor probabilidad de disuria en endometriosis</strong>
+      comparado con mujeres sin la enfermedad — y frecuentemente atribuida a infecciones urinarias sin cultivo positivo
+    </div>
+  </div>
+
+  <!-- FATIGA Y NIEBLA MENTAL -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Más allá del dolor</span>
+  </div>
+  <h2>La fatiga y la niebla mental no son psicológicas</h2>
+
+  <p class="body-text">
+    Dos de los síntomas más invalidados en consulta tienen base biológica documentada. La fatiga asociada a endometriosis no es cansancio habitual, y la niebla mental no es ansiedad mal gestionada.
+  </p>
+
+  <div class="sintoma-full">
+    <div class="sintoma-name">Fatiga crónica</div>
+    <div class="sintoma-def">Agotamiento desproporcionado al esfuerzo realizado, que no mejora con el descanso</div>
+    <div class="sintoma-body">La fatiga en endometriosis tiene múltiples mecanismos: inflamación sistémica crónica, anemia ferropénica por pérdidas menstruales, alteración del sueño por dolor nocturno y, en algunos casos, disfunción autonómica. No es un síntoma secundario — es parte de la enfermedad. La asociación con síndrome de fatiga crónica (EM/SFC) está documentada, con prevalencias estimadas entre el 4% y el 74% según las series.</div>
+  </div>
+
+  <div class="sintoma-full">
+    <div class="sintoma-name">Niebla mental</div>
+    <div class="sintoma-def">Dificultad de concentración, memoria y procesamiento cognitivo</div>
+    <div class="sintoma-body">La endometriosis genera un entorno inflamatorio sistémico que puede afectar al sistema nervioso central. Las citoquinas proinflamatorias elevadas en la cavidad peritoneal pueden cruzar la barrera hematoencefálica, activar la microglía y producir neuroinflmación. El resultado es cognitivo: dificultad para concentrarse, lentitud de procesamiento, olvidos frecuentes. No es psicológico. Es fisiología.</div>
+  </div>
+
+  <blockquote>
+    <p>Las citoquinas sistémicas pueden provocar la ruptura de la barrera hematoencefálica, activar la microglía y generar neuroinflamación prolongada, que impacta en la plasticidad neuronal y el funcionamiento cognitivo.</p>
+    <cite>International Immunopharmacology, 2024 · doi:10.1016/j.intimp.2024.111942</cite>
+  </blockquote>
+
+  <!-- SENSIBILIZACIÓN CENTRAL -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El sistema nervioso</span>
+  </div>
+  <h2>Cuando el sistema nervioso amplifica el dolor</h2>
+
+  <p class="body-text">
+    En muchas mujeres con endometriosis, el dolor deja de ser puramente periférico — localizado en las lesiones — y se convierte en un problema del sistema nervioso central. Se llama sensibilización central, y ocurre cuando la exposición prolongada al dolor cambia cómo el cerebro procesa las señales dolorosas.
+  </p>
+
+  <p class="body-text">
+    El resultado práctico: el dolor se vuelve más intenso, más difuso y menos predecible. Aparece en zonas que antes no dolían. Responde peor a los tratamientos locales. Y persiste incluso cuando las lesiones han sido tratadas quirúrgicamente.
+  </p>
+
+  <div class="highlight-box">
+    <p>La sensibilización central no es una complicación rara. Es un mecanismo documentado en endometriosis que explica por qué el dolor no siempre mejora tras la cirugía y por qué el abordaje debe ser multidisciplinar.</p>
+    <span class="highlight-source">Fuente: J Minim Invasive Gynecol, 2023 · Expert Opin Pharmacother, 2024</span>
+  </div>
+
+  <!-- SÍNTOMAS FUERA DEL ÁREA PÉLVICA -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Más allá de la pelvis</span>
+  </div>
+  <h2>Síntomas que no parecen ginecológicos</h2>
+
+  <p class="body-text">
+    En casos menos frecuentes, la endometriosis puede afectar a estructuras fuera de la pelvis. Estas presentaciones son especialmente difíciles de diagnosticar porque no encajan en el patrón esperado.
+  </p>
+
+  <div class="info-box">
+    <div class="info-box-title">Síntomas extraplvicos a tener en cuenta</div>
+    <ul class="info-list">
+      <li>Dolor de espalda baja o ciática con patrón cíclico — puede indicar afectación del nervio ciático.</li>
+      <li>Dolor en el hombro derecho durante la menstruación — puede orientar a endometriosis diafragmática.</li>
+      <li>Hemoptisis o dolor torácico cíclico — endometriosis torácica, muy infrecuente pero documentada.</li>
+      <li>Dolor neuropático: sensación de quemazón, pinchazos o corriente eléctrica en el área pélvica o piernas.</li>
+      <li>Síntomas urinarios recurrentes sin infección confirmada por cultivo.</li>
+    </ul>
+  </div>
+
+  <!-- CÓMO REGISTRARLOS -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+  <h2>Nombrar los síntomas es el primer paso</h2>
+
+  <p class="body-text">
+    Muchas pacientes llegan a consulta diciendo "me duele mucho la regla" cuando en realidad están describiendo dismenorrea severa, disquecia, fatiga crónica y dolor pélvico acíclico al mismo tiempo. El problema no es lo que sienten — es que no tienen el lenguaje para nombrarlo, ni el registro para mostrarlo.
+  </p>
+
+  <p class="body-text">
+    Llevar un seguimiento estructurado — con fechas, intensidad por tipo de síntoma y correlación con el ciclo — transforma una experiencia subjetiva en datos clínicos. Y los datos son el idioma de la medicina.
+  </p>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>Ochoa Bernal MA, Fazleabas AT. The Known, the Unknown and the Future of the Pathophysiology of Endometriosis. <em>Int J Mol Sci.</em> 2024;25(11):5815. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11172035/" target="_blank">PMC11172035</a></li>
+      <li>Predictive Model for the Non-Invasive Diagnosis of Endometriosis Based on Clinical Parameters. <em>PMC.</em> 2023. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10342998/" target="_blank">PMC10342998</a></li>
+      <li>Endometriosis, Pain, and Related Psychological Disorders: Microbiome, Inflammation, and Oxidative Stress. <em>Int J Mol Sci.</em> 2024;25(12):6473. <a href="https://doi.org/10.3390/ijms25126473" target="_blank">doi:10.3390/ijms25126473</a></li>
+      <li>Stress, pain, anxiety, and depression in endometriosis — Targeting glial activation and inflammation. <em>Int Immunopharmacol.</em> 2024. <a href="https://doi.org/10.1016/j.intimp.2024.111942" target="_blank">doi:10.1016/j.intimp.2024.111942</a></li>
+      <li>Raimondo D et al. Prevalence and Risk Factors of Central Sensitization in Women with Endometriosis. <em>J Minim Invasive Gynecol.</em> 2023;30(1):73–80. <a href="https://doi.org/10.1016/j.jmig.2022.10.007" target="_blank">doi:10.1016/j.jmig.2022.10.007</a></li>
+      <li>Pergolizzi JV et al. Managing the neuroinflammatory pain of endometriosis. <em>Expert Opin Pharmacother.</em> 2024;25(17):2267–2282. <a href="https://pubmed.ncbi.nlm.nih.gov/39540855/" target="_blank">PubMed</a></li>
+      <li>Endometriosis and Myalgic Encephalomyelitis/Chronic Fatigue Syndrome: A Systematic Review and Meta-Analysis. <em>PMC.</em> 2024. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12468137/" target="_blank">PMC12468137</a></li>
+      <li>Szypłowska M et al. The impact of endometriosis on depressive and anxiety symptoms and quality of life. <em>PMC.</em> 2023. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10512020/" target="_blank">PMC10512020</a></li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Registra tus síntomas antes de tu próxima consulta.</strong>
+      <p>Fora organiza tu historial en un brief médico listo para tu ginecóloga.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dieta baja en FODMAP en endometriosis: cuándo tiene sentido y cuándo no — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #27131C; --surface: #36041C; --surface-2: #2F0F1E;
+    --accent: #C4607A; --highlight: #D4899A; --text: #F7EDE7;
+    --muted: #C9A8B4; --border: #5A2A3C; --divider: #3D1A28;
+    --inverted-bg: #F7EDE7; --inverted-text: #27131C;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.75; min-height: 100vh; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--divider); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.5rem; color: var(--text); text-decoration: none; }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.8rem; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; }
+  article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+  .label { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .label::after { content: ''; display: inline-block; width: 2rem; height: 0.5px; background: var(--accent); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; color: var(--text); margin-bottom: 1rem; }
+  .meta { margin: 1.75rem 0 2.5rem; padding-bottom: 1.75rem; border-bottom: 0.5px solid var(--divider); }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+  .body-text { font-size: 1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 1.65rem; color: var(--text); margin: 3rem 0 1rem; line-height: 1.3; }
+  .section-start { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+  /* ESTUDIO DESTACADO */
+  .estudio-hero { background: var(--inverted-bg); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; }
+  .estudio-hero-label { font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: #7A3D52; margin-bottom: 0.6rem; }
+  .estudio-hero-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; font-weight: 400; color: var(--inverted-text); line-height: 1.4; margin-bottom: 1.25rem; }
+  .estudio-hero-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: #d4b8c0; border-radius: 8px; overflow: hidden; margin-bottom: 1rem; }
+  .estudio-hero-stat { background: var(--inverted-bg); padding: 0.9rem 0.75rem; text-align: center; }
+  .estudio-hero-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.75rem; font-weight: 300; color: #7A3D52; line-height: 1; display: block; margin-bottom: 0.25rem; }
+  .estudio-hero-slabel { font-size: 0.68rem; color: #9a5566; line-height: 1.3; }
+  .estudio-hero-cite { font-size: 0.72rem; color: #9a5566; }
+
+  /* FASES FODMAP */
+  .fase-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.5rem 1.75rem; margin: 1.25rem 0; }
+  .fase-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 0.75rem; }
+  .fase-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 2rem; font-weight: 300; color: var(--accent); line-height: 1; flex-shrink: 0; }
+  .fase-info {}
+  .fase-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+  .fase-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; font-weight: 400; color: var(--text); line-height: 1.2; }
+  .fase-duracion { font-size: 0.75rem; color: var(--muted); margin-top: 0.1rem; }
+  .fase-body { font-size: 0.9rem; color: var(--text); line-height: 1.75; }
+  .fase-tip { margin-top: 0.75rem; padding: 0.7rem 1rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 6px 6px 0; font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+  .fase-tip strong { color: var(--text); font-weight: 400; }
+
+  /* TABLA ALTO/BAJO FODMAP */
+  .fodmap-tabla { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--divider); border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; margin: 1.5rem 0; }
+  .fodmap-col { background: var(--surface); padding: 1.25rem; }
+  .fodmap-col-title { font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.75rem; }
+  .fodmap-col-title.bajo { color: var(--highlight); }
+  .fodmap-col-title.alto { color: var(--muted); }
+  .fodmap-list { list-style: none; display: flex; flex-direction: column; gap: 0.4rem; }
+  .fodmap-list li { font-size: 0.83rem; line-height: 1.5; display: flex; gap: 0.5rem; }
+  .fodmap-list.bajo li { color: var(--text); }
+  .fodmap-list.alto li { color: var(--muted); }
+  .fodmap-list li::before { content: ''; width: 3px; height: 3px; border-radius: 50%; flex-shrink: 0; margin-top: 0.55rem; }
+  .fodmap-list.bajo li::before { background: var(--highlight); }
+  .fodmap-list.alto li::before { background: var(--muted); }
+
+  /* CUÁNDO SÍ / NO */
+  .cuando-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--divider); border: 0.5px solid var(--border); border-radius: 10px; overflow: hidden; margin: 2rem 0; }
+  .cuando-card { background: var(--surface); padding: 1.5rem; }
+  .cuando-title { font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; margin-bottom: 0.75rem; }
+  .cuando-title.si { color: var(--highlight); }
+  .cuando-title.no { color: var(--muted); }
+  .cuando-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .cuando-list li { font-size: 0.85rem; line-height: 1.55; display: flex; gap: 0.6rem; }
+  .cuando-list.si li { color: var(--text); }
+  .cuando-list.no li { color: var(--muted); }
+  .cuando-list li::before { content: ''; width: 3px; height: 3px; border-radius: 50%; flex-shrink: 0; margin-top: 0.6rem; }
+  .cuando-list.si li::before { background: var(--highlight); }
+  .cuando-list.no li::before { background: var(--muted); }
+
+  blockquote { margin: 2.5rem 0; padding: 1.75rem 2rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 10px 10px 0; }
+  blockquote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.25rem; color: var(--text); line-height: 1.6; margin-bottom: 0.75rem; }
+  blockquote cite { font-size: 0.75rem; color: var(--muted); font-style: normal; }
+
+  .highlight-box { background: var(--inverted-bg); border-radius: 10px; padding: 1.75rem 2rem; margin: 2.5rem 0; }
+  .highlight-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.3rem; color: var(--inverted-text); line-height: 1.55; }
+  .highlight-box .highlight-source { display: block; margin-top: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: #7A3D52; font-style: normal; }
+
+  .info-box { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 2rem 0; }
+  .info-box-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li { display: flex; gap: 0.75rem; font-size: 0.9rem; color: var(--text); line-height: 1.55; }
+  .info-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.55rem; }
+
+  .references { margin-top: 4rem; padding-top: 2rem; border-top: 0.5px solid var(--divider); }
+  .references-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li { counter-increment: ref; display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+  .references ol li::before { content: counter(ref) "."; color: var(--accent); font-weight: 500; flex-shrink: 0; min-width: 1.2rem; }
+  .references ol li a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; opacity: 0.7; }
+
+  .article-cta { margin-top: 3.5rem; background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; font-weight: 300; color: var(--text); }
+  .cta-btn { background: var(--accent); color: var(--inverted-bg); font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; padding: 0.7rem 1.4rem; border-radius: 8px; text-decoration: none; white-space: nowrap; flex-shrink: 0; }
+  footer { border-top: 0.5px solid var(--divider); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; } .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .estudio-hero-stats, .cuando-grid, .fodmap-tabla { grid-template-columns: 1fr; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Nutrición</div>
+
+  <h1>Dieta baja en FODMAP:<br>cuándo tiene sentido<br>y cuándo no</h1>
+
+  <div class="meta">
+    <div class="meta-info">Nutrición · 7 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    Si tienes endometriosis y síntomas digestivos — hinchazón, dolor abdominal, tránsito irregular — es probable que en algún momento hayas oído hablar de la dieta baja en FODMAP. También es probable que no tengas claro si aplica a tu caso, cómo hacerla correctamente ni durante cuánto tiempo. Este artículo responde esas preguntas con el respaldo del ensayo clínico más riguroso publicado hasta ahora sobre este tema.
+  </p>
+
+  <!-- EL ESTUDIO ENDOFOD -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El estudio de referencia — publicado en 2025</span>
+  </div>
+
+  <div class="estudio-hero">
+    <div class="estudio-hero-label">Ensayo clínico aleatorizado cruzado · Monash University · Aliment Pharmacol Ther, 2025</div>
+    <div class="estudio-hero-title">EndoFOD: Effect of a 28-Day Low FODMAP Diet on Gastrointestinal Symptoms Associated with Endometriosis — Varney, So, Gibson et al.</div>
+    <div class="estudio-hero-stats">
+      <div class="estudio-hero-stat">
+        <span class="estudio-hero-num">60%</span>
+        <div class="estudio-hero-slabel">respondieron a la dieta baja en FODMAP con mejora clínicamente significativa</div>
+      </div>
+      <div class="estudio-hero-stat">
+        <span class="estudio-hero-num">26%</span>
+        <div class="estudio-hero-slabel">respondieron a la dieta control (guías dietéticas australianas)</div>
+      </div>
+      <div class="estudio-hero-stat">
+        <span class="estudio-hero-num">−40%</span>
+        <div class="estudio-hero-slabel">en la puntuación global de severidad de síntomas GI vs. control</div>
+      </div>
+    </div>
+    <div class="estudio-hero-cite">Varney JE, So D, Gibson PR et al. · Aliment Pharmacol Ther. 2025;61(12):1889–1903 · doi:10.1111/apt.70161 · PMC12107219</div>
+  </div>
+
+  <p class="body-text">
+    Es el primer ensayo clínico aleatorizado y controlado que demuestra que la dieta baja en FODMAP mejora significativamente los síntomas digestivos en mujeres con endometriosis. Los resultados son claros: el dolor abdominal y la hinchazón mejoraron, el tránsito intestinal se normalizó y la calidad de vida mejoró. Y no solo en personas con SII diagnosticado — también en mujeres con endometriosis como diagnóstico principal.
+  </p>
+
+  <!-- QUÉ SON LOS FODMAP -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo básico que necesitas entender</span>
+  </div>
+  <h2>Qué son los FODMAP y por qué importan</h2>
+
+  <p class="body-text">
+    FODMAP es el acrónimo de un grupo de carbohidratos fermentables — Fermentable Oligosaccharides, Disaccharides, Monosaccharides And Polyols. En términos simples: son azúcares que el intestino delgado absorbe mal y que las bacterias del colon fermentan, produciendo gas, hinchazón, dolor y cambios en el tránsito.
+  </p>
+
+  <p class="body-text">
+    El problema no es que sean tóxicos — en la mayoría de las personas los FODMAP son perfectamente tolerados. El problema aparece cuando el intestino es hipersensible — como ocurre en el SII y, según el estudio EndoFOD, también en una proporción significativa de personas con endometriosis.
+  </p>
+
+  <div class="fodmap-tabla">
+    <div class="fodmap-col">
+      <div class="fodmap-col-title bajo">Bajo en FODMAP — bien tolerado</div>
+      <ul class="fodmap-list bajo">
+        <li>Arroz, avena, quinoa, patata</li>
+        <li>Zanahoria, pepino, tomate, espinacas</li>
+        <li>Fresas, arándanos, naranja, kiwi</li>
+        <li>Pollo, pescado, huevos, tofu firme</li>
+        <li>Lactosa cero o leche vegetal (sin inulina)</li>
+        <li>Nueces, almendras (en cantidad moderada)</li>
+      </ul>
+    </div>
+    <div class="fodmap-col">
+      <div class="fodmap-col-title alto">Alto en FODMAP — puede fermentar</div>
+      <ul class="fodmap-list alto">
+        <li>Cebolla, ajo, puerro, espárragos</li>
+        <li>Manzana, pera, mango, sandía, cerezas</li>
+        <li>Leche, yogur con lactosa, quesos frescos</li>
+        <li>Trigo, centeno, cebada (en grandes cantidades)</li>
+        <li>Legumbres (lentejas, garbanzos — en altas cantidades)</li>
+        <li>Edulcorantes como sorbitol, xilitol, manitol</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- IMPORTANTE: NO ES PARA TODOS -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El matiz más importante</span>
+  </div>
+  <h2>No es para todas — y no es para siempre</h2>
+
+  <p class="body-text">
+    Este es el punto que más se pasa por alto cuando se habla de la dieta baja en FODMAP: no es una dieta antiinflamatoria ni una dieta para la endometriosis en general. Es una dieta para síntomas digestivos funcionales — hinchazón, dolor abdominal, tránsito irregular — en personas con hipersensibilidad visceral.
+  </p>
+
+  <div class="cuando-grid">
+    <div class="cuando-card">
+      <div class="cuando-title si">Cuándo tiene sentido probarla</div>
+      <ul class="cuando-list si">
+        <li>Tienes hinchazón, dolor abdominal o tránsito irregular que no se explican completamente por las lesiones</li>
+        <li>Los síntomas digestivos empeoran con alimentos específicos ricos en FODMAP</li>
+        <li>Tienes un diagnóstico de SII coexistente con la endometriosis</li>
+        <li>Los síntomas digestivos impactan significativamente en tu calidad de vida</li>
+      </ul>
+    </div>
+    <div class="cuando-card">
+      <div class="cuando-title no">Cuándo no es la prioridad</div>
+      <ul class="cuando-list no">
+        <li>No tienes síntomas digestivos significativos — la dieta antiinflamatoria general es más adecuada</li>
+        <li>Quieres mejorar la inflamación o reducir el dolor pélvico — el FODMAP no actúa sobre esos mecanismos</li>
+        <li>Ya sigues una dieta muy restrictiva — añadir más restricciones puede empeorar la relación con la comida</li>
+        <li>Tu objetivo es cuidar la microbiota — la dieta baja en FODMAP puede reducirla a largo plazo si no se gestiona bien</li>
+      </ul>
+    </div>
+  </div>
+
+  <blockquote>
+    <p>Los síntomas digestivos afectan a más del 75% de las mujeres con endometriosis. Atribuirlos simplemente a SII coexistente simplifica demasiado su origen — sus mecanismos son distintos y probablemente relacionados con la propia enfermedad. La dieta baja en FODMAP aborda la hipersensibilidad visceral, no la causa subyacente.</p>
+    <cite>EndoFOD · Aliment Pharmacol Ther 2025 · PMC12107219</cite>
+  </blockquote>
+
+  <!-- LAS TRES FASES -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Cómo se hace correctamente</span>
+  </div>
+  <h2>Las tres fases — y por qué las tres son imprescindibles</h2>
+
+  <p class="body-text">
+    La dieta baja en FODMAP no es una dieta de "come esto, no comas lo otro" de por vida. Tiene una estructura en tres fases que es fundamental respetar. Saltarse las fases — especialmente la reintroducción — puede generar restricciones innecesarias permanentes y dañar la microbiota.
+  </p>
+
+  <div class="fase-card">
+    <div class="fase-header">
+      <div class="fase-num">1</div>
+      <div class="fase-info">
+        <div class="fase-tag">Fase de eliminación</div>
+        <div class="fase-title">Reducir todos los FODMAP al mínimo</div>
+        <div class="fase-duracion">Duración: 4–6 semanas</div>
+      </div>
+    </div>
+    <p class="fase-body">Se eliminan todos los alimentos con contenido alto en FODMAP durante 4 a 6 semanas. El objetivo es reducir la carga fermentable en el intestino y dar tiempo al sistema para "calmarse". El ensayo EndoFOD usó 28 días con menos de 5 g/día de FODMAP totales. Si los síntomas no mejoran en este período, es probable que los FODMAP no sean el problema principal en tu caso.</p>
+    <div class="fase-tip">
+      <strong>Importante:</strong> esta fase no debe extenderse más allá de 6 semanas sin supervisión. Una dieta baja en FODMAP mantenida a largo plazo sin reintroducción puede reducir la diversidad microbiana y privar al intestino de prebióticos necesarios.
+    </div>
+  </div>
+
+  <div class="fase-card">
+    <div class="fase-header">
+      <div class="fase-num">2</div>
+      <div class="fase-info">
+        <div class="fase-tag">Fase de reintroducción</div>
+        <div class="fase-title">Identificar qué FODMAP específicos te afectan</div>
+        <div class="fase-duracion">Duración: 6–10 semanas</div>
+      </div>
+    </div>
+    <p class="fase-body">Se van reintroduciendo los alimentos eliminados de forma sistemática — un grupo de FODMAP a la vez, con varios días de margen entre cada prueba. El objetivo es identificar cuáles te generan síntomas y cuáles toleras sin problema. No todo el mundo reacciona a todos los FODMAP por igual — muchas personas solo son sensibles a uno o dos grupos específicos.</p>
+    <div class="fase-tip">
+      <strong>Por qué esta fase es la más importante:</strong> la mayoría de las personas que "hacen la dieta FODMAP" se quedan en la fase de eliminación indefinidamente — con restricciones que no necesitan. La reintroducción sistemática permite personalizar la dieta a tus propios umbrales de tolerancia.
+    </div>
+  </div>
+
+  <div class="fase-card">
+    <div class="fase-header">
+      <div class="fase-num">3</div>
+      <div class="fase-info">
+        <div class="fase-tag">Fase de personalización</div>
+        <div class="fase-title">Dieta adaptada a tus umbrales reales</div>
+        <div class="fase-duracion">Indefinida — pero flexible</div>
+      </div>
+    </div>
+    <p class="fase-body">Con los datos de la reintroducción, construyes una versión personalizada de tu alimentación — eliminando solo lo que realmente te genera síntomas, en las cantidades que realmente importan. El resultado no es una dieta restrictiva permanente, sino una alimentación informada sobre tus propios límites. Y esos límites pueden cambiar con el tiempo, el tratamiento y el estado de la microbiota.</p>
+  </div>
+
+  <!-- LA PARADOJA DE LA MICROBIOTA -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">La tensión que hay que gestionar</span>
+  </div>
+  <h2>La paradoja: lo que alivia los síntomas puede dañar la microbiota</h2>
+
+  <p class="body-text">
+    Aquí está el punto más complejo de la dieta baja en FODMAP en el contexto de endometriosis: muchos de los alimentos que se eliminan en la fase de restricción — ajo, cebolla, legumbres, ciertos cereales — son también los principales alimentos prebióticos que nutren la microbiota intestinal beneficiosa.
+  </p>
+
+  <p class="body-text">
+    En otras palabras: la dieta que alivia la hinchazón a corto plazo puede, si se mantiene indefinidamente, reducir la diversidad microbiana que en endometriosis ya suele estar comprometida. Por eso la fase de reintroducción no es opcional — es la que permite recuperar progresivamente los alimentos que la microbiota necesita, dentro de los umbrales que el intestino tolera.
+  </p>
+
+  <div class="highlight-box">
+    <p>La dieta baja en FODMAP es una herramienta terapéutica con evidencia sólida para los síntomas digestivos — no una dieta de estilo de vida. Usarla bien significa hacerla con las tres fases y con supervisión dietética.</p>
+    <span class="highlight-source">EndoFOD · Monash University 2025 · Effects of low-FODMAP diet in endometriosis · BMC Women's Health, 2025</span>
+  </div>
+
+  <!-- LO QUE PUEDES HACER -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+
+  <div class="info-box">
+    <div class="info-box-title">Cómo empezar de forma inteligente</div>
+    <ul class="info-list">
+      <li><strong style="color: var(--highlight); font-weight: 400;">Primero evalúa si tus síntomas son candidatos.</strong> Si tu problema principal es hinchazón, dolor abdominal o tránsito irregular — especialmente si empeoran con alimentos concretos — tiene sentido. Si tu problema es el dolor pélvico o menstrual, la dieta antiinflamatoria general es más relevante.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Busca un dietista con formación en FODMAP y en endometriosis.</strong> La dieta baja en FODMAP es compleja y requiere orientación profesional para hacerla bien — especialmente la fase de reintroducción. Hacerla solo con una lista de alimentos descargada de internet aumenta el riesgo de quedarte con restricciones innecesarias.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Usa la app de Monash University.</strong> Es la referencia global para el contenido en FODMAP de los alimentos, actualizada regularmente con nuevos análisis. Es de pago pero es la herramienta más fiable disponible.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Registra qué comes y cómo te sientes durante la eliminación y la reintroducción.</strong> Sin un registro sistemático, es imposible identificar qué alimentos te generan síntomas y cuáles no. La memoria no es suficientemente precisa para este proceso.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">No la mantengas como restricción permanente.</strong> Si en 6 semanas no ves mejoría, suspende y replantea. Si hay mejoría, pasa a la fase de reintroducción — no te quedes en la eliminación indefinidamente.</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>Varney JE, So D, Gibson PR et al. Clinical trial: Effect of a 28-day low FODMAP diet on GI symptoms associated with endometriosis (EndoFOD). <em>Aliment Pharmacol Ther.</em> 2025;61(12):1889–1903. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12107219/" target="_blank">PMC12107219</a></li>
+      <li>Low FODMAP Diet Eases GI Symptoms in Endometriosis Patients. <em>Monash University.</em> 2025. <a href="https://www.monash.edu/news/articles/low-fodmap-diet-can-ease-symptoms-of-those-with-endometriosis-study" target="_blank">Ver comunicado</a></li>
+      <li>Effects of a low-FODMAP diet on patients with endometriosis, a prospective cohort study. <em>BMC Women's Health.</em> 2025. <a href="https://link.springer.com/article/10.1186/s12905-025-03715-1" target="_blank">Ver artículo</a></li>
+      <li>Efficacy of the Low FODMAP Diet for GI Symptoms Associated with Endometriosis: RCT. <em>Digestive Disease Week.</em> 2025. <a href="https://ddw.digitellinc.com/p/s/efficacy-of-the-low-fodmap-diet-for-gastrointestinal-symptoms-associated-with-endometriosis-a-randomised-controlled-trial-5827" target="_blank">Ver abstract</a></li>
+      <li>Effectiveness of the low FODMAP diet in patients with IBS and SIBO. <em>PMC.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12893123/" target="_blank">PMC12893123</a></li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Registra qué comes y cómo te sientes.</strong>
+      <p>Fora te ayuda a detectar patrones entre los alimentos y los síntomas digestivos durante el proceso FODMAP.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

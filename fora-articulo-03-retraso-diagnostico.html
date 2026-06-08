@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Por qué tarda tanto en diagnosticarse la endometriosis — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #27131C;
+    --surface: #36041C;
+    --surface-2: #2F0F1E;
+    --accent: #C4607A;
+    --highlight: #D4899A;
+    --text: #F7EDE7;
+    --muted: #C9A8B4;
+    --border: #5A2A3C;
+    --divider: #3D1A28;
+    --inverted-bg: #F7EDE7;
+    --inverted-text: #27131C;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .label::after {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 0.5px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .meta {
+    margin: 1.75rem 0 2.5rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.65rem;
+    color: var(--text);
+    margin: 3rem 0 1rem;
+    line-height: 1.3;
+  }
+
+  .section-start {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* STAT GRANDE CENTRAL */
+  .stat-central {
+    text-align: center;
+    padding: 2.5rem 2rem;
+    margin: 2.5rem 0;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+  }
+  .stat-central .big-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(3.5rem, 10vw, 5.5rem);
+    color: var(--highlight);
+    line-height: 1;
+    display: block;
+  }
+  .stat-central .big-label {
+    font-size: 0.85rem;
+    color: var(--muted);
+    margin-top: 0.6rem;
+    line-height: 1.5;
+  }
+  .stat-central .big-source {
+    font-size: 0.7rem;
+    color: var(--border);
+    margin-top: 0.75rem;
+    letter-spacing: 0.04em;
+  }
+
+  /* CAUSA CARDS */
+  .causa-card {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 1rem 0;
+  }
+  .causa-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.75rem;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 1.75rem;
+    padding-top: 0.1rem;
+  }
+  .causa-content {}
+  .causa-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+  .causa-body {
+    font-size: 0.875rem;
+    color: var(--muted);
+    line-height: 1.7;
+  }
+  .causa-body strong { color: var(--highlight); font-weight: 400; }
+
+  blockquote {
+    margin: 2.5rem 0;
+    padding: 1.75rem 2rem;
+    background: var(--surface-2);
+    border-left: 1px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+  }
+  blockquote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  blockquote cite {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  .highlight-box {
+    background: var(--inverted-bg);
+    border-radius: 10px;
+    padding: 1.75rem 2rem;
+    margin: 2.5rem 0;
+  }
+  .highlight-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: var(--inverted-text);
+    line-height: 1.55;
+  }
+  .highlight-box .highlight-source {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    color: #7A3D52;
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  .info-box {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+  }
+  .info-box-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .info-list li {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .info-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+
+  /* TIMELINE HORIZONTAL */
+  .timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin: 2rem 0;
+    position: relative;
+  }
+  .timeline-item {
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding-bottom: 1.5rem;
+    position: relative;
+  }
+  .timeline-item:last-child { padding-bottom: 0; }
+  .timeline-left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+    width: 2rem;
+  }
+  .timeline-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    flex-shrink: 0;
+    margin-top: 0.3rem;
+  }
+  .timeline-line {
+    width: 1px;
+    flex: 1;
+    background: var(--divider);
+    min-height: 2rem;
+    margin-top: 4px;
+  }
+  .timeline-item:last-child .timeline-line { display: none; }
+  .timeline-content {}
+  .timeline-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+  .timeline-text {
+    font-size: 0.875rem;
+    color: var(--text);
+    line-height: 1.65;
+  }
+  .timeline-text em { color: var(--muted); font-style: normal; }
+
+  .references {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--divider);
+  }
+  .references-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li {
+    counter-increment: ref;
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .references ol li::before {
+    content: counter(ref) ".";
+    color: var(--accent);
+    font-weight: 500;
+    flex-shrink: 0;
+    min-width: 1.2rem;
+  }
+  .references ol li a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    opacity: 0.7;
+  }
+
+  .article-cta {
+    margin-top: 3.5rem;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--text);
+  }
+  .cta-btn {
+    background: var(--accent);
+    color: var(--inverted-bg);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.85; }
+
+  footer {
+    border-top: 0.5px solid var(--divider);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; }
+    .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Diagnóstico</div>
+
+  <h1>Por qué tarda tanto<br>en diagnosticarse</h1>
+
+  <div class="meta">
+    <div class="meta-info">Diagnóstico · 7 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    El retraso diagnóstico de la endometriosis no es un accidente ni un fallo aislado. Es el resultado predecible de una cadena de factores que se acumulan: en la paciente, en el sistema sanitario y en la cultura médica que durante décadas normalizó el dolor menstrual como algo inevitable. Entender por qué ocurre es el primer paso para no seguir esperando.
+  </p>
+
+  <!-- STAT CENTRAL -->
+  <div class="stat-central">
+    <span class="big-number">6,6 años</span>
+    <div class="big-label">de media entre el inicio de los síntomas y el diagnóstico<br>con al menos 7 visitas médicas previas</div>
+    <div class="big-source">Fryer et al., medRxiv 2024 · rango global: 0,5 a 27 años según el país</div>
+  </div>
+
+  <!-- CAUSAS: PACIENTE -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Factores de la paciente</span>
+  </div>
+  <h2>Cuando el dolor se aprende a ignorar</h2>
+
+  <p class="body-text">
+    Uno de los mecanismos más documentados del retraso diagnóstico es la normalización del dolor. Muchas mujeres crecen escuchando que la regla duele, que es parte de ser mujer, que hay que aguantar. Ese mensaje — interiorizado desde la adolescencia, muchas veces reforzado por madres, amigas o profesoras — hace que el umbral para buscar atención médica sea extraordinariamente alto.
+  </p>
+
+  <div class="causa-card">
+    <div class="causa-num">1</div>
+    <div class="causa-content">
+      <div class="causa-title">Normalización del dolor menstrual</div>
+      <div class="causa-body">La dismenorrea incapacitante se asume como variante normal durante años. <strong>La media de inicio de síntomas es a los 14 años en adolescentes</strong> — pero el diagnóstico llega, de media, a los 20. Esos seis años de síntomas sin nombre tienen un coste real.</div>
+    </div>
+  </div>
+
+  <div class="causa-card">
+    <div class="causa-num">2</div>
+    <div class="causa-content">
+      <div class="causa-title">Síntomas que no se reconocen como propios de la enfermedad</div>
+      <div class="causa-body">Dolor al defecar, fatiga crónica, síntomas digestivos cíclicos, dolor de espalda baja durante la menstruación — muchas pacientes no los relacionan con ginecología y no los mencionan espontáneamente en consulta. Sin información, no hay pregunta.</div>
+    </div>
+  </div>
+
+  <div class="causa-card">
+    <div class="causa-num">3</div>
+    <div class="causa-content">
+      <div class="causa-title">Dificultad para describir el dolor con precisión</div>
+      <div class="causa-body">La investigación muestra que el uso de lenguaje metafórico o impreciso — <strong>"como si me retorcieran por dentro"</strong>, "un dolor que va y viene" — dificulta que los profesionales de atención primaria identifiquen patrones compatibles con endometriosis.</div>
+    </div>
+  </div>
+
+  <!-- CAUSAS: SISTEMA SANITARIO -->
+  <div class="section-start" style="margin-top: 2rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Factores del sistema sanitario</span>
+  </div>
+  <h2>Las barreras que existen antes de llegar a la especialista</h2>
+
+  <div class="causa-card">
+    <div class="causa-num">4</div>
+    <div class="causa-content">
+      <div class="causa-title">Formación insuficiente en atención primaria</div>
+      <div class="causa-body">La endometriosis se presenta con síntomas inespecíficos que se solapan con muchas otras condiciones. Médicos de familia no siempre tienen las herramientas para identificarla como diagnóstico diferencial. <strong>La participación de ginecólogos desde el inicio acorta significativamente el tiempo hasta el diagnóstico.</strong></div>
+    </div>
+  </div>
+
+  <div class="causa-card">
+    <div class="causa-num">5</div>
+    <div class="causa-content">
+      <div class="causa-title">Confusión con otras patologías</div>
+      <div class="causa-body">Los síntomas digestivos llevan a diagnósticos de síndrome del intestino irritable (SII). El dolor pélvico crónico se etiqueta como enfermedad inflamatoria pélvica. Los síntomas psicológicos asociados se interpretan como ansiedad primaria. <strong>El solapamiento sintomático con el SII es especialmente frecuente</strong> — ambas condiciones pueden coexistir y reforzarse mutuamente.</div>
+    </div>
+  </div>
+
+  <div class="causa-card">
+    <div class="causa-num">6</div>
+    <div class="causa-content">
+      <div class="causa-title">El diagnóstico definitivo requiere cirugía</div>
+      <div class="causa-body">El gold standard diagnóstico sigue siendo la laparoscopia. Una prueba invasiva que muchos clínicos no solicitan — o retrasan — ante síntomas que no consideren suficientemente claros. Mientras tanto, la enfermedad avanza.</div>
+    </div>
+  </div>
+
+  <blockquote>
+    <p>La endometriosis se confunde frecuentemente con el síndrome del intestino irritable. Ambas condiciones comparten síntomas, coexisten con frecuencia y se diagnostican erróneamente la una por la otra, prolongando el sufrimiento innecesario.</p>
+    <cite>BMC Gastroenterology, 2023 · PMC10316551</cite>
+  </blockquote>
+
+  <!-- CAUSAS: CULTURA MÉDICA -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Factores culturales y estructurales</span>
+  </div>
+  <h2>El problema de no ser creída</h2>
+
+  <p class="body-text">
+    Existe un tercer nivel de causas que la literatura científica ya nombra con claridad: el sesgo de género en la atención al dolor. Las mujeres son diagnosticadas más tarde, reciben menos analgesia y tienen más probabilidades de que su dolor sea atribuido a causas psicológicas en comparación con hombres con el mismo cuadro clínico.
+  </p>
+
+  <div class="highlight-box">
+    <p>La endometriosis es una de las condiciones que con más frecuencia se menciona junto al término gaslighting en el ámbito sanitario. No es un problema individual de algunas pacientes — es un patrón sistémico documentado.</p>
+    <span class="highlight-source">Fuente: American Family Physician, 2024 · AMA Journal of Ethics, 2025</span>
+  </div>
+
+  <p class="body-text">
+    A esto se suma la desfinanciación histórica de la investigación en salud femenina. En Estados Unidos, la endometriosis recibe apenas 2 dólares de inversión investigadora por paciente y año — una cifra que contrasta radicalmente con otras enfermedades de prevalencia similar.
+  </p>
+
+  <!-- TIMELINE: QUÉ PASA MIENTRAS TANTO -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que ocurre durante esos años</span>
+  </div>
+  <h2>El coste del tiempo perdido</h2>
+
+  <p class="body-text">
+    El retraso diagnóstico no es solo un problema de etiqueta. Tiene consecuencias clínicas directas: la enfermedad progresa, las lesiones se extienden y el impacto en la calidad de vida se acumula.
+  </p>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-label">Años 0–2</div>
+        <div class="timeline-text">Inicio de síntomas. Frecuentemente en la adolescencia. El dolor se normaliza. No se busca atención o se desestima en primera visita. <em>El reloj empieza aquí.</em></div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-label">Años 2–5</div>
+        <div class="timeline-text">Consultas repetidas. Diagnósticos alternativos: SII, dismenorrea funcional, ansiedad. Tratamientos sintomáticos que no resuelven la causa. La enfermedad puede progresar silenciosamente.</div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-label">Años 5–7</div>
+        <div class="timeline-text">El impacto en calidad de vida, fertilidad y salud mental ya es significativo. La paciente llega a ginecología con una carga acumulada de años sin respuesta. <em>Las enfermedades ginecológicas son la principal causa de años vividos con discapacidad en mujeres de 15 a 49 años.</em></div>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-left">
+        <div class="timeline-dot"></div>
+        <div class="timeline-line"></div>
+      </div>
+      <div class="timeline-content">
+        <div class="timeline-label">Diagnóstico</div>
+        <div class="timeline-text">Media global: 6,6 años desde el inicio de síntomas. En algunos países, más de dos décadas. El diagnóstico no es el final del camino — es el principio del manejo.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUÉ PUEDES HACER -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que está en tu mano</span>
+  </div>
+  <h2>Llegar a consulta con datos cambia la conversación</h2>
+
+  <p class="body-text">
+    El retraso diagnóstico tiene causas sistémicas que ninguna paciente puede resolver sola. Pero hay algo que sí puede acortar el camino: llegar a consulta con un registro claro, estructurado y longitudinal de los síntomas.
+  </p>
+
+  <p class="body-text">
+    Un diario de síntomas bien organizado — con fechas, intensidad, esferas afectadas y correlación con el ciclo — convierte una narrativa imprecisa en datos clínicos. Y los datos son más difíciles de ignorar.
+  </p>
+
+  <div class="info-box">
+    <div class="info-box-title">Qué incluir en tu registro antes de la consulta</div>
+    <ul class="info-list">
+      <li>Intensidad del dolor en escala 0–10, diferenciando tipo: menstrual, pélvico crónico, al defecar, al orinar, durante el sexo.</li>
+      <li>Días del ciclo en que aparece cada síntoma — no solo durante la regla.</li>
+      <li>Impacto en actividades diarias: trabajo, sueño, vida social, ejercicio.</li>
+      <li>Síntomas digestivos y su relación con el ciclo: hinchazón, cambios en el tránsito, náuseas.</li>
+      <li>Fatiga: si es diferente a un cansancio habitual y cuándo aparece con más intensidad.</li>
+      <li>Historial de diagnósticos previos y tratamientos que no han funcionado.</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>Fryer J, Mason-Jones AJ, Woodward A. Understanding diagnostic delay for endometriosis: a scoping review. <em>medRxiv.</em> 2024. <a href="https://doi.org/10.1101/2024.01.08.24300988" target="_blank">doi:10.1101/2024.01.08.24300988</a></li>
+      <li>Li W, Feng H, Ye Q. Factors contributing to the delayed diagnosis of endometriosis — a systematic review and meta-analysis. <em>Front Med.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12321876/" target="_blank">PMC12321876</a></li>
+      <li>Exploring delay to diagnosis of endometriosis, a healthcare professional perspective. <em>PMC.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12629012/" target="_blank">PMC12629012</a></li>
+      <li>Avoiding Delays in Diagnosing Endometriosis. <em>American Family Physician.</em> 2024;109(3):268–270. <a href="https://www.aafp.org/afp/2024/0300/lown-right-care-endometriosis" target="_blank">Ver artículo</a></li>
+      <li>Using Policy and Law to Help Reduce Endometriosis Diagnostic Delay. <em>AMA Journal of Ethics.</em> 2025. <a href="https://journalofethics.ama-assn.org/article/using-policy-and-law-help-reduce-endometriosis-diagnostic-delay/2025-02" target="_blank">Ver artículo</a></li>
+      <li>Pettersson A et al. Associations and gastrointestinal symptoms in women with endometriosis in comparison to women with IBS. <em>BMC Gastroenterology.</em> 2023. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10316551/" target="_blank">PMC10316551</a></li>
+      <li>Menstrual reform: cultural roots of delayed endometriosis diagnosis in the Asia-Pacific region. <em>Lancet Regional Health.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12266178/" target="_blank">PMC12266178</a></li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Registra tus síntomas antes de tu próxima consulta.</strong>
+      <p>Fora organiza tu historial en un brief médico listo para tu ginecóloga.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

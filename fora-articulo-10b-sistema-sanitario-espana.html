@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cómo navegar el sistema sanitario español con endometriosis — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #27131C;
+    --surface: #36041C;
+    --surface-2: #2F0F1E;
+    --accent: #C4607A;
+    --highlight: #D4899A;
+    --text: #F7EDE7;
+    --muted: #C9A8B4;
+    --border: #5A2A3C;
+    --divider: #3D1A28;
+    --inverted-bg: #F7EDE7;
+    --inverted-text: #27131C;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .label::after {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 0.5px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .meta {
+    margin: 1.75rem 0 2.5rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.65rem;
+    color: var(--text);
+    margin: 3rem 0 1rem;
+    line-height: 1.3;
+  }
+
+  .section-start {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* PASO CARD — flujo del sistema */
+  .paso-card {
+    display: flex;
+    gap: 1.5rem;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    margin: 1.25rem 0;
+    align-items: flex-start;
+  }
+  .paso-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--accent);
+    line-height: 1;
+    flex-shrink: 0;
+    min-width: 2rem;
+    padding-top: 0.1rem;
+  }
+  .paso-content {}
+  .paso-nivel {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.3rem;
+  }
+  .paso-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+  .paso-body {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.75;
+    margin-bottom: 0.75rem;
+  }
+  .paso-tip {
+    padding: 0.7rem 1rem;
+    background: var(--surface-2);
+    border-left: 1px solid var(--accent);
+    border-radius: 0 6px 6px 0;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .paso-tip strong { color: var(--text); font-weight: 400; }
+
+  /* GUIÓN DE CONSULTA */
+  .guion-box {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    margin: 2rem 0;
+  }
+  .guion-label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .guion-frase {
+    background: var(--surface-2);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    font-weight: 300;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .guion-frase:last-child { margin-bottom: 0; }
+  .guion-nota {
+    font-size: 0.78rem;
+    color: var(--muted);
+    margin-top: 1rem;
+    font-style: italic;
+  }
+
+  blockquote {
+    margin: 2.5rem 0;
+    padding: 1.75rem 2rem;
+    background: var(--surface-2);
+    border-left: 1px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+  }
+  blockquote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  blockquote cite {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  .highlight-box {
+    background: var(--inverted-bg);
+    border-radius: 10px;
+    padding: 1.75rem 2rem;
+    margin: 2.5rem 0;
+  }
+  .highlight-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: var(--inverted-text);
+    line-height: 1.55;
+  }
+  .highlight-box .highlight-source {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    color: #7A3D52;
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  .info-box {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+  }
+  .info-box-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.55;
+  }
+  .info-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+
+  /* TABLA PÚBLICA vs PRIVADA */
+  .comparativa {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin: 2rem 0;
+  }
+  .comp-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+  .comp-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .comp-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+  .comp-list li {
+    display: flex;
+    gap: 0.6rem;
+    font-size: 0.83rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .comp-list li::before {
+    content: '';
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+
+  .references {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--divider);
+  }
+  .references-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li {
+    counter-increment: ref;
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .references ol li::before {
+    content: counter(ref) ".";
+    color: var(--accent);
+    font-weight: 500;
+    flex-shrink: 0;
+    min-width: 1.2rem;
+  }
+  .references ol li a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    opacity: 0.7;
+  }
+
+  .article-cta {
+    margin-top: 3.5rem;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--text);
+  }
+  .cta-btn {
+    background: var(--accent);
+    color: var(--inverted-bg);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.85; }
+
+  footer {
+    border-top: 0.5px solid var(--divider);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; }
+    .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .paso-card { flex-direction: column; gap: 0.5rem; }
+    .comparativa { grid-template-columns: 1fr; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Tratamiento</div>
+
+  <h1>Cómo navegar el sistema<br>sanitario español<br>con endometriosis</h1>
+
+  <div class="meta">
+    <div class="meta-info">Tratamiento · 8 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    Saber qué te corresponde y cómo pedirlo es una habilidad que nadie te enseña cuando recibes un diagnóstico. El sistema sanitario español tiene recursos, protocolos y unidades especializadas — pero acceder a ellos requiere conocer cómo funciona el circuito, qué decir en cada consulta y cuándo tienes derecho a pedir más.
+  </p>
+
+  <p class="body-text">
+    Este artículo es una guía práctica para recorrer ese camino de forma más eficiente: desde la primera consulta en atención primaria hasta la derivación a una unidad especializada, pasando por la segunda opinión y la decisión entre lo público y lo privado.
+  </p>
+
+  <!-- EL CIRCUITO -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Cómo funciona el sistema</span>
+  </div>
+  <h2>El circuito asistencial paso a paso</h2>
+
+  <div class="paso-card">
+    <div class="paso-num">1</div>
+    <div class="paso-content">
+      <div class="paso-nivel">Atención Primaria</div>
+      <div class="paso-title">Tu médico de cabecera o matrona: el primer nivel</div>
+      <p class="paso-body">
+        La sospecha diagnóstica de endometriosis se establece en atención primaria. El médico de familia o la matrona pueden iniciar tratamiento analgésico, prescribir anticonceptivos o progestágenos y, lo más importante, generar la derivación a ginecología. El papel de atención primaria está recogido en la Guía del Ministerio de Sanidad (SEGO/SEMFYC) y en las guías autonómicas — no es una consulta de segundo nivel, es el punto de entrada al sistema.
+      </p>
+      <div class="paso-tip">
+        <strong>Qué llevar:</strong> un registro escrito de tus síntomas — con intensidad, relación con el ciclo y evolución temporal. Un diario estructurado transforma una conversación de cinco minutos en una conversación con datos. Sin datos, la derivación puede no justificarse en el informe.
+      </div>
+    </div>
+  </div>
+
+  <div class="paso-card">
+    <div class="paso-num">2</div>
+    <div class="paso-content">
+      <div class="paso-nivel">Atención Especializada</div>
+      <div class="paso-title">Ginecología general: el diagnóstico y el plan inicial</div>
+      <p class="paso-body">
+        Con la derivación de atención primaria, accedes a ginecología del hospital o centro de especialidades que te corresponde por domicilio. Aquí se realiza la exploración ginecológica, se solicitan las pruebas de imagen (ecografía transvaginal) y se establece el plan de tratamiento inicial. Para casos que no son complejos — endometriosis superficial sin afectación de órganos, endometrioma de seguimiento — la ginecología general puede ser suficiente.
+      </p>
+      <div class="paso-tip">
+        <strong>Señal de alerta:</strong> si tienes síntomas digestivos o urinarios significativos, dolor que no responde al tratamiento hormonal o sospecha de afectación profunda, y el ginecólogo no menciona derivación a una unidad especializada, puedes pedirla explícitamente. Es tu derecho.
+      </div>
+    </div>
+  </div>
+
+  <div class="paso-card">
+    <div class="paso-num">3</div>
+    <div class="paso-content">
+      <div class="paso-nivel">Unidad especializada</div>
+      <div class="paso-title">Unidad de endometriosis: para casos complejos</div>
+      <p class="paso-body">
+        Las unidades de endometriosis — designadas como CSUR (Centros, Servicios y Unidades de Referencia) del SNS o como unidades de referencia autonómicas — concentran el equipamiento, la experiencia quirúrgica y el equipo multidisciplinar necesario para los casos más complejos. La derivación a estas unidades se tramita a través de tu ginecólogo de zona, que debe emitir un informe justificando la necesidad. El Fondo de Cohesión permite derivaciones entre comunidades autónomas cuando no existe unidad en tu región.
+      </p>
+      <div class="paso-tip">
+        <strong>Unidades activas en España (referencia 2024–2025):</strong> Hospital La Paz (Madrid) · Hospital 12 de Octubre (Madrid) · Hospital Clínico San Carlos (Madrid) · Hospital La Fe (Valencia) · Hospital General de Valencia · Hospital Virgen del Rocío (Sevilla) · Hospital Clínico Universitario de Zaragoza · Hospital Miguel Servet (Zaragoza) · Hospital Clínic (Barcelona). La lista no es exhaustiva — consulta con tu comunidad autónoma.
+      </div>
+    </div>
+  </div>
+
+  <div class="paso-card">
+    <div class="paso-num">4</div>
+    <div class="paso-content">
+      <div class="paso-nivel">Opcional pero legítimo</div>
+      <div class="paso-title">Segunda opinión: cuándo y cómo pedirla</div>
+      <p class="paso-body">
+        Pedir una segunda opinión es un derecho recogido en la Ley 41/2002 de autonomía del paciente. No necesitas justificarlo ni disculparte por ello. Está especialmente indicada cuando el plan de tratamiento propuesto es quirúrgico, cuando no ves mejoría tras varios ciclos de tratamiento médico, cuando sientes que tus síntomas no están siendo tomados en serio, o cuando hay discrepancias entre lo que te dicen y lo que lees en fuentes fiables.
+      </p>
+      <div class="paso-tip">
+        <strong>Cómo pedirla en el sistema público:</strong> solicita un informe completo con todas tus pruebas al médico actual, y pide a atención primaria o directamente al hospital una derivación a otra unidad. En el sistema privado es más directo: basta con pedir cita con otro especialista con tu historial en mano.
+      </div>
+    </div>
+  </div>
+
+  <!-- QUÉ DECIR EN CONSULTA -->
+  <div class="section-start" style="margin-top: 2rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Herramientas para la consulta</span>
+  </div>
+  <h2>Cómo pedir lo que necesitas sin que te digan que no</h2>
+
+  <p class="body-text">
+    La comunicación en consulta tiene sus propios códigos. Hay formas de formular las peticiones que generan menos resistencia y que sitúan la conversación en el terreno clínico — que es donde tiene que estar.
+  </p>
+
+  <div class="guion-box">
+    <div class="guion-label">Frases que funcionan — adaptadas a cada situación</div>
+    <div class="guion-frase">"Llevo un registro detallado de mis síntomas durante los últimos tres meses. ¿Puedo enseñártelo para que lo tengamos en cuenta?"</div>
+    <div class="guion-frase">"He leído que las guías de la ESHRE recomiendan ecografía transvaginal especializada ante síntomas como los míos. ¿Estaría indicada en mi caso?"</div>
+    <div class="guion-frase">"Tengo dolor al defecar durante la menstruación desde hace años. ¿Se ha descartado afectación intestinal en mis pruebas actuales?"</div>
+    <div class="guion-frase">"Mi dolor no ha mejorado con el tratamiento actual. ¿Cuáles son los siguientes pasos? ¿Estaría indicada una derivación a una unidad especializada?"</div>
+    <div class="guion-frase">"Me gustaría una segunda opinión antes de tomar la decisión quirúrgica. ¿Puedes prepararme un informe completo con las pruebas?"</div>
+    <div class="guion-nota">Estas frases están pensadas para ser directas sin ser confrontativas. Citar guías clínicas reales (ESHRE, NICE, guías del Ministerio) traslada la conversación a la evidencia, no a la opinión personal.</div>
+  </div>
+
+  <!-- PÚBLICO VS PRIVADO -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">La decisión que muchas se plantean</span>
+  </div>
+  <h2>Público o privado: lo que hay que saber</h2>
+
+  <p class="body-text">
+    La decisión entre el sistema público y el privado en endometriosis no es blanca o negra. La sanidad pública española tiene unidades de referencia con excelentes equipos quirúrgicos — el problema es el acceso y el tiempo de espera. La sanidad privada da más velocidad y más control sobre a quién ves, pero la calidad depende enormemente del especialista concreto y del centro.
+  </p>
+
+  <div class="comparativa">
+    <div class="comp-card">
+      <div class="comp-title">Sistema público</div>
+      <ul class="comp-list">
+        <li>Coste cero para la paciente</li>
+        <li>Unidades de referencia acreditadas con equipos quirúrgicos de alto volumen</li>
+        <li>Lista de espera: puede ser larga en consulta inicial y en cirugía</li>
+        <li>Acceso al especialista determinado por derivación — no eliges libremente</li>
+        <li>Requiere más gestión activa por parte de la paciente</li>
+        <li>Derivación entre CCAA posible pero burocráticamente compleja</li>
+      </ul>
+    </div>
+    <div class="comp-card">
+      <div class="comp-title">Sistema privado</div>
+      <ul class="comp-list">
+        <li>Acceso rápido — primera consulta en días</li>
+        <li>Eliges al especialista y al centro directamente</li>
+        <li>Coste significativo — especialmente en cirugía</li>
+        <li>Calidad muy variable según el especialista</li>
+        <li>Seguimiento más flexible y continuidad garantizada</li>
+        <li>Puede complementarse con el sistema público para la cirugía</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p>Muchas pacientes usan ambos sistemas en paralelo: diagnóstico y seguimiento en privado por la velocidad, y cirugía en la unidad pública de referencia por la experiencia quirúrgica y el equipo multidisciplinar.</p>
+    <span class="highlight-source">Asociación Endometriosis España · EndoMadrid · experiencia clínica documentada</span>
+  </div>
+
+  <!-- PRESERVACIÓN FERTILIDAD -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que muchas no saben</span>
+  </div>
+  <h2>Preservación de fertilidad y Seguridad Social: lo que existe y lo que no</h2>
+
+  <p class="body-text">
+    Una de las preguntas más frecuentes — y más infrainformadas — en endometriosis es si la Seguridad Social cubre congelar óvulos. La respuesta es matizada: depende del motivo, del hospital y de la comunidad autónoma. Pero hay escenarios concretos en los que sí es posible, y conviene conocerlos.
+  </p>
+
+  <div class="paso-card">
+    <div class="paso-num">→</div>
+    <div class="paso-content">
+      <div class="paso-nivel">Cubierto en toda España</div>
+      <div class="paso-title">Preservación oncológica</div>
+      <p class="paso-body">
+        Si vas a someterte a tratamientos que pueden dañar la reserva ovárica — quimioterapia, radioterapia u otras terapias gonadotóxicas — la congelación de óvulos está cubierta por el SNS en toda España. Es el supuesto más consolidado y universal.
+      </p>
+    </div>
+  </div>
+
+  <div class="paso-card">
+    <div class="paso-num">→</div>
+    <div class="paso-content">
+      <div class="paso-nivel">Variable según hospital y comunidad autónoma</div>
+      <div class="paso-title">Endometriosis previa a cirugía ovárica</div>
+      <p class="paso-body">
+        Si tienes endometrioma ovárico y se está valorando una intervención quirúrgica con riesgo significativo para la reserva ovárica, algunos hospitales públicos contemplan la preservación de fertilidad preoperatoria. No es un derecho universal ni está garantizado en todo el territorio — depende del protocolo del centro y de la comunidad autónoma. Galicia aprobó en 2024 cubrirlo específicamente para endometriosis dentro de su Plan de Reproducción Humana Asistida 2024–2028.
+      </p>
+      <div class="paso-tip">
+        <strong>Cómo preguntarlo:</strong> "Antes de la cirugía del endometrioma, ¿estaría indicada la preservación de fertilidad? ¿Este hospital la cubre en el sistema público?" Si la respuesta es no, es legítimo pedir ser derivada a un hospital que sí lo contemple.
+      </div>
+    </div>
+  </div>
+
+  <div class="paso-card">
+    <div class="paso-num">→</div>
+    <div class="paso-content">
+      <div class="paso-nivel">Lista de espera preferente</div>
+      <div class="paso-title">FIV con endometriosis: prioridad documentada</div>
+      <p class="paso-body">
+        Las guías del SNS sobre gestión de listas de espera en reproducción asistida clasifican a las mujeres con endometriosis — especialmente con baja reserva ovárica o previo a cirugía — como prioridad 3, con un tiempo de acceso recomendado de 6 a 9 meses. Esto significa que, en teoría, tienen acceso preferente a la FIV pública respecto a otros perfiles. En la práctica, aplicación varía mucho entre hospitales. Vale la pena preguntarlo explícitamente.
+      </p>
+      <div class="paso-tip">
+        <strong>Importante:</strong> la cobertura de FIV pública tiene límites — generalmente hasta los 40 años, sin hijos previos con la pareja actual, y hasta 3 ciclos. Los criterios concretos varían por comunidad autónoma.
+      </div>
+    </div>
+  </div>
+
+  <!-- LO QUE DEBES LLEVAR SIEMPRE -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+  <h2>Tu historial como herramienta de navegación</h2>
+
+  <p class="body-text">
+    El sistema sanitario tiene fragmentación como característica estructural: el médico de primaria no ve lo que hace el ginecólogo, el ginecólogo no comparte historial con el fisioterapeuta, y la unidad de referencia recibe a pacientes con informes incompletos. El historial organizado que tú llevas encima es lo que da continuidad a un sistema que no la tiene por defecto.
+  </p>
+
+  <div class="info-box">
+    <div class="info-box-title">Qué llevar a cualquier consulta relacionada con endometriosis</div>
+    <ul class="info-list">
+      <li>Registro de síntomas con fechas, intensidad y relación con el ciclo — al menos de los últimos 3 meses.</li>
+      <li>Informes de todas las pruebas de imagen previas: ecografías, resonancias, informes quirúrgicos si los hay.</li>
+      <li>Lista de todos los tratamientos que has probado, durante cuánto tiempo y con qué resultado.</li>
+      <li>Analíticas recientes — especialmente si incluyen ferritina, vitamina D, Ca-125 o AMH.</li>
+      <li>Lista de preguntas preparada antes de la consulta — en consultas cortas, las preguntas sin preparar quedan sin respuesta.</li>
+      <li>Si es una segunda opinión: el informe completo del especialista anterior con el diagnóstico y el plan propuesto.</li>
+    </ul>
+  </div>
+
+  <blockquote>
+    <p>La derivación entre niveles asistenciales es imprescindible. La coordinación entre atención primaria, ginecología general y las unidades multidisciplinares es lo que permite que cada paciente llegue al nivel de atención que necesita — ni más ni menos.</p>
+    <cite>Guía de Atención a Mujeres con Endometriosis · Ministerio de Sanidad, SEGO, SEMFYC</cite>
+  </blockquote>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Fuentes y referencias</div>
+    <ol>
+      <li>Ministerio de Sanidad, SEGO, SEMFYC. Guía de Atención a las Mujeres con Endometriosis en el Sistema Nacional de Salud. <a href="https://www.medicosypacientes.com/articulo/sanidad-publica-una-guia-de-atencion-las-mujeres-con-endometriosis-en-el-sistema-nacional/" target="_blank">Ver publicación</a></li>
+      <li>Conselleria de Sanitat. Guía de Atención a la Mujer con Endometriosis. Comunitat Valenciana 2021. <a href="https://biblioesp.gva.es/publicos/tsan/documentos/mig/CasG_ENDOMETRIOCV2021_V2.pdf" target="_blank">Ver guía</a></li>
+      <li>Servicio Andaluz de Salud. Guía de Atención a Mujeres con Endometriosis en el Sistema Sanitario Público de Andalucía. <a href="https://www.sspa.juntadeandalucia.es/servicioandaluzdesalud/profesionales/cartera-de-servicios/atencion-primaria/i-area-de-atencion-la-persona/2-atencion-especifica/26-atencion-relacionada-con-la-salud-sexual-y-etapa-reproductiva/267-atencion-mujeres-con-endometriosis" target="_blank">Ver protocolo</a></li>
+      <li>Asociación Endometriosis España. La Endometriosis en la Salud Pública — sistema de derivaciones. <a href="https://www.endoinfo.org/la-endometriosis-en-la-salud-publica/" target="_blank">Ver recurso</a></li>
+      <li>EndoMadrid. Médicos especialistas en endometriosis en la Comunidad de Madrid. <a href="https://www.endomadrid.org/medicos-especialistas-endometriosis-madrid/" target="_blank">Ver recurso</a></li>
+      <li>Comunitat Valenciana. Designación de Unidades de Referencia de Endometriosis Profunda Infiltrante. Conselleria de Sanitat. 2024. <a href="https://alicante.san.gva.es/es/-/sanidad-designa-tres-unidades-de-referencia-para-la-endometriosis-en-la-comunitat-valenciana" target="_blank">Ver resolución</a></li>
+      <li>Ley 41/2002, de 14 de noviembre, básica reguladora de la autonomía del paciente y de derechos y obligaciones en materia de información y documentación clínica. BOE núm. 274.</li>
+      <li>Gestión de la lista de espera y criterios de priorización en los tratamientos de reproducción asistida en los centros del SNS de España. <em>Medicina Reproductiva y Embriología Clínica.</em> 2022. <a href="https://www.elsevier.es/es-revista-medicina-reproductiva-embriologia-clinica-390-articulo-gestion-lista-espera-criterios-priorizacion-S2340932022000019" target="_blank">Ver artículo</a></li>
+      <li>Xunta de Galicia. Plan Gallego de Reproducción Humana Asistida 2024–2028: cobertura de congelación de óvulos en endometriosis. Noviembre 2024. <a href="https://www.xunta.gal/es/notas-de-prensa/-/nova/00026/rueda-anuncia-que-xunta-aprueba-plan-gallego-reproduccion-humana-asistida-con" target="_blank">Ver resolución</a></li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Tu historial organizado, siempre contigo.</strong>
+      <p>Fora centraliza síntomas, analíticas e informes en un brief médico listo para cualquier consulta.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

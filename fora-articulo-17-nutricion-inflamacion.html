@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Endometriosis e inflamación: por qué lo que comes importa — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #27131C; --surface: #36041C; --surface-2: #2F0F1E;
+    --accent: #C4607A; --highlight: #D4899A; --text: #F7EDE7;
+    --muted: #C9A8B4; --border: #5A2A3C; --divider: #3D1A28;
+    --inverted-bg: #F7EDE7; --inverted-text: #27131C;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.75; min-height: 100vh; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--divider); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.5rem; color: var(--text); text-decoration: none; }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.8rem; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+  .label { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .label::after { content: ''; display: inline-block; width: 2rem; height: 0.5px; background: var(--accent); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; color: var(--text); margin-bottom: 1rem; }
+  .meta { margin: 1.75rem 0 2.5rem; padding-bottom: 1.75rem; border-bottom: 0.5px solid var(--divider); }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+  .body-text { font-size: 1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 1.65rem; color: var(--text); margin: 3rem 0 1rem; line-height: 1.3; }
+  .section-start { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+  /* MECANISMO CARD */
+  .mecanismo-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.75rem 2rem; margin: 1.25rem 0; }
+  .mecanismo-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+  .mecanismo-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; font-weight: 400; color: var(--text); margin-bottom: 0.75rem; line-height: 1.3; }
+  .mecanismo-body { font-size: 0.9rem; color: var(--text); line-height: 1.75; }
+
+  /* TABLA ALIMENTOS */
+  .tabla-alimentos { margin: 2rem 0; border: 0.5px solid var(--border); border-radius: 12px; overflow: hidden; }
+  .tabla-header { display: grid; grid-template-columns: 1fr 1fr; background: var(--surface-2); border-bottom: 0.5px solid var(--border); }
+  .tabla-header-cell { padding: 0.9rem 1.5rem; font-size: 9px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .tabla-header-cell.pro { color: var(--highlight); }
+  .tabla-header-cell.contra { color: var(--muted); }
+  .tabla-row { display: grid; grid-template-columns: 1fr 1fr; border-bottom: 0.5px solid var(--divider); }
+  .tabla-row:last-child { border-bottom: none; }
+  .tabla-row:nth-child(even) .tabla-cell { background: var(--surface-2); }
+  .tabla-cell { padding: 0.9rem 1.5rem; font-size: 0.87rem; line-height: 1.55; background: var(--surface); }
+  .tabla-cell.pro { color: var(--text); }
+  .tabla-cell.contra { color: var(--muted); }
+  .tabla-cell .categoria { font-size: 9px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); display: block; margin-bottom: 0.25rem; }
+  .tabla-cell .contra .categoria { color: var(--muted); }
+
+  blockquote { margin: 2.5rem 0; padding: 1.75rem 2rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 10px 10px 0; }
+  blockquote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.25rem; color: var(--text); line-height: 1.6; margin-bottom: 0.75rem; }
+  blockquote cite { font-size: 0.75rem; color: var(--muted); font-style: normal; letter-spacing: 0.04em; }
+
+  .highlight-box { background: var(--inverted-bg); border-radius: 10px; padding: 1.75rem 2rem; margin: 2.5rem 0; }
+  .highlight-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.3rem; color: var(--inverted-text); line-height: 1.55; }
+  .highlight-box .highlight-source { display: block; margin-top: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: #7A3D52; font-style: normal; letter-spacing: 0.04em; }
+
+  .info-box { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 2rem 0; }
+  .info-box-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li { display: flex; gap: 0.75rem; font-size: 0.9rem; color: var(--text); line-height: 1.55; }
+  .info-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.55rem; }
+
+  /* AVISO HONESTIDAD */
+  .aviso { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.25rem 1.5rem; margin: 1.5rem 0; display: flex; gap: 1rem; align-items: flex-start; }
+  .aviso-icono { font-size: 1rem; flex-shrink: 0; color: var(--accent); padding-top: 0.1rem; }
+  .aviso-text { font-size: 0.85rem; color: var(--muted); line-height: 1.6; }
+  .aviso-text strong { color: var(--text); font-weight: 400; }
+
+  .references { margin-top: 4rem; padding-top: 2rem; border-top: 0.5px solid var(--divider); }
+  .references-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li { counter-increment: ref; display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+  .references ol li::before { content: counter(ref) "."; color: var(--accent); font-weight: 500; flex-shrink: 0; min-width: 1.2rem; }
+  .references ol li a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; opacity: 0.7; }
+
+  .article-cta { margin-top: 3.5rem; background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; font-weight: 300; color: var(--text); }
+  .cta-btn { background: var(--accent); color: var(--inverted-bg); font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; padding: 0.7rem 1.4rem; border-radius: 8px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: opacity 0.2s; }
+  .cta-btn:hover { opacity: 0.85; }
+  footer { border-top: 0.5px solid var(--divider); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; } .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .tabla-header, .tabla-row { grid-template-columns: 1fr; }
+    .tabla-cell { border-top: 0.5px solid var(--divider); }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Nutrición</div>
+
+  <h1>Endometriosis e inflamación:<br>por qué lo que<br>comes importa</h1>
+
+  <div class="meta">
+    <div class="meta-info">Nutrición · 8 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    La nutrición no cura la endometriosis. Dicho esto — y es importante decirlo primero, porque hay mucho ruido al respecto — lo que comes sí tiene un impacto real y documentado sobre la inflamación, los niveles de estrógeno, la microbiota y la intensidad de los síntomas. No como tratamiento principal, sino como parte de un abordaje integral que suma.
+  </p>
+
+  <p class="body-text">
+    Este artículo explica el mecanismo por el que la alimentación importa en endometriosis, qué dice la evidencia sobre los patrones dietéticos que más ayudan y cuáles son las señales de alerta para distinguir consejo nutricional fundamentado de moda o pseudociencia.
+  </p>
+
+  <div class="aviso">
+    <div class="aviso-icono">—</div>
+    <div class="aviso-text"><strong>Antes de empezar:</strong> ninguna dieta específica está aprobada como tratamiento de la endometriosis. Lo que existe es evidencia de asociación — ciertos patrones alimentarios se asocian con menor riesgo y menor intensidad de síntomas. La diferencia importa.</div>
+  </div>
+
+  <!-- POR QUÉ IMPORTA -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El mecanismo</span>
+  </div>
+  <h2>Por qué la alimentación puede influir en la endometriosis</h2>
+
+  <p class="body-text">
+    La endometriosis es una enfermedad inflamatoria crónica. Eso significa que uno de sus mecanismos clave es la producción sostenida de moléculas inflamatorias — prostaglandinas, citoquinas, radicales libres — que alimentan el dolor, la angiogénesis de las lesiones y el entorno que favorece su crecimiento. La alimentación puede actuar sobre ese entorno inflamatorio de tres formas distintas.
+  </p>
+
+  <div class="mecanismo-card">
+    <div class="mecanismo-tag">Mecanismo 1</div>
+    <div class="mecanismo-title">Modulación de la inflamación</div>
+    <p class="mecanismo-body">Ciertos alimentos — especialmente los ricos en ácidos grasos omega-3, polifenoles y antioxidantes — compiten directamente con las vías inflamatorias. Los omega-3 (EPA y DHA) reducen la producción de prostaglandinas proinflamatorias, que son las mismas moléculas que amplifican el dolor menstrual. Los polifenoles de frutas, verduras y aceite de oliva inhiben el NF-κB, una vía de señalización central en la inflamación de la endometriosis.</p>
+  </div>
+
+  <div class="mecanismo-card">
+    <div class="mecanismo-tag">Mecanismo 2</div>
+    <div class="mecanismo-title">Metabolismo del estrógeno</div>
+    <p class="mecanismo-body">La endometriosis es una enfermedad dependiente del estrógeno. La dieta puede influir en los niveles de estrógeno circulante de dos formas: a través de la fibra alimentaria, que favorece la eliminación del estrógeno metabolizado a través del intestino y reduce la reabsorción; y a través de los glucosinolatos de las verduras crucíferas (brócoli, coliflor, col), que favorecen una vía de metabolización del estrógeno menos activa. Una microbiota intestinal saludable es parte de este proceso — el llamado "estroboloma" microbiano regula la recirculación de estrógenos.</p>
+  </div>
+
+  <div class="mecanismo-card">
+    <div class="mecanismo-tag">Mecanismo 3</div>
+    <div class="mecanismo-title">Estrés oxidativo</div>
+    <p class="mecanismo-body">El estrés oxidativo — el desequilibrio entre la producción de radicales libres y la capacidad antioxidante del organismo — es uno de los mecanismos que favorece la implantación de las lesiones endometriósicas. Una dieta rica en antioxidantes (vitamina C, vitamina E, carotenoides, polifenoles) puede contribuir a reducir ese estrés oxidativo. Es el mismo mecanismo sobre el que actúa la NAC en el protocolo Porpora.</p>
+  </div>
+
+  <!-- EL PATRÓN QUE MÁS EVIDENCIA TIENE -->
+  <div class="section-start" style="margin-top: 2rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">El patrón con mayor respaldo</span>
+  </div>
+  <h2>La dieta mediterránea antiinflamatoria: lo más respaldado</h2>
+
+  <p class="body-text">
+    No existe una "dieta de la endometriosis" con un protocolo único validado. Lo que sí existe es un patrón alimentario que acumula la mayor evidencia en endometriosis y en salud reproductiva femenina en general: el patrón mediterráneo antiinflamatorio.
+  </p>
+
+  <p class="body-text">
+    Una revisión sistemática y metaanálisis de 2023 en el <em>American Journal of Obstetrics and Gynecology</em> — con más de 103.000 mujeres en 32 estudios — encontró que la adherencia a la dieta mediterránea se asocia con mejores resultados en salud reproductiva femenina, incluyendo beneficio sugerido en endometriosis. Una revisión de 2024 específicamente sobre prevención de endometriosis identificó asociaciones consistentes con menor riesgo en las mujeres con mayor consumo de verduras, frutas, legumbres y pescado azul.
+  </p>
+
+  <blockquote>
+    <p>La dieta y la nutrición pueden influir significativamente en la inflamación, la microbiota y los niveles de estrógeno en endometriosis — con resultados prometedores en la reducción del dolor y los síntomas digestivos.</p>
+    <cite>Dietary and Nutritional Interventions for the Management of Endometriosis · Nutrients 2024;16(23):3988</cite>
+  </blockquote>
+
+  <!-- TABLA MÁS / MENOS -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Qué incluir y qué reducir</span>
+  </div>
+  <h2>El mapa práctico</h2>
+
+  <p class="body-text">
+    Esta tabla resume lo que la evidencia actual asocia con mayor o menor riesgo e intensidad de síntomas. No es una lista de prohibidos y permitidos — es un mapa de prioridades.
+  </p>
+
+  <div class="tabla-alimentos">
+    <div class="tabla-header">
+      <div class="tabla-header-cell pro">Más de esto</div>
+      <div class="tabla-header-cell">Menos de esto</div>
+    </div>
+    <div class="tabla-row">
+      <div class="tabla-cell pro">
+        <span class="categoria">Grasas saludables</span>
+        Aceite de oliva virgen extra, aguacate, frutos secos (nueces, almendras)
+      </div>
+      <div class="tabla-cell contra">
+        <span class="categoria">Grasas inflamatorias</span>
+        Grasas trans (ultraprocesados), aceites vegetales refinados en exceso
+      </div>
+    </div>
+    <div class="tabla-row">
+      <div class="tabla-cell pro">
+        <span class="categoria">Omega-3 marino</span>
+        Salmón, sardinas, caballa, boquerones, anchoas — 2-3 veces por semana
+      </div>
+      <div class="tabla-cell contra">
+        <span class="categoria">Carne procesada</span>
+        Embutidos, carnes procesadas, bacon — asociados con mayor riesgo en varios estudios
+      </div>
+    </div>
+    <div class="tabla-row">
+      <div class="tabla-cell pro">
+        <span class="categoria">Verduras crucíferas</span>
+        Brócoli, coliflor, col, kale, rúcula — metabolismo estrogénico y antioxidante
+      </div>
+      <div class="tabla-cell contra">
+        <span class="categoria">Azúcar añadido</span>
+        Refrescos, bollería, zumos industriales — picos glucémicos e inflamación
+      </div>
+    </div>
+    <div class="tabla-row">
+      <div class="tabla-cell pro">
+        <span class="categoria">Fibra y legumbres</span>
+        Lentejas, garbanzos, alubias, avena — microbiota y eliminación de estrógenos
+      </div>
+      <div class="tabla-cell contra">
+        <span class="categoria">Carne roja en exceso</span>
+        Asociada con mayor riesgo de endometriosis en estudios observacionales — no prohibida, pero moderada
+      </div>
+    </div>
+    <div class="tabla-row">
+      <div class="tabla-cell pro">
+        <span class="categoria">Frutas y antioxidantes</span>
+        Frutos rojos, cítricos, uvas, tomates, pimientos — vitamina C, polifenoles, carotenoides
+      </div>
+      <div class="tabla-cell contra">
+        <span class="categoria">Alcohol</span>
+        El consumo regular se asocia con mayor estrógeno circulante y mayor inflamación sistémica
+      </div>
+    </div>
+    <div class="tabla-row">
+      <div class="tabla-cell pro">
+        <span class="categoria">Hierbas antiinflamatorias</span>
+        Cúrcuma (con pimienta negra), jengibre, romero — efectos antiinflamatorios documentados
+      </div>
+      <div class="tabla-cell contra">
+        <span class="categoria">Ultraprocesados</span>
+        Alta carga inflamatoria, bajo valor nutricional, perjudicial para la microbiota
+      </div>
+    </div>
+  </div>
+
+  <!-- LO QUE NO TIENE EVIDENCIA -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Honestidad sobre la evidencia</span>
+  </div>
+  <h2>Lo que todavía no está demostrado</h2>
+
+  <p class="body-text">
+    En nutrición y endometriosis hay mucho que se dice con más certeza de la que la ciencia justifica. Dos ejemplos especialmente relevantes:
+  </p>
+
+  <div class="aviso">
+    <div class="aviso-icono">—</div>
+    <div class="aviso-text"><strong>Dieta sin gluten:</strong> el gluten se menciona frecuentemente en comunidades de endometriosis. La evidencia actual no respalda la eliminación del gluten como estrategia general — solo tiene sentido en personas con celiaquía o sensibilidad al gluten no celíaca confirmada. Una revisión de 2024 en AJOG Global Reports concluye que no hay evidencia suficiente para recomendarla.</div>
+  </div>
+
+  <div class="aviso">
+    <div class="aviso-icono">—</div>
+    <div class="aviso-text"><strong>Dieta sin lácteos:</strong> los estudios observacionales sobre lácteos y endometriosis son contradictorios. Algunos sugieren que los lácteos enteros pueden tener un efecto levemente protector. Eliminar los lácteos sin indicación específica — intolerancia a la lactosa, por ejemplo — no tiene respaldo científico sólido en endometriosis.</div>
+  </div>
+
+  <div class="highlight-box">
+    <p>La dieta mediterránea no requiere eliminar grupos completos de alimentos ni seguir un protocolo rígido. Es un patrón de abundancia — más de lo que nutre — no una lista de restricciones.</p>
+    <span class="highlight-source">Diet and Endometriosis: An Umbrella Review · Foods 2025;14(12):2087 · PMC12192176</span>
+  </div>
+
+  <!-- LO QUE PUEDES HACER -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que puedes hacer</span>
+  </div>
+  <h2>Por dónde empezar sin agobiarse</h2>
+
+  <div class="info-box">
+    <div class="info-box-title">Cambios con el mejor ratio impacto / esfuerzo</div>
+    <ul class="info-list">
+      <li>Añade pescado azul a tu alimentación dos o tres veces por semana. Es el cambio con mayor impacto antiinflamatorio y uno de los más sencillos de sostener.</li>
+      <li>Cambia los aceites refinados por aceite de oliva virgen extra como grasa principal de cocina. El cambio es inmediato y el impacto acumulado es significativo.</li>
+      <li>Aumenta las verduras en cada comida — especialmente crucíferas y de hoja verde. No tienes que eliminar nada para añadir más de esto.</li>
+      <li>Reduce los ultraprocesados gradualmente, no de golpe. Empezar por los que más consumes y sustituirlos por alternativas reales tiene más sostenibilidad que un cambio drástico que dura dos semanas.</li>
+      <li>Si tienes síntomas digestivos significativos, considera una evaluación con una dietista especializada en endometriosis antes de hacer cambios más específicos — el intestino irritable asociado puede requerir un enfoque diferente al general.</li>
+      <li>Registra si los cambios influyen en tus síntomas. La respuesta a la dieta es individual — lo que funciona en estudios de población puede no funcionar igual en tu caso concreto.</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>Łukasiewicz A et al. The Importance of Diet in the Treatment of Endometriosis. <em>Diseases.</em> 2024;4(4):34. <a href="https://www.mdpi.com/2673-4184/4/4/34" target="_blank">Ver artículo</a></li>
+      <li>Popa AD et al. Dietary and Nutritional Interventions for the Management of Endometriosis. <em>Nutrients.</em> 2024;16(23):3988. <a href="https://doi.org/10.3390/nu16233988" target="_blank">doi:10.3390/nu16233988</a></li>
+      <li>Diet and Endometriosis: An Umbrella Review. <em>Foods.</em> 2025;14(12):2087. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12192176/" target="_blank">PMC12192176</a></li>
+      <li>Yang J et al. Mediterranean diet and female reproductive health over lifespan: systematic review and meta-analysis. <em>Am J Obstet Gynecol.</em> 2023;229(6):617–631.</li>
+      <li>Sienko A et al. The effect of two anti-inflammatory dietary components, omega-3 and resveratrol, on endometriosis. <em>Ginekol Pol.</em> 2024;95(7):573–583. <a href="https://pubmed.ncbi.nlm.nih.gov/37768015/" target="_blank">PubMed</a></li>
+      <li>van Haaps AP et al. A gluten-free diet for endometriosis patients lacks evidence to recommend it. <em>AJOG Global Rep.</em> 2024;4:100369.</li>
+      <li>Arab A et al. Food groups and nutrients consumption and risk of endometriosis: systematic review and meta-analysis. <em>Nutr J.</em> 2022;21:58.</li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Registra tu alimentación junto a tus síntomas.</strong>
+      <p>Fora te permite ver si hay patrones entre lo que comes y cómo te sientes cada semana.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

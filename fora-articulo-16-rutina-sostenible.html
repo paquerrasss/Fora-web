@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Construir una rutina sostenible con endometriosis — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --bg: #27131C; --surface: #36041C; --surface-2: #2F0F1E;
+    --accent: #C4607A; --highlight: #D4899A; --text: #F7EDE7;
+    --muted: #C9A8B4; --border: #5A2A3C; --divider: #3D1A28;
+    --inverted-bg: #F7EDE7; --inverted-text: #27131C;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; font-weight: 300; line-height: 1.75; min-height: 100vh; }
+  nav { display: flex; align-items: center; justify-content: space-between; padding: 1.5rem 3rem; border-bottom: 0.5px solid var(--divider); }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.5rem; color: var(--text); text-decoration: none; }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { font-size: 0.8rem; font-weight: 400; color: var(--muted); text-decoration: none; letter-spacing: 0.06em; text-transform: uppercase; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--text); }
+  article { max-width: 720px; margin: 0 auto; padding: 4rem 2rem 6rem; }
+  .label { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; }
+  .label::after { content: ''; display: inline-block; width: 2rem; height: 0.5px; background: var(--accent); }
+  h1 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: clamp(2.2rem, 5vw, 3.2rem); line-height: 1.15; color: var(--text); margin-bottom: 1rem; }
+  .meta { margin: 1.75rem 0 2.5rem; padding-bottom: 1.75rem; border-bottom: 0.5px solid var(--divider); }
+  .meta-info { font-size: 0.78rem; color: var(--muted); }
+  .body-text { font-size: 1rem; line-height: 1.8; color: var(--text); margin-bottom: 1.5rem; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 400; font-size: 1.65rem; color: var(--text); margin: 3rem 0 1rem; line-height: 1.3; }
+  .section-start { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 0.5rem; }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
+
+  /* PRINCIPIO CARD */
+  .principio-card { background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 1.75rem 2rem; margin: 1.25rem 0; }
+  .principio-num { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 3rem; font-weight: 300; color: var(--divider); float: right; line-height: 1; margin-left: 1rem; }
+  .principio-tag { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+  .principio-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.25rem; font-weight: 400; color: var(--text); margin-bottom: 0.75rem; line-height: 1.3; }
+  .principio-body { font-size: 0.9rem; color: var(--text); line-height: 1.75; }
+  .principio-tip { margin-top: 0.9rem; padding: 0.75rem 1rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 6px 6px 0; font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
+  .principio-tip strong { color: var(--text); font-weight: 400; }
+
+  /* SPOON THEORY VISUAL */
+  .spoon-box { background: var(--inverted-bg); border-radius: 12px; padding: 2rem; margin: 2.5rem 0; }
+  .spoon-label { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: #7A3D52; margin-bottom: 0.75rem; }
+  .spoon-title { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.3rem; font-weight: 400; color: var(--inverted-text); margin-bottom: 0.75rem; line-height: 1.3; }
+  .spoon-body { font-size: 0.88rem; color: #4a2030; line-height: 1.7; }
+  .spoon-cucharas { display: flex; gap: 0.4rem; flex-wrap: wrap; margin: 1rem 0 0.5rem; }
+  .cuchara { font-size: 1.4rem; }
+  .cuchara.usada { opacity: 0.2; }
+  .spoon-nota { font-size: 0.75rem; color: #9a5566; margin-top: 0.5rem; font-style: italic; }
+
+  blockquote { margin: 2.5rem 0; padding: 1.75rem 2rem; background: var(--surface-2); border-left: 1px solid var(--accent); border-radius: 0 10px 10px 0; }
+  blockquote p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.25rem; color: var(--text); line-height: 1.6; margin-bottom: 0.75rem; }
+  blockquote cite { font-size: 0.75rem; color: var(--muted); font-style: normal; letter-spacing: 0.04em; }
+
+  .highlight-box { background: var(--inverted-bg); border-radius: 10px; padding: 1.75rem 2rem; margin: 2.5rem 0; }
+  .highlight-box p { font-family: 'Cormorant Garamond', serif; font-style: italic; font-weight: 300; font-size: 1.3rem; color: var(--inverted-text); line-height: 1.55; }
+  .highlight-box .highlight-source { display: block; margin-top: 0.75rem; font-family: 'DM Sans', sans-serif; font-size: 0.72rem; color: #7A3D52; font-style: normal; letter-spacing: 0.04em; }
+
+  .info-box { background: var(--surface); border: 0.5px solid var(--border); border-radius: 10px; padding: 1.5rem 1.75rem; margin: 2rem 0; }
+  .info-box-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.65rem; }
+  .info-list li { display: flex; gap: 0.75rem; font-size: 0.9rem; color: var(--text); line-height: 1.55; }
+  .info-list li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: 0.55rem; }
+
+  .references { margin-top: 4rem; padding-top: 2rem; border-top: 0.5px solid var(--divider); }
+  .references-title { font-size: 9px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.25rem; }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li { counter-increment: ref; display: flex; gap: 0.75rem; font-size: 0.78rem; color: var(--muted); line-height: 1.55; }
+  .references ol li::before { content: counter(ref) "."; color: var(--accent); font-weight: 500; flex-shrink: 0; min-width: 1.2rem; }
+  .references ol li a { color: var(--muted); text-decoration: underline; text-underline-offset: 2px; opacity: 0.7; }
+
+  .article-cta { margin-top: 3.5rem; background: var(--surface); border: 0.5px solid var(--border); border-radius: 12px; padding: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; font-weight: 300; color: var(--text); }
+  .cta-btn { background: var(--accent); color: var(--inverted-bg); font-family: 'DM Sans', sans-serif; font-size: 0.8rem; font-weight: 500; letter-spacing: 0.04em; padding: 0.7rem 1.4rem; border-radius: 8px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: opacity 0.2s; }
+  .cta-btn:hover { opacity: 0.85; }
+  footer { border-top: 0.5px solid var(--divider); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; } .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    .principio-num { font-size: 2rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Salud Mental</div>
+
+  <h1>Construir una rutina<br>sostenible con<br>endometriosis</h1>
+
+  <div class="meta">
+    <div class="meta-info">Salud Mental · 7 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    Una rutina sostenible con endometriosis no se parece a la que te vendieron cuando no tenías endometriosis. No es madrugar siempre a la misma hora, ni hacer ejercicio cinco días a la semana, ni ser igual de productiva todos los días del mes. Es algo más parecido a un sistema que funciona con tu cuerpo — no contra él — y que aguanta tanto los días buenos como los días malos.
+  </p>
+
+  <p class="body-text">
+    Este artículo no es una lista de hábitos perfectos. Es un conjunto de principios con base en la investigación sobre enfermedad crónica y calidad de vida que pueden ayudarte a diseñar una forma de vivir que sea real y que dure.
+  </p>
+
+  <!-- SPOON THEORY -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">El primer concepto que cambia todo</span>
+  </div>
+
+  <div class="spoon-box">
+    <div class="spoon-label">Herramienta conceptual · Spoon Theory, Christine Miserandino</div>
+    <div class="spoon-title">La teoría de las cucharas: por qué tu energía no funciona igual que la de los demás</div>
+    <div class="spoon-cucharas">
+      <span class="cuchara">🥄</span><span class="cuchara">🥄</span><span class="cuchara">🥄</span><span class="cuchara">🥄</span><span class="cuchara">🥄</span>
+      <span class="cuchara usada">🥄</span><span class="cuchara usada">🥄</span><span class="cuchara usada">🥄</span><span class="cuchara usada">🥄</span><span class="cuchara usada">🥄</span>
+    </div>
+    <div class="spoon-body">
+      Imagina que cada día empiezas con un número limitado de cucharas — cada una representa una unidad de energía. Ducharte cuesta una. Preparar el desayuno, otra. Ir al trabajo, dos más. A diferencia de las personas sin enfermedad crónica, tú no puedes recargar fácilmente. Y si te quedas sin cucharas y sigues gastando, estás pidiendo prestadas las del día siguiente.
+    </div>
+    <div class="spoon-nota">La Spoon Theory fue creada por Christine Miserandino para explicar el lupus, y se ha convertido en el marco de referencia más usado en la comunidad de enfermedad crónica para comunicar el impacto de la fatiga y la energía limitada.</div>
+  </div>
+
+  <p class="body-text">
+    Entender tu energía como un recurso limitado y variable — no igual todos los días, no igual en todas las fases del ciclo — es el primer cambio de perspectiva que hace posible construir una rutina que funcione. No es rendirse. Es ser estratégica.
+  </p>
+
+  <!-- PRINCIPIOS -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Los principios que funcionan</span>
+  </div>
+  <h2>Cinco principios para una rutina que aguanta</h2>
+
+  <div class="principio-card">
+    <div class="principio-num">1</div>
+    <div class="principio-tag">El más contraintuitivo</div>
+    <div class="principio-title">Diseña para los días malos, no para los buenos</div>
+    <p class="principio-body">
+      El error más frecuente es diseñar la rutina en un día bueno — con energía, con optimismo, con la sensación de que todo es posible. Y luego frustrarse cuando un día malo lo deja todo sin hacer. Una rutina sostenible parte de la pregunta contraria: ¿qué es lo mínimo imprescindible que puedo hacer incluso en los días con más dolor? Eso es tu base. Todo lo que añades encima es bonus, no obligación.
+    </p>
+    <div class="principio-tip">
+      <strong>En la práctica:</strong> identifica las tres cosas que, si haces solo ellas un día difícil, te permiten sentir que el día no fue una catástrofe. Para muchas personas son comer algo, moverse aunque sea cinco minutos y tener una conversación real con alguien.
+    </div>
+  </div>
+
+  <div class="principio-card">
+    <div class="principio-num">2</div>
+    <div class="principio-tag">Pacing — gestión de la energía</div>
+    <div class="principio-title">Ni demasiado ni demasiado poco: el equilibrio del pacing</div>
+    <p class="principio-body">
+      El pacing es una técnica de gestión de energía desarrollada en el contexto del dolor crónico y la fatiga. La idea es evitar los dos extremos que perpetúan el ciclo de enfermedad crónica: la sobreexigencia en los días buenos — que agota las reservas y genera un colapso posterior — y la inactividad total en los días malos — que reduce la capacidad funcional a largo plazo.
+    </p>
+    <p class="principio-body">
+      En endometriosis, el pacing significa planificar las actividades más exigentes fuera de las fases del ciclo con más síntomas, incluir descansos activos antes de estar agotada, y resistir la tentación de "recuperar" en los días buenos todo lo que no se pudo hacer en los malos.
+    </p>
+    <div class="principio-tip">
+      <strong>Señal de que necesitas pacing:</strong> si habitualmente alternas entre días en los que haces demasiado y días en los que no puedes hacer nada, estás en el ciclo boom-bust. El pacing busca romper ese ciclo con una actividad más constante y predecible.
+    </div>
+  </div>
+
+  <div class="principio-card">
+    <div class="principio-num">3</div>
+    <div class="principio-tag">El ejercicio — sin dogma</div>
+    <div class="principio-title">Moverse, sí — pero adaptado al ciclo y al cuerpo</div>
+    <p class="principio-body">
+      Una revisión sistemática y metaanálisis de 2025 (PLOS One) confirma que el ejercicio regular tiene beneficios documentados en endometriosis: reduce el dolor, mejora el estado de ánimo, reduce la inflamación sistémica y mejora la calidad de vida. Pero "ejercicio regular" en endometriosis no significa lo mismo que en la población general.
+    </p>
+    <p class="principio-body">
+      Lo que funciona en endometriosis es el ejercicio de intensidad moderada y constante — caminar, yoga, natación, bicicleta suave — adaptado a la fase del ciclo. Forzar el ejercicio durante una crisis de dolor intenso puede empeorar los síntomas. El objetivo no es el rendimiento — es el movimiento como herramienta de regulación del sistema nervioso y la inflamación.
+    </p>
+    <div class="principio-tip">
+      <strong>Punto de partida sin presión:</strong> 20-30 minutos de caminata a ritmo cómodo, 3-4 días a la semana, tiene más impacto a largo plazo que sesiones intensas ocasionales. La regularidad importa más que la intensidad.
+    </div>
+  </div>
+
+  <div class="principio-card">
+    <div class="principio-num">4</div>
+    <div class="principio-tag">El sueño — no negociable</div>
+    <div class="principio-title">El sueño roto amplifica el dolor: cómo protegerlo</div>
+    <p class="principio-body">
+      El dolor nocturno interrumpe el sueño. El sueño interrumpido reduce el umbral del dolor al día siguiente. Ese ciclo es real y está documentado — y en endometriosis ocurre con frecuencia. La privación de sueño no solo agota: activa directamente los sistemas de inflamación y amplifica la percepción del dolor de forma fisiológica.
+    </p>
+    <p class="principio-body">
+      Proteger el sueño en endometriosis no significa solo "acostarse temprano". Significa crear condiciones que minimicen las interrupciones — temperatura, postura, técnicas de relajación previas — y reconocer cuando el dolor nocturno necesita atención médica específica, no solo manejo de higiene del sueño.
+    </p>
+    <div class="principio-tip">
+      <strong>Posturas que pueden ayudar en el dolor nocturno:</strong> posición fetal con una almohada entre las rodillas reduce la tensión pélvica. Posición boca arriba con una almohada debajo de las rodillas puede aliviar el dolor lumbar asociado. No hay una postura universal — experimenta en tus noches más difíciles.
+    </div>
+  </div>
+
+  <div class="principio-card">
+    <div class="principio-num">5</div>
+    <div class="principio-tag">El registro — tu herramienta más útil</div>
+    <div class="principio-title">Conocer tus patrones para dejar de ser sorprendida</div>
+    <p class="principio-body">
+      Una de las experiencias más desgastantes de la endometriosis es la sensación de imprevisibilidad: no saber cuándo va a aparecer el dolor, con qué intensidad, qué lo desencadena o qué lo alivia. Esa incertidumbre genera ansiedad anticipatoria y hace imposible planificar.
+    </p>
+    <p class="principio-body">
+      El registro sistemático de síntomas — durante al menos dos o tres ciclos completos — empieza a revelar patrones: qué días del ciclo son habitualmente más difíciles, qué actividades preceden a los picos de dolor, qué estrategias han funcionado antes. El conocimiento de tus propios patrones no elimina el dolor, pero reduce significativamente la sensación de caos.
+    </p>
+    <div class="principio-tip">
+      <strong>Qué registrar:</strong> intensidad del dolor por tipo (menstrual, pélvico, intestinal), nivel de energía, estado emocional, horas de sueño, actividad física, alimentación y medicación o suplementos. Con tres meses de datos tienes un mapa.
+    </div>
+  </div>
+
+  <blockquote>
+    <p>Un programa digital estructurado con seguimiento de síntomas y herramientas de terapia cognitivo-conductual durante tres meses mostró mejoras significativas en dolor, calidad de vida y funcionamiento diario en personas con endometriosis.</p>
+    <cite>Digital Program for Daily Life Management with Endometriosis · JMIR Formative Research, 2025</cite>
+  </blockquote>
+
+  <!-- LO QUE NO ES SOSTENIBLE -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que desgasta — aunque parezca que ayuda</span>
+  </div>
+  <h2>Lo que no es sostenible aunque lo parezca</h2>
+
+  <div class="highlight-box">
+    <p>La culpa por no ser constante, por no poder hacer lo que hacías antes, por tener que cancelar — es uno de los mayores consumidores de energía en la enfermedad crónica. Y es completamente inútil clínicamente.</p>
+    <span class="highlight-source">Chronic illness energy management · Apollo Imperium, 2024 · JMIR Formative Research, 2025</span>
+  </div>
+
+  <p class="body-text">
+    Hay patrones que parecen productivos pero que, en el contexto de una enfermedad crónica, acaban siendo contraproducentes. Reconocerlos es parte del trabajo.
+  </p>
+
+  <div class="info-box">
+    <div class="info-box-title">Patrones que desgastan sin que lo parezcan</div>
+    <ul class="info-list">
+      <li><strong style="color: var(--highlight); font-weight: 400;">El ciclo boom-bust.</strong> Hacer demasiado en los días buenos y colapsar en los malos. Parece productivo a corto plazo — pero cronifica el agotamiento y hace los días malos peores.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">La comparación con el yo anterior.</strong> Medir el día de hoy con el estándar de antes del diagnóstico o de un periodo sin síntomas. Es una comparación que siempre se pierde.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">El perfeccionismo en el autocuidado.</strong> Convertir la dieta, el ejercicio y el sueño en otra fuente de exigencia y culpa cuando no se cumplen. El autocuidado que genera ansiedad no es autocuidado.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Gestionar el dolor en silencio total.</strong> No decir nada, no pedir ayuda, aguantar. Consume mucha más energía de la que ahorra — y hace más difícil que el entorno pueda adaptarse.</li>
+      <li><strong style="color: var(--highlight); font-weight: 400;">Esperar a estar "mejor" para empezar.</strong> Posponer el diseño de una rutina sostenible hasta que la enfermedad mejore. La rutina sostenible es para ahora — con la enfermedad tal como está hoy.</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>Breton Z et al. A Digital Program for Daily Life Management With Endometriosis: Pilot Cohort Study on Symptoms and Quality of Life. <em>JMIR Formative Research.</em> 2025. <a href="https://formative.jmir.org/2025/1/e58262" target="_blank">Ver artículo</a></li>
+      <li>The effectiveness and safety of physical activity and exercise on women with endometriosis: A systematic review and meta-analysis. <em>PLOS One.</em> 2025. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11824993/" target="_blank">PMC11824993</a></li>
+      <li>Lalla AT et al. Impact of lifestyle and dietary modifications for endometriosis development and symptom management. <em>Curr Opin Obstet Gynecol.</em> 2024;36(4):247–254.</li>
+      <li>Endometriosis and Lifestyle-Based Therapies. <em>Institute for Functional Medicine.</em> 2024. <a href="https://www.ifm.org/articles/endometriosis-root-causes-lifestyle-interventions" target="_blank">Ver artículo</a></li>
+      <li>Miserandino C. The Spoon Theory. But You Don't Look Sick. 2003. <a href="https://butyoudontlooksick.com/articles/written-by-christine/the-spoon-theory/" target="_blank">Ver artículo original</a></li>
+      <li>Bernini O et al. Incremental validity of acceptance over coping in predicting adjustment to endometriosis. <em>Front Pain.</em> 2022. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9335002/" target="_blank">PMC9335002</a></li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Empieza a conocer tus patrones.</strong>
+      <p>Fora registra síntomas, energía y ciclo para que el mapa de tu cuerpo deje de ser un misterio.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>

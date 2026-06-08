@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tipos de endometriosis: superficial, endometrioma y profunda — Fora</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #27131C;
+    --surface: #36041C;
+    --surface-2: #2F0F1E;
+    --accent: #C4607A;
+    --highlight: #D4899A;
+    --text: #F7EDE7;
+    --muted: #C9A8B4;
+    --border: #5A2A3C;
+    --divider: #3D1A28;
+    --inverted-bg: #F7EDE7;
+    --inverted-text: #27131C;
+  }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    line-height: 1.75;
+    min-height: 100vh;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 3rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.5rem;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .nav-logo em { color: var(--accent); font-style: italic; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--muted);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--text); }
+
+  article {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 4rem 2rem 6rem;
+  }
+
+  .label {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .label::after {
+    content: '';
+    display: inline-block;
+    width: 2rem;
+    height: 0.5px;
+    background: var(--accent);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(2.2rem, 5vw, 3.2rem);
+    line-height: 1.15;
+    color: var(--text);
+    margin-bottom: 1rem;
+  }
+
+  .meta {
+    margin: 1.75rem 0 2.5rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 0.5px solid var(--divider);
+  }
+  .meta-info {
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+
+  .body-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 1.65rem;
+    color: var(--text);
+    margin: 3rem 0 1rem;
+    line-height: 1.3;
+  }
+
+  .section-start {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .section-line { width: 1.5rem; height: 0.5px; background: var(--accent); flex-shrink: 0; }
+  .section-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  blockquote {
+    margin: 2.5rem 0;
+    padding: 1.75rem 2rem;
+    background: var(--surface-2);
+    border-left: 1px solid var(--accent);
+    border-radius: 0 10px 10px 0;
+  }
+  blockquote p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.25rem;
+    color: var(--text);
+    line-height: 1.6;
+    margin-bottom: 0.75rem;
+  }
+  blockquote cite {
+    font-size: 0.75rem;
+    color: var(--muted);
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  /* TIPO CARDS — una por tipo */
+  .tipo-card {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 1.75rem 2rem;
+    margin: 1.5rem 0;
+    position: relative;
+  }
+  .tipo-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 3rem;
+    font-weight: 300;
+    color: var(--divider);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    line-height: 1;
+    user-select: none;
+  }
+  .tipo-tag {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+  }
+  .tipo-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.35rem;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 0.75rem;
+    line-height: 1.3;
+  }
+  .tipo-body {
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.75;
+    margin-bottom: 1rem;
+  }
+  .tipo-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.25rem;
+  }
+  .pill {
+    font-size: 0.72rem;
+    color: var(--highlight);
+    background: var(--surface-2);
+    border: 0.5px solid var(--border);
+    border-radius: 6px;
+    padding: 0.25rem 0.65rem;
+    white-space: nowrap;
+  }
+
+  /* AVISO IMPORTANTE */
+  .highlight-box {
+    background: var(--inverted-bg);
+    border-radius: 10px;
+    padding: 1.75rem 2rem;
+    margin: 2.5rem 0;
+  }
+  .highlight-box p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: 1.3rem;
+    color: var(--inverted-text);
+    line-height: 1.55;
+  }
+  .highlight-box .highlight-source {
+    display: block;
+    margin-top: 0.75rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.72rem;
+    color: #7A3D52;
+    font-style: normal;
+    letter-spacing: 0.04em;
+  }
+
+  /* INFO BOX */
+  .info-box {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1.5rem 1.75rem;
+    margin: 2rem 0;
+  }
+  .info-box-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+  }
+  .info-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
+  .info-list li {
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .info-list li::before {
+    content: '';
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+    margin-top: 0.55rem;
+  }
+
+  /* REFERENCES */
+  .references {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 0.5px solid var(--divider);
+  }
+  .references-title {
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 1.25rem;
+  }
+  .references ol { list-style: none; counter-reset: ref; display: flex; flex-direction: column; gap: 0.6rem; }
+  .references ol li {
+    counter-increment: ref;
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    line-height: 1.55;
+  }
+  .references ol li::before {
+    content: counter(ref) ".";
+    color: var(--accent);
+    font-weight: 500;
+    flex-shrink: 0;
+    min-width: 1.2rem;
+  }
+  .references ol li a {
+    color: var(--muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    opacity: 0.7;
+  }
+
+  /* CTA */
+  .article-cta {
+    margin-top: 3.5rem;
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: 12px;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+  }
+  .cta-text p { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+  .cta-text strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1.15rem;
+    font-weight: 300;
+    color: var(--text);
+  }
+  .cta-btn {
+    background: var(--accent);
+    color: var(--inverted-bg);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    padding: 0.7rem 1.4rem;
+    border-radius: 8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: opacity 0.2s;
+  }
+  .cta-btn:hover { opacity: 0.85; }
+
+  footer {
+    border-top: 0.5px solid var(--divider);
+    padding: 2rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  footer p { font-size: 0.72rem; color: var(--muted); }
+
+  @media (max-width: 640px) {
+    nav { padding: 1.25rem 1.5rem; }
+    .nav-links { display: none; }
+    article { padding: 2.5rem 1.25rem 4rem; }
+    footer { padding: 1.5rem; flex-direction: column; gap: 0.5rem; text-align: center; }
+    .article-cta { flex-direction: column; }
+    .tipo-number { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">f<em>o</em>ra</a>
+  <ul class="nav-links">
+    <li><a href="#">La app</a></li>
+    <li><a href="#">Endometriosis</a></li>
+    <li><a href="#">Blog médico</a></li>
+    <li><a href="#">El equipo</a></li>
+  </ul>
+</nav>
+
+<article>
+
+  <div class="label">Diagnóstico</div>
+
+  <h1>No toda la endometriosis<br>es igual</h1>
+
+  <div class="meta">
+    <div class="meta-info">Diagnóstico · 6 min lectura · Junio 2026</div>
+  </div>
+
+  <p class="body-text">
+    La endometriosis no es una enfermedad única y uniforme. Se presenta en formas distintas, con localizaciones diferentes, síntomas que no siempre se solapan y un impacto clínico que varía enormemente de una mujer a otra. Entender el tipo que te afecta es el primer paso para hablar con tu especialista desde un lugar más informado.
+  </p>
+
+  <p class="body-text">
+    Clínicamente se reconocen tres fenotipos principales, que pueden coexistir en la misma paciente.
+  </p>
+
+  <!-- TIPO 1 -->
+  <div class="section-start" style="margin-top: 2.5rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Tipo I</span>
+  </div>
+
+  <div class="tipo-card">
+    <span class="tipo-number">I</span>
+    <div class="tipo-tag">Endometriosis superficial peritoneal</div>
+    <div class="tipo-title">Lesiones sobre la superficie del peritoneo</div>
+    <p class="tipo-body">
+      Es el tipo más frecuente. Las lesiones se forman sobre la capa fina que recubre el interior de la cavidad pélvica, sin infiltrar el tejido subyacente. Su aspecto varía — pueden ser rojas, azuladas o blanquecinas — y en imagen (ecografía o resonancia) frecuentemente no son visibles. El diagnóstico definitivo requiere laparoscopia.
+    </p>
+    <p class="tipo-body">
+      Un dato contraintuitivo pero importante: el tamaño o la extensión de las lesiones no determina la intensidad del dolor. Lesiones pequeñas y superficiales pueden provocar síntomas severos, mientras que formas más extensas pueden cursar con poco dolor. La biología individual importa más que la imagen.
+    </p>
+    <div class="tipo-pills">
+      <span class="pill">Más frecuente</span>
+      <span class="pill">No siempre visible en imagen</span>
+      <span class="pill">Diagnóstico por laparoscopia</span>
+    </div>
+  </div>
+
+  <!-- TIPO 2 -->
+  <div class="section-start" style="margin-top: 2rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Tipo II</span>
+  </div>
+
+  <div class="tipo-card">
+    <span class="tipo-number">II</span>
+    <div class="tipo-tag">Endometrioma ovárico</div>
+    <div class="tipo-title">Quistes de endometriosis en los ovarios</div>
+    <p class="tipo-body">
+      El endometrioma es un quiste ovárico formado por tejido endometriósico que acumula sangre antigua en su interior. Por eso se les llama coloquialmente "quistes de chocolate". A diferencia de la endometriosis superficial, sí es visible por ecografía transvaginal, lo que permite su seguimiento sin necesidad de cirugía inmediata.
+    </p>
+    <p class="tipo-body">
+      Su impacto más relevante, más allá del dolor, es sobre la reserva ovárica. Los endometriomas generan inflamación local y estrés oxidativo en el tejido ovárico circundante, lo que puede reducir los niveles de hormona antimülleriana (AMH) — el marcador principal de reserva ovárica — incluso antes de cualquier intervención quirúrgica.
+    </p>
+    <div class="tipo-pills">
+      <span class="pill">Visible por ecografía</span>
+      <span class="pill">Impacto en reserva ovárica</span>
+      <span class="pill">AMH puede estar reducida</span>
+    </div>
+  </div>
+
+  <blockquote>
+    <p>Los endometriomas generan inflamación crónica y estrés oxidativo que pueden comprometer la reserva ovárica incluso antes de la cirugía. La monitorización de AMH es parte esencial del seguimiento.</p>
+    <cite>Dove Medical Press, International Journal of Women's Health, 2025 · Frontiers in Endocrinology, 2025</cite>
+  </blockquote>
+
+  <!-- TIPO 3 -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Tipo III</span>
+  </div>
+
+  <div class="tipo-card">
+    <span class="tipo-number">III</span>
+    <div class="tipo-tag">Endometriosis infiltrante profunda (EIP)</div>
+    <div class="tipo-title">Lesiones que infiltran más de 5 mm en profundidad</div>
+    <p class="tipo-body">
+      La endometriosis profunda es la forma más compleja de la enfermedad. Se define por la infiltración del tejido a más de 5 mm de profundidad, afectando estructuras como los ligamentos uterosacros, el tabique rectovaginal, el intestino, la vejiga o los uréteres. La afectación intestinal se estima presente en entre el 3,8% y el 37% de los casos según las series.
+    </p>
+    <p class="tipo-body">
+      Los síntomas orientativos incluyen dolor al defecar (disquecia), dolor al orinar (disuria) especialmente durante la menstruación, y dispareunia profunda. Son síntomas que las pacientes frecuentemente no mencionan espontáneamente — o que durante años han normalizado. Su manejo requiere equipos multidisciplinares especializados.
+    </p>
+    <div class="tipo-pills">
+      <span class="pill">Afectación intestinal o vesical posible</span>
+      <span class="pill">Disquecia · Disuria · Dispareunia</span>
+      <span class="pill">Requiere equipo especializado</span>
+    </div>
+  </div>
+
+  <!-- COEXISTENCIA -->
+  <div class="section-start" style="margin-top: 2.5rem;">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que el estadio no explica</span>
+  </div>
+  <h2>El estadio rASRM: útil, pero incompleto</h2>
+
+  <p class="body-text">
+    La clasificación más usada clínicamente es la de la Sociedad Americana de Medicina Reproductiva (rASRM), que divide la endometriosis en estadios I a IV según la extensión de las lesiones. Pero tiene una limitación importante: no predice el nivel de dolor ni la calidad de vida. Una paciente con estadio I puede tener dolor incapacitante. Una con estadio IV puede tener síntomas moderados.
+  </p>
+
+  <div class="highlight-box">
+    <p>La extensión visible de las lesiones no determina la intensidad del dolor. Dos mujeres con el mismo estadio pueden vivir la enfermedad de forma radicalmente diferente.</p>
+    <span class="highlight-source">Fuente: Journal of Clinical Medicine, MDPI, 2023 · PMC12705831</span>
+  </div>
+
+  <p class="body-text">
+    Por eso la clasificación Enzian — más reciente y específica para endometriosis profunda — complementa al rASRM ofreciendo un mapa anatómico detallado de las lesiones, especialmente útil para planificar la cirugía.
+  </p>
+
+  <!-- COEXISTENCIA TIPOS -->
+  <div class="section-start">
+    <div class="section-line"></div>
+    <span class="section-tag">Lo que conviene saber</span>
+  </div>
+  <h2>Los tipos pueden coexistir</h2>
+
+  <p class="body-text">
+    Una misma paciente puede tener endometriosis superficial, endometrioma ovárico y endometriosis profunda al mismo tiempo. No son categorías excluyentes. Eso explica por qué los cuadros clínicos son tan variables y por qué el abordaje terapéutico debe individualizarse.
+  </p>
+
+  <div class="info-box">
+    <div class="info-box-title">Preguntas que vale la pena llevar a tu consulta</div>
+    <ul class="info-list">
+      <li>¿Qué tipo o tipos de endometriosis tengo? ¿Han podido confirmarse o solo sospecharse?</li>
+      <li>¿Se ha evaluado mi reserva ovárica si tengo endometrioma?</li>
+      <li>¿Tenemos evidencia de afectación intestinal o vesical? ¿Qué pruebas se han hecho?</li>
+      <li>¿Mi equipo incluye especialistas en endometriosis profunda si fuera necesario?</li>
+      <li>¿Con qué frecuencia debería hacer seguimiento por imagen?</li>
+    </ul>
+  </div>
+
+  <!-- REFERENCIAS -->
+  <div class="references">
+    <div class="references-title">Referencias científicas</div>
+    <ol>
+      <li>Brichant G et al. Endometriosis and Adenomyosis: Modern Concepts of Their Clinical Outcomes, Treatment, and Management. <em>J Clin Med.</em> 2024;13(14):3996. <a href="https://doi.org/10.3390/jcm13143996" target="_blank">doi:10.3390/jcm13143996</a></li>
+      <li>Situmoran H et al. Unraveling molecular heterogeneity across endometriosis phenotypes. <em>Front Reprod Health.</em> 2026. <a href="https://www.frontiersin.org/journals/reproductive-health/articles/10.3389/frph.2026.1749020/full" target="_blank">Ver artículo</a></li>
+      <li>Vanhie A et al. Three Types of Endometriosis: Pathogenesis, Diagnosis and Treatment. <em>J Clin Med.</em> 2023;12(3):994. <a href="https://doi.org/10.3390/jcm12030994" target="_blank">doi:10.3390/jcm12030994</a></li>
+      <li>Deep pelvic endometriosis: clinical features, diagnosis, and treatment. <em>PMC12705831.</em> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12705831/" target="_blank">Ver artículo</a></li>
+      <li>The Impact of Endometriosis on Ovarian Reserve: A Systematic Review. <em>Int J Women's Health.</em> Dove Medical Press, 2025. <a href="https://www.dovepress.com/the-impact-of-endometriosis-on-ovarian-reserve-a-systematic-review-peer-reviewed-fulltext-article-IJWH" target="_blank">Ver artículo</a></li>
+      <li>Frontiers in Endocrinology. Impact of endometrioma management strategies on ovarian reserve. 2025. <a href="https://www.frontiersin.org/journals/endocrinology/articles/10.3389/fendo.2025.1631108/full" target="_blank">Ver artículo</a></li>
+      <li>Lessans N et al. Ovarian reserve markers of women with superficial endometriosis. <em>Int J Gynecol Obstet.</em> 2024. <a href="https://obgyn.onlinelibrary.wiley.com/doi/full/10.1002/ijgo.15310" target="_blank">Wiley Online Library</a></li>
+    </ol>
+  </div>
+
+  <!-- CTA -->
+  <div class="article-cta">
+    <div class="cta-text">
+      <strong>Registra tus síntomas antes de tu próxima consulta.</strong>
+      <p>Fora organiza tu historial en un brief médico listo para tu ginecóloga.</p>
+    </div>
+    <a href="#" class="cta-btn">Unirme a la lista →</a>
+  </div>
+
+</article>
+
+<footer>
+  <p>© 2026 Fora · Fora no diagnostica. Es una herramienta de organización médica, no un dispositivo clínico.</p>
+  <p><a href="#" style="color: var(--muted); text-decoration: none;">Privacidad</a> · <a href="#" style="color: var(--muted); text-decoration: none;">Términos</a></p>
+</footer>
+
+</body>
+</html>
